@@ -1,0 +1,11 @@
+/* ---------------- reset css ---------------- */
+
+/* les epaisseurs des bordures de conteneurs se confondent */
+*{
+    box-sizing: border-box;
+}
+
+/* la taille de l'image dependra de son conteneur parent */
+img{
+    width: 100%;
+}
