@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,93 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Evolution Homme</title>
 </head>
+
 <body>
 
+    <div id="principal">
+        <div class="inline-block" id="gauche">
+            <div class="blocGauche" id="statistiques">
+                <h2>Statistiques</h2>
+                <ul id="listeStat">
+                    <li id="nbTotalClic">nombre de click total : 0</li>
+                    <li id="nbTotalBois">bois coupés : 0</li>
+                    <li id="nbTotalPierre">pierres ramassés : 0</li>
+                    <li id="nbTotalFer">fer obtenus : 0</li>
+                    <li id="nbTotalOutils">outils obtenus : 0</li>
+                    <li id="nbTotalEre">eres terminées : 0</li>
+                    <li id="nbTotalBatiment">batiments construits : 0</li>
+                    <li id="nbTotalCata">catastrophes rencontrées : 0</li>
+                </ul>
+            </div>
+            <figure class="blocGauche" id="personnage">
+                <img id="hero" src="#" alt="Personnage">
+            </figure>
+            <div class="blocGauche" id="ressources">
+                <h2>Ressources</h2>
+                <ul>
+                    <li id="ressource1">ressource 1</li>
+                    <li id="ressource2">ressource 2</li>
+                    <li id="ressource3">ressource 3</li>
+                </ul>
+            </div>
+        </div>
 
-<script src="assets/js/app.js"></script>
-    
+        <div class="inline-block" id="central">
+            <div id="topCentre">
+                <h1 id="ereActuelle">ere en cours</h1>
+                <label for="file">Connaissances</label>
+                <progress id="file" max="100" value="70"></progress>
+                <p id="barreConnaissance"></p>
+            </div>
+            <div id="bgEre">bg ere en cours</div>
+            <div id="jeu">
+                <div id="x1y1"></div><div id="x1y2"></div><div id="x1y3"></div><div id="x1y4"></div><div id="x1y5"></div>
+                <div id="x1y6"></div><div id="x1y7"></div><div id="x1y8"></div><div id="x1y9"></div><div id="x1y10"></div>
+
+                <div id="x2y1"></div><div id="x2y2"></div><div id="x2y3"></div><div id="x2y4"></div><div id="x2y5"></div>
+                <div id="x2y6"></div><div id="x2y7"></div><div id="x2y8"></div><div id="x2y9"></div><div id="x2y10"></div>
+
+                <div id="x3y1"></div><div id="x3y2"></div><div id="x3y3"></div><div id="x3y4"></div><div id="x3y5"></div>
+                <div id="x3y6"></div><div id="x3y7"></div><div id="x3y8"></div><div id="x3y9"></div><div id="x3y10"></div>
+
+                <div id="x4y1"></div><div id="x4y2"></div><div id="x4y3"></div><div id="x4y4"></div><div id="x4y5"></div>
+                <div id="x4y6"></div><div id="x4y7"></div><div id="x4y8"></div><div id="x4y9"></div><div id="x4y10"></div>
+
+                <div id="x5y1"></div><div id="x5y2"></div><div id="x5y3"></div><div id="x5y4"></div><div id="x5y5"></div>
+                <div id="x5y6"></div><div id="x5y7"></div><div id="x5y8"></div><div id="x5y9"></div><div id="x5y10"></div>
+
+                <div id="x6"></div><div id="x6"></div><div id="x6"></div><div id="x6"></div><div id="x6"></div>
+                <div id="x6"></div><div id="x6"></div><div id="x6"></div><div id="x6"></div><div id="x6"></div>
+
+                <div id="x7"></div><div id="x7"></div><div id="x7"></div><div id="x7"></div><div id="x7"></div>
+                <div id="x7"></div><div id="x7"></div><div id="x7"></div><div id="x7"></div><div id="x7"></div>
+
+                <div id="x8"></div><div id="x8"></div><div id="x8"></div><div id="x8"></div><div id="x8"></div>
+                <div id="x8"></div><div id="x8"></div><div id="x8"></div><div id="x8"></div><div id="x8"></div>
+
+                <div id="x9"></div><div id="x9"></div><div id="x9"></div><div id="x9"></div><div id="x9"></div>
+                <div id="x9"></div><div id="x9"></div><div id="x9"></div><div id="x9"></div><div id="x9"></div>
+
+                <div id="x10"></div><div id="x10"></div><div id="x10"></div><div id="x10"></div><div id="x10"></div>
+                <div id="x10"></div><div id="x10"></div><div id="x10"></div><div id="x10"></div><div id="x10"></div>
+            </div>
+
+        </div>
+
+        <div class="inline-block" id="droite">
+            <div class="bloc-droite" id="shop">
+                <h2>shop des objets</h2>
+                <button id='agrandirShop'>Ouvrir le shop</button>
+            </div>
+            <div class="bloc-droite" id="objets">objets possedés</div>
+            <figure class="bloc-droite" id="bonusMaitre">
+                <img id="lanceBonusMaitre" src="#" alt="Bonus clicker">
+            </figure>
+        </div>
+
+    </div>
+
+    <script src="assets/js/app.js"></script>
+
 </body>
 </html>
