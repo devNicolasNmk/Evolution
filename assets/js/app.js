@@ -5,17 +5,17 @@
     var scoreClick = 0;
     //stat ressources recoltées
     var ressourcesCumulees = document.getElementById('nbTotalRessources');
-    var ressourceUne = 4;
-    var ressourceDeux = 5;
-    var ressourceTrois = 6;
+    var ressourceUne = 0;
+    var ressourceDeux = 0;
+    var ressourceTrois = 0;
     var somme = 0
     //stat outils obtenus
     var nbTotalOutils = document.getElementById('nbTotalOutils');
     //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
     var tabOutils = {
-        "out1": 1,
-        "out2": 1,
-        "out3": 1,
+        "out1": 0,
+        "out2": 0,
+        "out3": 0,
         "out4": 0,
         "out5": 0,
         "out6": 0,
@@ -32,8 +32,8 @@
     var nbOutils = 0;
     //tableau des eres terminées : 0=> non achevée 1=> achevée
     var tabEre = {
-        "ere1": 1,
-        "ere2": 1,
+        "ere1": 0,
+        "ere2": 0,
         "ere3": 0,
         "ere4": 0,
         "ere5": 0
