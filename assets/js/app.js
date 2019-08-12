@@ -6,17 +6,17 @@
     var scoreClick = 0;
     //stat ressources recoltées
     var ressourcesCumulees = document.getElementById('nbTotalRessources');
-    var ressourceUne = 0;
-    var ressourceDeux = 0;
-    var ressourceTrois = 0;
+    var ressourceUne = 5;
+    var ressourceDeux = 10;
+    var ressourceTrois = 25;
     var somme = 0
     //stat outils obtenus
     var nbTotalOutils = document.getElementById('nbTotalOutils');
     //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
     var tabOutils = {
-        "out1": 0,
-        "out2": 0,
-        "out3": 0,
+        "out1": 1,
+        "out2": 1,
+        "out3": 1,
         "out4": 0,
         "out5": 0,
         "out6": 0,
@@ -33,9 +33,9 @@
     var nbOutils = 0;
     //tableau des eres terminées : 0=> non achevée 1=> achevée
     var tabEre = {
-        "ere1": 0,
-        "ere2": 0,
-        "ere3": 0,
+        "ere1": 1,
+        "ere2": 1,
+        "ere3": 1,
         "ere4": 0,
         "ere5": 0
     };
@@ -45,6 +45,9 @@
     var eventConstruct = false;
     var eventCastastrophes = false;
 
+    var viderCache = document.getElementById('viderCache');
+
+
 // ----------------------- Debut : Statistiques - options ----------------------- //
 
     //---- Stat total click ----//
@@ -53,11 +56,11 @@
          * Fonction incremenation de total des clicks + maj de l'affichage
          * 
          */
-        // function incrTotalClick() {
-        //     scoreClick++;
-        //     totalClick.innerHTML = "nombre de click total : " + scoreClick;
-        // }
-        // getClick.onclick = incrTotalClick;
+        function incrTotalClick() {
+            scoreClick++;
+            totalClick.innerHTML = scoreClick;
+        }
+        getClick.onclick = incrTotalClick;
 
 
         //---- Stat Total ressources recoltées ----//
@@ -66,35 +69,35 @@
          * Fonction d'addition des ressources cumulées
          * 
          */
-        // function sommeRessources() {
-        //     somme = ressourceUne + ressourceDeux + ressourceTrois;
-        //     return somme;
-        // }
-        // ressourcesCumulees.innerHTML = "ressources cumulées : " + sommeRessources();
+        function sommeRessources() {
+            somme = ressourceUne + ressourceDeux + ressourceTrois;
+            return somme;
+        }
+        ressourcesCumulees.innerHTML = sommeRessources();
 
 
     // ---- Outils obtenus ---- //
         /*boucle sur le tableau pour check le nombre de fois que 1 est présent 
         *le for in me permet de boucler sur le tableau associatif
         */
-        // for (outil in tabOutils) {
-        //     if (tabOutils[outil] === 1) {
-        //         nbOutils++
-        //     }
-        // }
-        // nbTotalOutils.innerHTML = "outils obtenus : " + nbOutils;
+        for (outil in tabOutils) {
+            if (tabOutils[outil] === 1) {
+                nbOutils++
+            }
+        }
+        nbTotalOutils.innerHTML = nbOutils;
 
 
     // ---- eres terminées ---- //
         /*boucle sur le tableau pour check le nombre de fois que 1 est présent 
         *le for in me permet de boucler sur le tableau associatif
         */
-        // for (ere in tabEre) {
-        //     if (tabEre[ere] === 1) {
-        //         nbEres++
-        //     }
-        // }
-        // nbTotalEre.innerHTML = "eres terminées : " + nbEres;
+        for (ere in tabEre) {
+            if (tabEre[ere] === 1) {
+                nbEres++
+            }
+        }
+        nbTotalEre.innerHTML = nbEres;
 
 
     // ---- batiments construits ---- //
@@ -124,8 +127,51 @@
 
 // ----------------------- Debut : gestion des cookies || webstorage ----------------------- //
 
+    /**
+     * 
+     * fonction de sauvegarde local via le webstorage
+     * [url:https: //developer.mozilla.org/fr/docs/Web/API/Web_Storage_API]
+     * 
+     */
+    function sauvegardeLocal() {
+        totalClick = document.getElementById('nbTotalClic')
+           
+            localStorage.setItem('nbTotalClic', totalClick.innerHTML);
+   
+    }
+
+    function sauvegardeAuto(){
+        setInterval(sauvegardeLocal, 5000);
+    }
+    sauvegardeAuto()
+
+    window.addEventListener('load', restauration)
+
+    function restauration() {
+
+        if (localStorage.getItem('nbTotalClic') != null) {
+            totalClick.innerHTML = localStorage.getItem('nbTotalClic');
+            // scoreClick = totalClick.innerHTML
+        }
+
+        // if (localStorage.getItem('nbTotalRessources') != null) {
+        //     ressourcesCumulees.innerHTML = localStorage.getItem('nbTotalRessources')
+        // }
+
+    }
 
 
+viderCache.addEventListener('click', recommencer);
+    function recommencer(){
+     
+            localStorage.removeItem('nbTotalClic');
+            localStorage.clear();
+            scoreClick = 0;
+            totalClick.innerHTML = scoreClick;
+            location.reload();
+          
+   
+    }
 
 // ----------------------- fin : gestion des cookies || webstorage ----------------------- //
 

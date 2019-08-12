@@ -15,18 +15,25 @@
         <div class="inline-block" id="gauche">
             <div class="blocGauche" id="statistiques">
                 <h2>Statistiques - options</h2>
-                <ul id="listeStat">
-                    <li id="nbTotalClic">nombre de click total : 0</li>
-                    <!-- <li id="nbTotalBois">bois coupés : 0</li>
-                    <li id="nbTotalPierre">pierres ramassés : 0</li>
-                    <li id="nbTotalFer">fer obtenus : 0</li> -->
-                    <li id="nbTotalRessources">ressources cumulées : 0</li>
-                    <li id="nbTotalOutils">outils obtenus : 0</li>
-                    <li id="nbTotalEre">eres terminées : 0</li>
-                    <li id="nbTotalBatiment">batiments construits : 0</li>
-                    <li id="nbTotalCata">catastrophes rencontrées : 0</li>
-                </ul>
-                <button>Recommencer la partie</button>
+                <div id="alignStat">
+                    <div>
+                        <p>nombre de click total :</p>
+                        <p>ressources cumulées :</p>
+                        <p>outils obtenus :</p>
+                        <p>eres terminées :</p>
+                        <p>batiments construits :</p>
+                        <p>catastrophes rencontrées :</p>
+                    </div>
+                    <ul id="listeStat">
+                        <li id="nbTotalClic">0</li>
+                        <li id="nbTotalRessources">0</li>
+                        <li id="nbTotalOutils">0</li>
+                        <li id="nbTotalEre">0</li>
+                        <li id="nbTotalBatiment">0</li>
+                        <li id="nbTotalCata">0</li>
+                    </ul>
+                </div>
+                <button id='viderCache'>Recommencer la partie</button>
             </div>
             <figure class="blocGauche" id="personnage">
                 <img id="hero" src="#" alt="Personnage">
