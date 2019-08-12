@@ -14,9 +14,9 @@
     var nbTotalOutils = document.getElementById('nbTotalOutils');
     //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
     var tabOutils = {
-        "out1": 1,
-        "out2": 1,
-        "out3": 1,
+        "out1": 0,
+        "out2": 0,
+        "out3": 0,
         "out4": 0,
         "out5": 0,
         "out6": 0,
@@ -33,9 +33,9 @@
     var nbOutils = 0;
     //tableau des eres terminées : 0=> non achevée 1=> achevée
     var tabEre = {
-        "ere1": 1,
-        "ere2": 1,
-        "ere3": 1,
+        "ere1": 0,
+        "ere2": 0,
+        "ere3": 0,
         "ere4": 0,
         "ere5": 0
     };
@@ -130,7 +130,7 @@
     /**
      * 
      * fonction de sauvegarde local via le webstorage
-     * [url:https: //developer.mozilla.org/fr/docs/Web/API/Web_Storage_API]
+     * [https://developer.mozilla.org/fr/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API]
      * 
      */
     function sauvegardeLocal() {
