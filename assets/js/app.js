@@ -135,43 +135,48 @@
      */
     function sauvegardeLocal() {
         totalClick = document.getElementById('nbTotalClic')
-           
-            localStorage.setItem('nbTotalClic', totalClick.innerHTML);
+        localStorage.setItem('nbTotalClic', totalClick.innerHTML);
    
     }
 
+    /**
+     * 
+     * fonction de sauvegarde auto
+     * 
+     */
     function sauvegardeAuto(){
         setInterval(sauvegardeLocal, 5000);
     }
     sauvegardeAuto()
 
-    window.addEventListener('load', restauration)
-
+    /**
+     * 
+     * fonction restauration des variables aux rechargements de pages
+     * 
+     */
     function restauration() {
 
         if (localStorage.getItem('nbTotalClic') != null) {
             totalClick.innerHTML = localStorage.getItem('nbTotalClic');
-            // scoreClick = totalClick.innerHTML
+            scoreClick = totalClick.innerHTML
         }
 
-        // if (localStorage.getItem('nbTotalRessources') != null) {
-        //     ressourcesCumulees.innerHTML = localStorage.getItem('nbTotalRessources')
-        // }
-
     }
+    window.onload = restauration;
 
-
-viderCache.addEventListener('click', recommencer);
-    function recommencer(){
-     
-            localStorage.removeItem('nbTotalClic');
-            localStorage.clear();
-            scoreClick = 0;
-            totalClick.innerHTML = scoreClick;
-            location.reload();
-          
-   
-    }
+    /**
+     * 
+     * fonction d'effacement du webstorage
+     * 
+     */
+    viderCache.addEventListener('click', recommencer);
+        function recommencer(){
+                localStorage.removeItem('nbTotalClic');
+                localStorage.clear();
+                scoreClick = 0;
+                totalClick.innerHTML = scoreClick;
+                location.reload();
+        }
 
 // ----------------------- fin : gestion des cookies || webstorage ----------------------- //
 
