@@ -1,3 +1,4 @@
+
 //Declaration des variables 
     //stat clicks
     var totalClick = document.getElementById('nbTotalClic');
@@ -52,11 +53,11 @@
          * Fonction incremenation de total des clicks + maj de l'affichage
          * 
          */
-        function incrTotalClick() {
-            scoreClick++;
-            totalClick.innerHTML = "nombre de click total : " + scoreClick;
-        }
-        getClick.onclick = incrTotalClick;
+        // function incrTotalClick() {
+        //     scoreClick++;
+        //     totalClick.innerHTML = "nombre de click total : " + scoreClick;
+        // }
+        // getClick.onclick = incrTotalClick;
 
 
         //---- Stat Total ressources recoltées ----//
@@ -65,35 +66,35 @@
          * Fonction d'addition des ressources cumulées
          * 
          */
-        function sommeRessources() {
-            somme = ressourceUne + ressourceDeux + ressourceTrois;
-            return somme;
-        }
-        ressourcesCumulees.innerHTML = "ressources cumulées : " + sommeRessources();
+        // function sommeRessources() {
+        //     somme = ressourceUne + ressourceDeux + ressourceTrois;
+        //     return somme;
+        // }
+        // ressourcesCumulees.innerHTML = "ressources cumulées : " + sommeRessources();
 
 
     // ---- Outils obtenus ---- //
         /*boucle sur le tableau pour check le nombre de fois que 1 est présent 
         *le for in me permet de boucler sur le tableau associatif
         */
-        for (outil in tabOutils) {
-            if (tabOutils[outil] === 1) {
-                nbOutils++
-            }
-        }
-        nbTotalOutils.innerHTML = "outils obtenus : " + nbOutils;
+        // for (outil in tabOutils) {
+        //     if (tabOutils[outil] === 1) {
+        //         nbOutils++
+        //     }
+        // }
+        // nbTotalOutils.innerHTML = "outils obtenus : " + nbOutils;
 
 
     // ---- eres terminées ---- //
         /*boucle sur le tableau pour check le nombre de fois que 1 est présent 
         *le for in me permet de boucler sur le tableau associatif
         */
-        for (ere in tabEre) {
-            if (tabEre[ere] === 1) {
-                nbEres++
-            }
-        }
-        nbTotalEre.innerHTML = "eres terminées : " + nbEres;
+        // for (ere in tabEre) {
+        //     if (tabEre[ere] === 1) {
+        //         nbEres++
+        //     }
+        // }
+        // nbTotalEre.innerHTML = "eres terminées : " + nbEres;
 
 
     // ---- batiments construits ---- //
