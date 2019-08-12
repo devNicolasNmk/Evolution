@@ -11,13 +11,17 @@ img {
 }
 
 body,
-h1,h2 {
+h1,
+h2,
+p,
+ul {
     margin: 0;
 }
 
 ul,
 li {
     list-style: none;
+    padding-left: 0;
 }
 
 /* ---------------- fin reset css ---------------- */
@@ -71,6 +75,12 @@ li {
 
 #statistiques {
     background-color: lightblue;
+}
+
+#alignStat{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
 }
 
 #personnage {
