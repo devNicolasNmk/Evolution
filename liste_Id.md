@@ -36,13 +36,12 @@
 ***Liste des id se trouvant dans Statistiques :***
 
     Id nombre de click total => "nbTotalClic"
-    Id bois coupés => "nbTotalBois"
-    Id pierres ramassés => "nbTotalPierre"
-    Id fer obtenus => "nbTotalFer"
+    id ressources cumulées =>"nbTotalRessources"
     Id outils obtenus => "nbTotalOutils"
     Id ere terminée => "nbTotalEre"
     Id batiment construit => "nbTotalBatiment"
     Id catastrophe rencontrée => "nbTotalCata"
+    id recommencer la partie =>"recommencer"
 
 ### **bloc Personnage**
 

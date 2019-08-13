@@ -6,9 +6,9 @@
     var scoreClick = 0;
     //stat ressources recoltées
     var ressourcesCumulees = document.getElementById('nbTotalRessources');
-    var ressourceUne = 5;
-    var ressourceDeux = 10;
-    var ressourceTrois = 25;
+    var ressourceUne = 0;
+    var ressourceDeux = 0;
+    var ressourceTrois = 0;
     var somme = 0;
     //stat outils obtenus
     var nbTotalOutils = document.getElementById('nbTotalOutils');
@@ -44,7 +44,7 @@
     // incrementation du nombre de batiments construits et catastrophes rencontrées
     var eventConstruct = false;
     var eventCastastrophes = false;
-
+    
     var viderCache = document.getElementById('viderCache');
 
 
