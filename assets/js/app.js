@@ -165,8 +165,19 @@
     function restauration() {
 
         if (localStorage.getItem('nbTotalClic') != null) {
+            //restauration bloc stats
             totalClick.innerHTML = localStorage.getItem('nbTotalClic');
+            //ne pas repartir avec un scoreClick a zero
             scoreClick = totalClick.innerHTML;
+            ressourcesCumulees.innerHTML = localStorage.getItem('nbTotalRessources');
+            nbTotalOutils.innerHTML = localStorage.getItem('nbTotalOutils');
+            nbTotalEre.innerHTML = localStorage.getItem('nbTotalEre');
+            nbTotalBatiment.innerHTML = localStorage.getItem('nbTotalBatiment');
+            nbTotalCata.innerHTML = localStorage.getItem('nbTotalCata');
+            //restauration bloc ressources
+            ressource1.innerHTML = localStorage.getItem('ressource1');
+            ressource2.innerHTML = localStorage.getItem('ressource2');
+            ressource3.innerHTML = localStorage.getItem('ressource3');
         }
 
     }
@@ -179,7 +190,7 @@
      */
     viderCache.addEventListener('click', recommencer);
         function recommencer(){
-                localStorage.removeItem('nbTotalClic');
+                // localStorage.removeItem('nbTotalClic');
                 localStorage.clear();
                 // scoreClick = 0;
                 // totalClick.innerHTML = scoreClick;
