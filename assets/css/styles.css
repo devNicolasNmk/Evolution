@@ -47,7 +47,7 @@ li {
 #central {
     width: 960px;
     height: 916px;
-    background-color: blue;
+
     border: 1px solid black;
 }
 
@@ -75,7 +75,7 @@ li {
 }
 
 #statistiques {
-    background-color: lightblue;
+
 }
 
 .alignStat{
@@ -85,7 +85,7 @@ li {
 }
 
 #personnage {
-    background-color: orange;
+
 }
 
 figure {
@@ -97,7 +97,6 @@ figure {
 }
 
 #ressources {
-    background-color: chocolate;
 }
 
 /* ---------------- fin interieur bloc gauche ---------------- */
@@ -110,19 +109,16 @@ figure {
     height: 125px;
     width: 960px;
     text-align: center;
-    background-color: cornflowerblue;
 }
 
 #bgEre {
     height: 191px;
     width: 960px;
-    background-color: darkgrey;
 }
 
 #jeu {
     height: 600px;
     width: 960px;
-    background-color: orange;
     display: flex;
     flex-wrap: wrap;
 }
@@ -148,7 +144,7 @@ figure {
 }
 
 #shop {
-    background-color: chocolate;
+
 }
 
 .ouvrirShop{
@@ -160,11 +156,11 @@ figure {
 }
 
 #objets {
-    background-color: orange;
+
 }
 
 #bonusMaitre {
-    background-color: lightgreen;
+
 }
 
 /* ---------------- fin interieur bloc droite ---------------- */
