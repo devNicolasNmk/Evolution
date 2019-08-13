@@ -32,7 +32,8 @@ li {
 #principal {
     width: 1920px;
     height: 100vh;
-    /* background-color: red; */
+    background-image: url(../img/bg1.jpg);
+    background-size: cover;
     display: flex;
     align-items: center
 }
