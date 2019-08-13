@@ -9,7 +9,7 @@
     var ressourceUne = 5;
     var ressourceDeux = 10;
     var ressourceTrois = 25;
-    var somme = 0
+    var somme = 0;
     //stat outils obtenus
     var nbTotalOutils = document.getElementById('nbTotalOutils');
     //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
@@ -94,7 +94,7 @@
         */
         for (ere in tabEre) {
             if (tabEre[ere] === 1) {
-                nbEres++
+                nbEres++;
             }
         }
         nbTotalEre.innerHTML = nbEres;
@@ -134,9 +134,17 @@
      * 
      */
     function sauvegardeLocal() {
-        totalClick = document.getElementById('nbTotalClic')
+        //sauvegarde bloc statistiques
         localStorage.setItem('nbTotalClic', totalClick.innerHTML);
-   
+        localStorage.setItem('nbTotalRessources', ressourcesCumulees.innerHTML);
+        localStorage.setItem('nbTotalOutils', nbTotalOutils.innerHTML);
+        localStorage.setItem('nbTotalEre', nbTotalEre.innerHTML);
+        localStorage.setItem('nbTotalBatiment', nbTotalBatiment.innerHTML);
+        localStorage.setItem('nbTotalCata', nbTotalCata.innerHTML);
+        //sauvegarde bloc ressources
+        localStorage.setItem('ressource1', ressource1.innerHTML);
+        localStorage.setItem('ressource2', ressource2.innerHTML);
+        localStorage.setItem('ressource3', ressource3.innerHTML);
     }
 
     /**
@@ -157,8 +165,19 @@
     function restauration() {
 
         if (localStorage.getItem('nbTotalClic') != null) {
+            //restauration bloc stats
             totalClick.innerHTML = localStorage.getItem('nbTotalClic');
-            scoreClick = totalClick.innerHTML
+            //ne pas repartir avec un scoreClick a zero
+            scoreClick = totalClick.innerHTML;
+            ressourcesCumulees.innerHTML = localStorage.getItem('nbTotalRessources');
+            nbTotalOutils.innerHTML = localStorage.getItem('nbTotalOutils');
+            nbTotalEre.innerHTML = localStorage.getItem('nbTotalEre');
+            nbTotalBatiment.innerHTML = localStorage.getItem('nbTotalBatiment');
+            nbTotalCata.innerHTML = localStorage.getItem('nbTotalCata');
+            //restauration bloc ressources
+            ressource1.innerHTML = localStorage.getItem('ressource1');
+            ressource2.innerHTML = localStorage.getItem('ressource2');
+            ressource3.innerHTML = localStorage.getItem('ressource3');
         }
 
     }
@@ -171,10 +190,10 @@
      */
     viderCache.addEventListener('click', recommencer);
         function recommencer(){
-                localStorage.removeItem('nbTotalClic');
+                // localStorage.removeItem('nbTotalClic');
                 localStorage.clear();
-                scoreClick = 0;
-                totalClick.innerHTML = scoreClick;
+                // scoreClick = 0;
+                // totalClick.innerHTML = scoreClick;
                 location.reload();
         }
 
