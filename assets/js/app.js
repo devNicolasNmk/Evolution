@@ -9,7 +9,7 @@
     var ressourceUne = 5;
     var ressourceDeux = 10;
     var ressourceTrois = 25;
-    var somme = 0
+    var somme = 0;
     //stat outils obtenus
     var nbTotalOutils = document.getElementById('nbTotalOutils');
     //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
@@ -94,7 +94,7 @@
         */
         for (ere in tabEre) {
             if (tabEre[ere] === 1) {
-                nbEres++
+                nbEres++;
             }
         }
         nbTotalEre.innerHTML = nbEres;
@@ -134,9 +134,13 @@
      * 
      */
     function sauvegardeLocal() {
-        totalClick = document.getElementById('nbTotalClic')
+        totalClick = document.getElementById('nbTotalClic');
         localStorage.setItem('nbTotalClic', totalClick.innerHTML);
-   
+        localStorage.setItem('nbTotalRessources', ressourcesCumulees.innerHTML);
+        localStorage.setItem('nbTotalOutils', nbTotalOutils.innerHTML);
+        localStorage.setItem('nbTotalEre', nbTotalEre.innerHTML);
+        localStorage.setItem('nbTotalBatiment', nbTotalBatiment.innerHTML);
+        localStorage.setItem('nbTotalCata', nbTotalCata.innerHTML);
     }
 
     /**
@@ -158,7 +162,7 @@
 
         if (localStorage.getItem('nbTotalClic') != null) {
             totalClick.innerHTML = localStorage.getItem('nbTotalClic');
-            scoreClick = totalClick.innerHTML
+            scoreClick = totalClick.innerHTML;
         }
 
     }
@@ -173,8 +177,8 @@
         function recommencer(){
                 localStorage.removeItem('nbTotalClic');
                 localStorage.clear();
-                scoreClick = 0;
-                totalClick.innerHTML = scoreClick;
+                // scoreClick = 0;
+                // totalClick.innerHTML = scoreClick;
                 location.reload();
         }
 
