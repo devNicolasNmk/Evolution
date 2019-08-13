@@ -134,13 +134,17 @@
      * 
      */
     function sauvegardeLocal() {
-        totalClick = document.getElementById('nbTotalClic');
+        //sauvegarde bloc statistiques
         localStorage.setItem('nbTotalClic', totalClick.innerHTML);
         localStorage.setItem('nbTotalRessources', ressourcesCumulees.innerHTML);
         localStorage.setItem('nbTotalOutils', nbTotalOutils.innerHTML);
         localStorage.setItem('nbTotalEre', nbTotalEre.innerHTML);
         localStorage.setItem('nbTotalBatiment', nbTotalBatiment.innerHTML);
         localStorage.setItem('nbTotalCata', nbTotalCata.innerHTML);
+        //sauvegarde bloc ressources
+        localStorage.setItem('ressource1', ressource1.innerHTML);
+        localStorage.setItem('ressource2', ressource2.innerHTML);
+        localStorage.setItem('ressource3', ressource3.innerHTML);
     }
 
     /**
