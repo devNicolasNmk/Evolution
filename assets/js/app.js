@@ -226,3 +226,61 @@
 
 
 // ----------------------- Fin : ouverture / fermeture du shop ----------------------- //
+
+// ----------------------- Debut : ressource et compteur ----------------------- //
+
+var plateau= document.getElementById("jeu");
+
+var scoreRessourcesMetal = 0;
+var scoreRessourcesBois = 0;
+var scoreRessourcesPierre = 0;
+
+
+ressource1.innerHTML = scoreRessourcesMetal;
+ressource2.innerHTML = scoreRessourcesBois;
+ressource3.innerHTML = scoreRessourcesPierre;
+
+function selectionne(plateau) {
+    
+    if (plateau.target.getAttribute("class") == "metal") {
+        if (plateau.target.getAttribute("class", 'metal')) {
+            scoreRessourcesMetal = scoreRessourcesMetal + 1 ;
+            
+        }
+    }
+        ressource1.innerHTML = scoreRessourcesMetal;
+
+    if (plateau.target.getAttribute("class") == "bois") {
+            if (plateau.target.getAttribute("class", 'bois')) {
+            scoreRessourcesBois = scoreRessourcesBois + 1 ;
+            
+        }
+    }
+        ressource2.innerHTML = scoreRessourcesBois;
+
+    if (plateau.target.getAttribute("class") == "pierre") {
+        if (plateau.target.getAttribute("class", 'pierre')) {
+            scoreRessourcesPierre = scoreRessourcesPierre + 1 ;
+            
+        }
+    }
+        ressource3.innerHTML = scoreRessourcesPierre;
+}
+plateau.onclick = selectionne;
+
+// ----------------------- Fin : ressource et compteur ----------------------- //
+
+//------------------------- catastrophe -------------------------//
+/*
+*var dino = document.getElementById("catastrophe");
+*
+*function choas (){
+*   if ($element.classList.contains("none")) {
+*        element.classList.toggle("visible")
+*        scoreRessourcesMetal = scoreRessourcesMetal - 1;
+*        scoreRessourcesBois = scoreRessourcesBois - 1;
+*        scoreRessourcesPierre = scoreRessourcesPierre - 1;
+*    }
+*}
+*/
+//------------------------- fin catastrophe -------------------------//

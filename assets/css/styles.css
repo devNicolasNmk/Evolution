@@ -47,7 +47,6 @@ li {
 #central {
     width: 960px;
     height: 916px;
-
     border: 1px solid black;
 }
 
@@ -75,7 +74,8 @@ li {
 }
 
 #statistiques {
-
+    background-image: url(../img/fondStat_sansText.png);
+    background-size: cover;
 }
 
 .alignStat{
@@ -97,6 +97,19 @@ figure {
 }
 
 #ressources {
+   background-image: url(../img/fondRessource.png);
+   background-size: cover;
+}
+
+.bois {
+    background-image: url(../img/ressourceArbre.png);
+    background-size: cover;
+    /*position:relative; 
+    top: -5px;*/ 
+}
+.pierre {
+    background-image: url(../img/ressourcePierre.png);
+    background-size: cover;
 }
 
 /* ---------------- fin interieur bloc gauche ---------------- */
@@ -162,5 +175,24 @@ figure {
 #bonusMaitre {
 
 }
+
+/*---------------------- catastrophe --------------------*/
+
+#catastrophe {
+    background-image: url(../img/dino.png);
+    background-size: cover;
+    width: 155px;
+    height: 155px;
+    position: relative;
+}
+
+.none{
+    display: none;
+}
+
+.visible{
+    display: flex; 
+}
+/*------------------- fin catastrophe -------------------*/
 
 /* ---------------- fin interieur bloc droite ---------------- */
