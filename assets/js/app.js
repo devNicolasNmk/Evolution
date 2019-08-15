@@ -238,44 +238,201 @@ boutonFermerShop.onclick = fermerShop;
 
 var plateau= document.getElementById("jeu");
 
+//compteur des ressources
 var scoreRessourcesMetal = 0;
 var scoreRessourcesBois = 0;
 var scoreRessourcesPierre = 0;
 
+//score de div avant incrémentation dans le compteur des ressources
+var i = 0;
+var j = 0;
+var k = 0;
 
+//pour les amélioration
+var compteurMetal = 1;
+var compteurBois = 1;
+var compteurPierre = 1;
+
+//affichage dans le html
 ressource1.innerHTML = scoreRessourcesMetal;
 ressource2.innerHTML = scoreRessourcesBois;
 ressource3.innerHTML = scoreRessourcesPierre;
 
-function selectionne(plateau) {
-    
-    if (plateau.target.getAttribute("class") == "metal") {
-        if (plateau.target.getAttribute("class", 'metal')) {
-            scoreRessourcesMetal = scoreRessourcesMetal + 1 ;
-            
-        }
-    }
-        ressource1.innerHTML = scoreRessourcesMetal;
+//compteur pour déclencher le changement de place des ressource
+var declencheur = 0;
 
-    if (plateau.target.getAttribute("class") == "bois") {
+
+//algo qui permet d'incrémenter 
+function clicker(plateau) {
+        
+
+        //si tu trouvre une div avec un class qui est metal    
+        if (plateau.target.getAttribute("class") == "metal") {
+            if (plateau.target.getAttribute("class", 'metal')) {
+                //alors tu incrémente le score de la div qui comptien la class metal
+                i = i + 1;
+                // si la div arrive a un score de 10
+                if (i == 10) {
+                    //tu remet le score a 0
+                    i = 0;
+                    // et tu incrémente de x le compteur de ressource
+                    scoreRessourcesMetal = scoreRessourcesMetal + compteurMetal;
+                    //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
+                    declencheur++;
+                }   
+            }
+        }ressource1.innerHTML = scoreRessourcesMetal;
+
+        //si tu trouvre une div avec un class qui est bois
+        if (plateau.target.getAttribute("class") == "bois") {
             if (plateau.target.getAttribute("class", 'bois')) {
-            scoreRessourcesBois = scoreRessourcesBois + 1 ;
-            
-        }
-    }
-        ressource2.innerHTML = scoreRessourcesBois;
+                //alors tu incrémente le score de la div qui comptien la class bois
+                j = j + 1;
+                // si la div arrive a un score de 4
+                if (j == 3) {
+                    //tu remet le score a 0
+                    j = 0;
+                    // et tu incrémente de x le compteur de ressource
+                    scoreRessourcesBois = scoreRessourcesBois + compteurBois;
+                    //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
+                    declencheur++;
+                }  
+            }
+        } ressource2.innerHTML = scoreRessourcesBois;
 
-    if (plateau.target.getAttribute("class") == "pierre") {
-        if (plateau.target.getAttribute("class", 'pierre')) {
-            scoreRessourcesPierre = scoreRessourcesPierre + 1 ;
-            
-        }
-    }
-        ressource3.innerHTML = scoreRessourcesPierre;
+        //si tu trouvre une div avec un class qui est pierre 
+        if (plateau.target.getAttribute("class") == "pierre") {
+            if (plateau.target.getAttribute("class", 'pierre')) {
+                //alors tu incrémente le score de la div qui comptien la class pierre
+                k = k + 1;
+                // si la div arrive a un score de 7
+                if (k == 7) {
+                    //tu remet le score a 0
+                    k = 0;
+                    // et tu incrémente de x le compteur de ressource
+                    scoreRessourcesPierre = scoreRessourcesPierre + compteurPierre;
+                    //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
+                    declencheur++;
+                }
+            }
+        } ressource3.innerHTML = scoreRessourcesPierre;
+        
+        //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
+        if (declencheur == 100) {
+            //tu remets le compteur du déclencheur a 0
+            declencheur = 0;
+            //tu appel le changements des places des ressources
+            changeDePlace();
+        }    
+    } plateau.onclick = clicker;
+
+
+//générateur de nombre aléatoire
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
 }
-plateau.onclick = selectionne;
+
+var randTab = 0;
+
+
+//algo de changement des places des ressources
+function changeDePlace() {
+    
+    //tu parcours le plateau de jeu
+    for (item of plateau.children) {
+        
+        //si une des div contient la class bois
+        if (item.classList.contains("bois")){
+            //alors la class bois est supprimer
+            item.classList.remove("bois");
+            //la class vide est ajouter a la place
+            item.classList.add("vide");
+            //attribution d'un nombre pour choisir une nouvelle div
+            randTab = parseInt(getRandomArbitrary(0, 100));
+
+            // si la div du plateau de la nouvelle position contien la class vide 
+            if (plateau.children[randTab].classList.contains("vide")){
+                //la div du plateau de la nouvelle position supprime la class vide
+                plateau.children[randTab].classList.remove("vide");
+                //la div du plateau de la nouvelle position ajoute la class bois
+                plateau.children[randTab].classList.add("bois");
+            }
+            // sinon si la dive du plateau de la nouvelle position contien la class metal ou pierre
+            else if (plateau.children[randTab].classList.contains("metal") || plateau.children[randTab].classList.contains("pierre")){
+                //alors une nouvelle attribution d'un nombre pour choisir une nouvelle div
+                randTab = parseInt(getRandomArbitrary(0, 100));
+                //la div du plateau de la nouvelle position supprime la class vide
+                plateau.children[randTab].classList.remove("vide");
+                //la div du plateau de la nouvelle position ajoute la class bois
+                plateau.children[randTab].classList.add("bois");
+            }
+        } 
+
+        //si une des div contient la class pierre
+        else if (item.classList.contains("pierre")){
+            //alors la class pierre est supprimer
+            item.classList.remove("pierre");
+            //la class vide est ajouter a la place
+            item.classList.add("vide");
+            //attribution d'un nombre pour choisir une nouvelle div
+            randTab = parseInt(getRandomArbitrary(0, 100));
+
+            // si la div du plateau de la nouvelle position contien la class vide 
+            if (plateau.children[randTab].classList.contains("vide")){
+                //la div du plateau de la nouvelle position supprime la class vide
+                plateau.children[randTab].classList.remove("vide");
+                //la div du plateau de la nouvelle position ajoute la class pierre
+                plateau.children[randTab].classList.add("pierre");
+            }
+            // sinon si la dive du plateau de la nouvelle position contien la class metal ou pierre
+            else if (plateau.children[randTab].classList.contains("metal") || plateau.children[randTab].classList.contains("bois")){
+                //alors une nouvelle attribution d'un nombre pour choisir une nouvelle div
+                randTab = parseInt(getRandomArbitrary(0, 100));
+                //la div du plateau de la nouvelle position supprime la class vide
+                plateau.children[randTab].classList.remove("vide");
+                //la div du plateau de la nouvelle position ajoute la class pierre
+                plateau.children[randTab].classList.add("pierre");
+            }
+        } 
+
+        //si une des div contient la class metal
+        else if (item.classList.contains("metal")){
+            //alors la class metal est supprimer
+            item.classList.remove("metal");
+            //la class vide est ajouter a la place
+            item.classList.add("vide");
+            //attribution d'un nombre pour choisir une nouvelle div
+            randTab = parseInt(getRandomArbitrary(0, 100));
+
+            // si la div du plateau de la nouvelle position contien la class vide 
+            if (plateau.children[randTab].classList.contains("vide")){
+                //la div du plateau de la nouvelle position supprime la class vide
+                plateau.children[randTab].classList.remove("vide");
+                //la div du plateau de la nouvelle position ajoute la class metal
+                plateau.children[randTab].classList.add("metal");
+            }
+            // sinon si la dive du plateau de la nouvelle position contien la class metal ou pierre
+            else if (plateau.children[randTab].classList.contains("bois") || plateau.children[randTab].classList.contains("pierre")){
+                //alors une nouvelle attribution d'un nombre pour choisir une nouvelle div
+                randTab = parseInt(getRandomArbitrary(0, 100));
+                //la div du plateau de la nouvelle position supprime la class vide
+                plateau.children[randTab].classList.remove("vide");
+                //la div du plateau de la nouvelle position ajoute la class metal
+                plateau.children[randTab].classList.add("metal");
+            }
+        }      
+    }
+}
 
 // ----------------------- Fin : ressource et compteur ----------------------- //
+
+
+// ----------------------- Debut : carte des Connaissances ----------------------- //
+
+
+
+// ----------------------- Fin : carte des Connaissances --------------------------- //
+
 
 //------------------------- catastrophe -------------------------//
 /*

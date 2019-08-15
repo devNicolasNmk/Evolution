@@ -24,6 +24,12 @@ li {
     padding-left: 0;
 }
 
+h1,h2 {
+    font-family: sans-serif;
+    color: #fff;
+}
+
+
 /* ---------------- fin reset css ---------------- */
 
 
@@ -78,6 +84,11 @@ li {
     background-size: cover;
 }
 
+#statistiques h2 {
+    margin-top: 6%;
+    color: #2E5967;
+}
+
 .alignStat{
     display: flex;
     justify-content: center;
@@ -101,6 +112,10 @@ figure {
    background-size: cover;
 }
 
+.metal {
+    background-color: gray;
+}
+
 .bois {
     background-image: url(../img/ressourceArbre.png);
     background-size: cover;
@@ -110,6 +125,33 @@ figure {
 .pierre {
     background-image: url(../img/ressourcePierre.png);
     background-size: cover;
+}
+
+.vide{
+    
+}
+
+#ressources .alignStat {
+    margin: 0;
+    padding-left: 15%;
+}
+
+#ressources ul li {
+        width: 230px;
+        height: 35%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+}
+
+#ressources ul li , #ressources p{
+    font-family: sans-serif;
+    font-size: 1.5em;
+    color: #fff;
+    margin-top: 2%;
+    margin-bottom: 12%;
+    text-align: right;
 }
 
 /* ---------------- fin interieur bloc gauche ---------------- */
@@ -163,10 +205,23 @@ figure {
 }
 
 #bouton-ouvrir-shop {
-
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+    width: 470px;
+    height: 250px;
+    background-image: url(../img/fondBoutonShop_sansText.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-#bouton-fermer-shop {
 
+#bouton-fermer-shop {
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+    width: 470px;
+    height: 250px;
+    background-image: url(../img/fondBoutonShop_sansText.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* BLOC-SHOP */
@@ -174,7 +229,9 @@ figure {
 #bloc-shop {
     display: none;
     position: absolute;
+    /* top: 35%; */
     top: 387px;
+    /* left: 34%; */
     left: 480px;
     height: 600px;
     width: 960px;
