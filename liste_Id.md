@@ -92,8 +92,9 @@
 
 ### **bloc shop**
 
-    Bloc shop des objets => "shop"
-    id ouverture du shop = "agrandirShop"
+    Bloc shop des objets => "bloc-shop"
+    id ouverture du shop = "ouvrirShop"
+    id fermeture du shop = "ouvrirShop"
 
 ### **bloc objets obtenus**
 
