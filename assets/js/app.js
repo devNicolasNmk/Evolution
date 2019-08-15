@@ -205,25 +205,32 @@
 // ----------------------- Debut : ouverture / fermeture du shop ----------------------- //
 
 //Cible le bouton ouvrir le shop
-    var clickShop = document.getElementById('agrandirShop');
-
-    /**
+    var boutonOuvrirShop = document.getElementById('bouton-ouvrir-shop');
+    var boutonFermerShop = document.getElementById('bouton-fermer-shop');
+    var blocShop = document.getElementById('bloc-shop');
+//Initilisation Styles boutons    
+    boutonOuvrirShop.style.display = "block";
+    boutonFermerShop.style.display = "none";
+    /*
      * 
      * Fonction d'ouverture et de fermeture du shop
      * 
      */
-    function agrandirShop() {
-        var shop = document.getElementById("shop");
-        shop.classList.toggle('ouvrirShop'); // applique la class .ouvrirShop => gestion css de la class
-        clickShop.innerHTML = "Fermer le shop";
-        if (!shop.classList.contains('ouvrirShop')) {
-            clickShop.innerHTML = "Ouvrir le shop";
-        }
+    function ouvrirShop() {
+        boutonOuvrirShop.style.display = "none";
+        boutonFermerShop.style.display = "block";
+        blocShop.style.display = "block";
+    }
+    function fermerShop() {
+        boutonOuvrirShop.style.display = "block";
+        boutonFermerShop.style.display = "none";
+        blocShop.style.display = "none";
     }
 
-//Lance la fonction agrandirShop au clic sur le bouton
-    clickShop.onclick = agrandirShop;
-
+//Lance la fonction ouvrir au clic sur le bouton
+boutonOuvrirShop.onclick = ouvrirShop;
+//Lance la fonction fermer au clic sur le bouton
+boutonFermerShop.onclick = fermerShop;
 
 // ----------------------- Fin : ouverture / fermeture du shop ----------------------- //
 

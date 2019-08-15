@@ -157,15 +157,77 @@ figure {
 }
 
 #shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bouton-ouvrir-shop {
+
+}
+#bouton-fermer-shop {
 
 }
 
-.ouvrirShop{
+/* BLOC-SHOP */
+
+#bloc-shop {
+    display: none;
     position: absolute;
-    right :5px;
-    width: 1435px;
-    height: 917px;
-    
+    top: 387px;
+    left: 480px;
+    height: 600px;
+    width: 960px;
+    background-color: #FEEEDC;
+}
+
+/* Title */
+#container-title-shop {
+    background-color: darkseagreen;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-shop {}
+
+/* Items */
+#container-items-shop {
+    background-color: mediumseagreen;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.containers-items-shop {
+    display: flex;
+    justify-content: space-around;
+}
+
+.noms-items-shop {
+    color: aliceblue;
+    font-size: 1em;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Items Lvls */
+.boutons-itemslvls-shop {
+    width: 15%;
+    border-radius: 10px;
+    color: aliceblue
+}
+
+.noms-itemslvls-shop {}
+
+.prix-itemslvls-shop {
+    display: flex;
+    flex-direction: column;
 }
 
 #objets {
