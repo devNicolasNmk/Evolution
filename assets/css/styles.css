@@ -64,8 +64,15 @@ h1,h2 {
     height: 916px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+}
+
+#gauche {
+    justify-content: space-between;
+}
+
+#droite {
+    justify-content: flex-start;
 }
 
 
@@ -112,15 +119,15 @@ figure {
    background-size: cover;
 }
 
-.metal {
-    background-color: gray;
+.os {
+    background-image: url(../img/ressourceOs.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .bois {
     background-image: url(../img/ressourceArbre.png);
     background-size: cover;
-    /*position:relative; 
-    top: -5px;*/ 
 }
 .pierre {
     background-image: url(../img/ressourcePierre.png);
@@ -185,6 +192,19 @@ figure {
     height: 10%;
 }
 
+#file {
+    width: 600px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#periode{
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 1em;
+}
+
 /* ---------------- fin interieur bloc central ---------------- */
 
 
@@ -194,7 +214,7 @@ figure {
 .bloc-droite {
     text-align: center;
     width: 470px;
-    height: 300px;
+    /*height: 300px;*/
     border: 1px solid black;
 }
 
@@ -202,13 +222,14 @@ figure {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 210px;
 }
 
 #bouton-ouvrir-shop {
     background-color: rgba(0, 0, 0, 0);
     border-style: none;
     width: 470px;
-    height: 250px;
+    height: 200px;
     background-image: url(../img/fondBoutonShop_sansText.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -218,7 +239,7 @@ figure {
     background-color: rgba(0, 0, 0, 0);
     border-style: none;
     width: 470px;
-    height: 250px;
+    height: 200px;
     background-image: url(../img/fondBoutonShop_sansText.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -288,7 +309,29 @@ figure {
 }
 
 #objets {
+    background-image: url(../img/fondObjetsSansText.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 500px;
+    margin-top: 0;
+}
 
+#objetsStock{
+    margin-left: 35px;
+    margin-top: 88px;
+    width: 370px;
+    height: 350px;
+    border: 1px solid black;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.objetscase {
+    width: 120px;
+    height: 114px;
+    border: 1px solid black;
+    display: inline-flex;
 }
 
 #bonusMaitre {
