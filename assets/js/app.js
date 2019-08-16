@@ -239,49 +239,64 @@ boutonFermerShop.onclick = fermerShop;
 var plateau= document.getElementById("jeu");
 
 //compteur des ressources
-var scoreRessourcesMetal = 0;
-var scoreRessourcesBois = 0;
-var scoreRessourcesPierre = 0;
+var compteurRessouceOs = 0;
+var compteurRessourceBois = 0;
+var compteurRessourcePierre = 0;
 
 //score de div avant incrémentation dans le compteur des ressources
 var i = 0;
 var j = 0;
 var k = 0;
 
-//pour les amélioration
-var compteurMetal = 1;
-var compteurBois = 1;
-var compteurPierre = 1;
+//Valeur d'un clic
+var clickOs = 1;
+var clickBois = 1;
+var clickPierre = 1;
 
 //affichage dans le html
-ressource1.innerHTML = scoreRessourcesMetal;
-ressource2.innerHTML = scoreRessourcesBois;
-ressource3.innerHTML = scoreRessourcesPierre;
+ressource1.innerHTML = compteurRessouceOs;
+ressource2.innerHTML = compteurRessourceBois;
+ressource3.innerHTML = compteurRessourcePierre;
 
 //compteur pour déclencher le changement de place des ressource
-var declencheur = 0;
+var declencheurOs = 0;
+var declencheurBois = 0;
+var declencheurPierre = 0;
 
+//décrémenter catastrophe / dommages subi avec la catastrophe
+var dommagesRessourceOs = 5;
+var dommagesRessourceBois = 5;
+var dommagesRessourcePierre = 5;
 
 //algo qui permet d'incrémenter 
 function clicker(plateau) {
         
 
-        //si tu trouvre une div avec un class qui est metal    
-        if (plateau.target.getAttribute("class") == "metal") {
-            if (plateau.target.getAttribute("class", 'metal')) {
-                //alors tu incrémente le score de la div qui comptien la class metal
+        //si tu trouvre une div avec un class qui est os    
+        if (plateau.target.getAttribute("class") == "os") {
+            if (plateau.target.getAttribute("class", 'os')) {
+                //alors tu incrémente le score de la div qui comptien la class os
                 i = i + 1;
                 // si la div arrive a un score de 10
                 if (i == 10) {
                     //tu remet le score a 0
                     i = 0;
                     // et tu incrémente de x le compteur de ressource
-                    scoreRessourcesMetal = scoreRessourcesMetal + compteurMetal;
+                    compteurRessouceOs = compteurRessouceOs + clickOs;
                     //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
-                    declencheur++;
+                    declencheurOs++;
+
+                    //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
+                    if (declencheurOs == 15) {
+                        //tu remets le compteur du déclencheur a 0
+                        declencheurOs = 0;
+                        //tu appel le changements des places des ressources
+                        changeDePlaceOs();
+                    } 
+console.log(declencheurOs);
                 }   
             }
-        }ressource1.innerHTML = scoreRessourcesMetal;
+        }ressource1.innerHTML = compteurRessouceOs;
 
         //si tu trouvre une div avec un class qui est bois
         if (plateau.target.getAttribute("class") == "bois") {
@@ -289,16 +304,25 @@ function clicker(plateau) {
                 //alors tu incrémente le score de la div qui comptien la class bois
                 j = j + 1;
                 // si la div arrive a un score de 4
-                if (j == 3) {
+                if (j == 4) {
                     //tu remet le score a 0
                     j = 0;
                     // et tu incrémente de x le compteur de ressource
-                    scoreRessourcesBois = scoreRessourcesBois + compteurBois;
+                    compteurRessourceBois = compteurRessourceBois + clickBois;
                     //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
-                    declencheur++;
+                    declencheurBois++;
+
+                    //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
+                    if (declencheurBois == 10) {
+                        //tu remets le compteur du déclencheur a 0
+                        declencheurBois = 0;
+                        //tu appel le changements des places des ressources
+                        changeDePlaceBois();
+                    } 
+console.log(declencheurBois);
                 }  
             }
-        } ressource2.innerHTML = scoreRessourcesBois;
+        } ressource2.innerHTML = compteurRessourceBois;
 
         //si tu trouvre une div avec un class qui est pierre 
         if (plateau.target.getAttribute("class") == "pierre") {
@@ -310,20 +334,22 @@ function clicker(plateau) {
                     //tu remet le score a 0
                     k = 0;
                     // et tu incrémente de x le compteur de ressource
-                    scoreRessourcesPierre = scoreRessourcesPierre + compteurPierre;
+                    compteurRessourcePierre = compteurRessourcePierre + clickPierre;
                     //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
-                    declencheur++;
+                    declencheurPierre++;
+
+                    //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
+                    if (declencheurPierre == 25) {
+                        //tu remets le compteur du déclencheur a 0
+                        declencheurPierre = 0;
+                        //tu appel le changements des places des ressources
+                        changeDePlacePierre();
+                    } 
+console.log(declencheurPierre);
                 }
             }
-        } ressource3.innerHTML = scoreRessourcesPierre;
-        
-        //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
-        if (declencheur == 100) {
-            //tu remets le compteur du déclencheur a 0
-            declencheur = 0;
-            //tu appel le changements des places des ressources
-            changeDePlace();
-        }    
+        } ressource3.innerHTML = compteurRessourcePierre;
+           
     } plateau.onclick = clicker;
 
 
@@ -336,11 +362,45 @@ var randTab = 0;
 
 
 //algo de changement des places des ressources
-function changeDePlace() {
+function changeDePlaceOs() {
     
     //tu parcours le plateau de jeu
     for (item of plateau.children) {
-        
+
+        //si une des div contient la class os
+        if (item.classList.contains("os")){
+            //alors la class os est supprimer
+            item.classList.remove("os");
+            //la class vide est ajouter a la place
+            item.classList.add("vide");
+            //attribution d'un nombre pour choisir une nouvelle div
+            randTab = parseInt(getRandomArbitrary(0, 100));
+
+            // si la div du plateau de la nouvelle position contien la class vide 
+            if (plateau.children[randTab].classList.contains("vide")){
+                //la div du plateau de la nouvelle position supprime la class vide
+                plateau.children[randTab].classList.remove("vide");
+                //la div du plateau de la nouvelle position ajoute la class os
+                plateau.children[randTab].classList.add("os");
+            }
+            // sinon si la dive du plateau de la nouvelle position contien la class os ou pierre
+            else if (plateau.children[randTab].classList.contains("bois") || plateau.children[randTab].classList.contains("pierre")){
+                //alors une nouvelle attribution d'un nombre pour choisir une nouvelle div
+                randTab = parseInt(getRandomArbitrary(0, 100));
+                //la div du plateau de la nouvelle position supprime la class vide
+                plateau.children[randTab].classList.remove("vide");
+                //la div du plateau de la nouvelle position ajoute la class ow
+                plateau.children[randTab].classList.add("os");
+            }
+        }      
+    }
+}
+
+function changeDePlaceBois() {
+
+    //tu parcours le plateau de jeu
+    for (item of plateau.children) {
+
         //si une des div contient la class bois
         if (item.classList.contains("bois")){
             //alors la class bois est supprimer
@@ -357,8 +417,8 @@ function changeDePlace() {
                 //la div du plateau de la nouvelle position ajoute la class bois
                 plateau.children[randTab].classList.add("bois");
             }
-            // sinon si la dive du plateau de la nouvelle position contien la class metal ou pierre
-            else if (plateau.children[randTab].classList.contains("metal") || plateau.children[randTab].classList.contains("pierre")){
+            // sinon si la dive du plateau de la nouvelle position contien la class os ou pierre
+            else if (plateau.children[randTab].classList.contains("os") || plateau.children[randTab].classList.contains("pierre")){
                 //alors une nouvelle attribution d'un nombre pour choisir une nouvelle div
                 randTab = parseInt(getRandomArbitrary(0, 100));
                 //la div du plateau de la nouvelle position supprime la class vide
@@ -367,9 +427,16 @@ function changeDePlace() {
                 plateau.children[randTab].classList.add("bois");
             }
         } 
+    }
+}
+
+function changeDePlacePierre() {
+
+    //tu parcours le plateau de jeu
+    for (item of plateau.children) {
 
         //si une des div contient la class pierre
-        else if (item.classList.contains("pierre")){
+        if (item.classList.contains("pierre")){
             //alors la class pierre est supprimer
             item.classList.remove("pierre");
             //la class vide est ajouter a la place
@@ -384,8 +451,8 @@ function changeDePlace() {
                 //la div du plateau de la nouvelle position ajoute la class pierre
                 plateau.children[randTab].classList.add("pierre");
             }
-            // sinon si la dive du plateau de la nouvelle position contien la class metal ou pierre
-            else if (plateau.children[randTab].classList.contains("metal") || plateau.children[randTab].classList.contains("bois")){
+            // sinon si la dive du plateau de la nouvelle position contien la class os ou pierre
+            else if (plateau.children[randTab].classList.contains("os") || plateau.children[randTab].classList.contains("bois")){
                 //alors une nouvelle attribution d'un nombre pour choisir une nouvelle div
                 randTab = parseInt(getRandomArbitrary(0, 100));
                 //la div du plateau de la nouvelle position supprime la class vide
@@ -394,57 +461,90 @@ function changeDePlace() {
                 plateau.children[randTab].classList.add("pierre");
             }
         } 
-
-        //si une des div contient la class metal
-        else if (item.classList.contains("metal")){
-            //alors la class metal est supprimer
-            item.classList.remove("metal");
-            //la class vide est ajouter a la place
-            item.classList.add("vide");
-            //attribution d'un nombre pour choisir une nouvelle div
-            randTab = parseInt(getRandomArbitrary(0, 100));
-
-            // si la div du plateau de la nouvelle position contien la class vide 
-            if (plateau.children[randTab].classList.contains("vide")){
-                //la div du plateau de la nouvelle position supprime la class vide
-                plateau.children[randTab].classList.remove("vide");
-                //la div du plateau de la nouvelle position ajoute la class metal
-                plateau.children[randTab].classList.add("metal");
-            }
-            // sinon si la dive du plateau de la nouvelle position contien la class metal ou pierre
-            else if (plateau.children[randTab].classList.contains("bois") || plateau.children[randTab].classList.contains("pierre")){
-                //alors une nouvelle attribution d'un nombre pour choisir une nouvelle div
-                randTab = parseInt(getRandomArbitrary(0, 100));
-                //la div du plateau de la nouvelle position supprime la class vide
-                plateau.children[randTab].classList.remove("vide");
-                //la div du plateau de la nouvelle position ajoute la class metal
-                plateau.children[randTab].classList.add("metal");
-            }
-        }      
     }
 }
-
 // ----------------------- Fin : ressource et compteur ----------------------- //
-
 
 // ----------------------- Debut : carte des Connaissances ----------------------- //
 
+function achatCarte1 () {
+    if (  //outil 1 niveau 1 &&
+        compteurRessouceOs == 20 && compteurRessourceBois == 40 && compteurRessourcePierre == 30) { 
+        
+        compteurRessouceOs = compteurRessouceOs - 20;
+        compteurRessourceBois = compteurRessourceBois - 40;
+        compteurRessourcePierre = compteurRessourcePierre - 30;
 
+        //ajoute + 20 % à la bar d'évolution
+    }
+}
 
-// ----------------------- Fin : carte des Connaissances --------------------------- //
+function achatCarte2 () {
+    if (  //outil 2 niveau 1 &&
+        compteurRessouceOs == 30 && compteurRessourceBois == 50 && compteurRessourcePierre == 40) { 
+        
+        compteurRessouceOs = compteurRessouceOs - 30;
+        compteurRessourceBois = compteurRessourceBois - 50;
+        compteurRessourcePierre = compteurRessourcePierre - 40;
 
+        //ajoute + 20 % à la bar d'évolution
+
+    }
+}
+
+function achatCarte3 () {
+    if ( //outil 3 niveau 1 &&
+        compteurRessouceOs == 40 && compteurRessourceBois == 60&& compteurRessourcePierre == 50) { 
+        
+        compteurRessouceOs = compteurRessouceOs - 40;
+        compteurRessourceBois = compteurRessourceBois - 60;
+        compteurRessourcePierre = compteurRessourcePierre - 50;
+
+        //ajoute + 20 % à la bar d'évolution
+
+    }
+}
+
+function achatCarte4 () {
+    if ( //outils 1 niveau 2 && outils 2 niveau 2 && outils 3 niveau 2 &&
+        compteurRessouceOs == 50 && compteurRessourceBois == 70 && compteurRessourcePierre == 60) { 
+        
+        compteurRessouceOs = compteurRessouceOs - 50;
+        compteurRessourceBois = compteurRessourceBois - 70;
+        compteurRessourcePierre = compteurRessourcePierre - 60;
+
+        //ajoute + 20 % à la bar d'évolution
+
+    }
+}
+
+function achatCarte5 () {
+    if ( //outils 1 niveau 3 && outils 2 niveau 3 && outils 3 niveau 3 &&
+        compteurRessouceOs == 60 && compteurRessourceBois == 80 && compteurRessourcePierre == 70) { 
+        
+        compteurRessouceOs = compteurRessouceOs - 60;
+        compteurRessourceBois = compteurRessourceBois - 70;
+        compteurRessourcePierre = compteurRessourcePierre - 80;
+
+        //ajoute + 20 % à la bar d'évolution
+
+    }
+}
+
+// ----------------------- Fin : ressource et compteur --------------------------- //
 
 //------------------------- catastrophe -------------------------//
-/*
-*var dino = document.getElementById("catastrophe");
-*
-*function choas (){
-*   if ($element.classList.contains("none")) {
-*        element.classList.toggle("visible")
-*        scoreRessourcesMetal = scoreRessourcesMetal - 1;
-*        scoreRessourcesBois = scoreRessourcesBois - 1;
-*        scoreRessourcesPierre = scoreRessourcesPierre - 1;
-*    }
-*}
-*/
+
+// function choas (){
+//     if ( /* quelque chose */ == 20) {
+//         var dino = document.getElementById("catastrophe");
+//         dino.classList.contains("none");
+//         dino.classList.remove("none");
+//         dino.classList.add("visible");
+//         compteurRessouceOs = compteurRessouceOs - dommagesRessourceOs;
+//         compteurRessourceBois = compteurRessourceBois - dommagesRessourceBois;
+//         compteurRessourcePierre = compteurRessourcePierre - dommagesRessourcePierre;
+//     }
+// }
+
 //------------------------- fin catastrophe -------------------------//
