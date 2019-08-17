@@ -239,9 +239,9 @@ boutonFermerShop.onclick = fermerShop;
 var plateau= document.getElementById("jeu");
 
 //compteur des ressources
-var compteurRessouceOs = 0;
-var compteurRessourceBois = 0;
-var compteurRessourcePierre = 0;
+var compteurRessourcePlateau1 = 0;
+var compteurRessourcePlateau2 = 0;
+var compteurRessourcePlateau3 = 0;
 
 //score de div avant incrémentation dans le compteur des ressources
 var i = 0;
@@ -249,24 +249,24 @@ var j = 0;
 var k = 0;
 
 //Valeur d'un clic
-var clickOs = 1;
-var clickBois = 1;
-var clickPierre = 1;
+var clickRessource1 = 1;
+var clickRessource2 = 1;
+var clickRessource3 = 1;
 
 //affichage dans le html
-ressource1.innerHTML = compteurRessouceOs;
-ressource2.innerHTML = compteurRessourceBois;
-ressource3.innerHTML = compteurRessourcePierre;
+ressource1.innerHTML = compteurRessourcePlateau1;
+ressource2.innerHTML = compteurRessourcePlateau2;
+ressource3.innerHTML = compteurRessourcePlateau3;
 
 //compteur pour déclencher le changement de place des ressource
-var declencheurOs = 0;
-var declencheurBois = 0;
-var declencheurPierre = 0;
+var declencheurRessource1 = 0;
+var declencheurRessource2 = 0;
+var declencheurRessource3 = 0;
 
 //décrémenter catastrophe / dommages subi avec la catastrophe
-var dommagesRessourceOs = 5;
-var dommagesRessourceBois = 5;
-var dommagesRessourcePierre = 5;
+var dommagesRessource1 = 5;
+var dommagesRessource2 = 5;
+var dommagesRessource3 = 5;
 
 //algo qui permet d'incrémenter 
 function clicker(plateau) {
@@ -282,21 +282,21 @@ function clicker(plateau) {
                     //tu remet le score a 0
                     i = 0;
                     // et tu incrémente de x le compteur de ressource
-                    compteurRessouceOs = compteurRessouceOs + clickOs;
+                    compteurRessourcePlateau1 = compteurRessourcePlateau1 + clickRessource1;
                     //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
-                    declencheurOs++;
+                    declencheurRessource1++;
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
-                    if (declencheurOs == 15) {
+                    if (declencheurRessource1 == 15) {
                         //tu remets le compteur du déclencheur a 0
-                        declencheurOs = 0;
+                        declencheurRessource1 = 0;
                         //tu appel le changements des places des ressources
-                        changeDePlaceOs();
+                        changeDePlaceRessource1();
                     } 
-console.log(declencheurOs);
+
                 }   
             }
-        }ressource1.innerHTML = compteurRessouceOs;
+        }ressource1.innerHTML = compteurRessourcePlateau1;
 
         //si tu trouvre une div avec un class qui est bois
         if (plateau.target.getAttribute("class") == "bois") {
@@ -308,21 +308,21 @@ console.log(declencheurOs);
                     //tu remet le score a 0
                     j = 0;
                     // et tu incrémente de x le compteur de ressource
-                    compteurRessourceBois = compteurRessourceBois + clickBois;
+                    compteurRessourcePlateau2 = compteurRessourcePlateau2 + clickRessource2;
                     //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
-                    declencheurBois++;
+                    declencheurRessource2++;
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
-                    if (declencheurBois == 10) {
+                    if (declencheurRessource2 == 10) {
                         //tu remets le compteur du déclencheur a 0
-                        declencheurBois = 0;
+                        declencheurRessource2 = 0;
                         //tu appel le changements des places des ressources
-                        changeDePlaceBois();
+                        changeDePlaceRessource2();
                     } 
-console.log(declencheurBois);
+
                 }  
             }
-        } ressource2.innerHTML = compteurRessourceBois;
+        } ressource2.innerHTML = compteurRessourcePlateau2;
 
         //si tu trouvre une div avec un class qui est pierre 
         if (plateau.target.getAttribute("class") == "pierre") {
@@ -334,21 +334,21 @@ console.log(declencheurBois);
                     //tu remet le score a 0
                     k = 0;
                     // et tu incrémente de x le compteur de ressource
-                    compteurRessourcePierre = compteurRessourcePierre + clickPierre;
+                    compteurRessourcePlateau3 = compteurRessourcePlateau3 + clickRessource3;
                     //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
-                    declencheurPierre++;
+                    declencheurRessource3++;
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
-                    if (declencheurPierre == 25) {
+                    if (declencheurRessource3 == 25) {
                         //tu remets le compteur du déclencheur a 0
-                        declencheurPierre = 0;
+                        declencheurRessource3 = 0;
                         //tu appel le changements des places des ressources
-                        changeDePlacePierre();
+                        changeDePlaceRessource3();
                     } 
-console.log(declencheurPierre);
+
                 }
             }
-        } ressource3.innerHTML = compteurRessourcePierre;
+        } ressource3.innerHTML = compteurRessourcePlateau3;
            
     } plateau.onclick = clicker;
 
@@ -362,7 +362,7 @@ var randTab = 0;
 
 
 //algo de changement des places des ressources
-function changeDePlaceOs() {
+function changeDePlaceRessource1() {
     
     //tu parcours le plateau de jeu
     for (item of plateau.children) {
@@ -396,7 +396,7 @@ function changeDePlaceOs() {
     }
 }
 
-function changeDePlaceBois() {
+function changeDePlaceRessource2() {
 
     //tu parcours le plateau de jeu
     for (item of plateau.children) {
@@ -430,7 +430,7 @@ function changeDePlaceBois() {
     }
 }
 
-function changeDePlacePierre() {
+function changeDePlaceRessource3() {
 
     //tu parcours le plateau de jeu
     for (item of plateau.children) {
@@ -469,11 +469,11 @@ function changeDePlacePierre() {
 
 function achatCarte1 () {
     if (  //outil 1 niveau 1 &&
-        compteurRessouceOs == 20 && compteurRessourceBois == 40 && compteurRessourcePierre == 30) { 
+        compteurRessourcePlateau1 == 20 && compteurRessourcePlateau2 == 40 && compteurRessourcePlateau3 == 30) { 
         
-        compteurRessouceOs = compteurRessouceOs - 20;
-        compteurRessourceBois = compteurRessourceBois - 40;
-        compteurRessourcePierre = compteurRessourcePierre - 30;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 20;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 40;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 30;
 
         //ajoute + 20 % à la bar d'évolution
     }
@@ -481,11 +481,11 @@ function achatCarte1 () {
 
 function achatCarte2 () {
     if (  //outil 2 niveau 1 &&
-        compteurRessouceOs == 30 && compteurRessourceBois == 50 && compteurRessourcePierre == 40) { 
+        compteurRessourcePlateau1 == 30 && compteurRessourcePlateau2 == 50 && compteurRessourcePlateau3 == 40) { 
         
-        compteurRessouceOs = compteurRessouceOs - 30;
-        compteurRessourceBois = compteurRessourceBois - 50;
-        compteurRessourcePierre = compteurRessourcePierre - 40;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 30;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 50;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 40;
 
         //ajoute + 20 % à la bar d'évolution
 
@@ -494,37 +494,11 @@ function achatCarte2 () {
 
 function achatCarte3 () {
     if ( //outil 3 niveau 1 &&
-        compteurRessouceOs == 40 && compteurRessourceBois == 60&& compteurRessourcePierre == 50) { 
+        compteurRessourcePlateau1 == 40 && compteurRessourcePlateau2 == 60&& compteurRessourcePlateau3 == 50) { 
         
-        compteurRessouceOs = compteurRessouceOs - 40;
-        compteurRessourceBois = compteurRessourceBois - 60;
-        compteurRessourcePierre = compteurRessourcePierre - 50;
-
-        //ajoute + 20 % à la bar d'évolution
-
-    }
-}
-
-function achatCarte4 () {
-    if ( //outils 1 niveau 2 && outils 2 niveau 2 && outils 3 niveau 2 &&
-        compteurRessouceOs == 50 && compteurRessourceBois == 70 && compteurRessourcePierre == 60) { 
-        
-        compteurRessouceOs = compteurRessouceOs - 50;
-        compteurRessourceBois = compteurRessourceBois - 70;
-        compteurRessourcePierre = compteurRessourcePierre - 60;
-
-        //ajoute + 20 % à la bar d'évolution
-
-    }
-}
-
-function achatCarte5 () {
-    if ( //outils 1 niveau 3 && outils 2 niveau 3 && outils 3 niveau 3 &&
-        compteurRessouceOs == 60 && compteurRessourceBois == 80 && compteurRessourcePierre == 70) { 
-        
-        compteurRessouceOs = compteurRessouceOs - 60;
-        compteurRessourceBois = compteurRessourceBois - 70;
-        compteurRessourcePierre = compteurRessourcePierre - 80;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 40;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 60;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 50;
 
         //ajoute + 20 % à la bar d'évolution
 
@@ -541,9 +515,9 @@ function achatCarte5 () {
 //         dino.classList.contains("none");
 //         dino.classList.remove("none");
 //         dino.classList.add("visible");
-//         compteurRessouceOs = compteurRessouceOs - dommagesRessourceOs;
-//         compteurRessourceBois = compteurRessourceBois - dommagesRessourceBois;
-//         compteurRessourcePierre = compteurRessourcePierre - dommagesRessourcePierre;
+//         compteurRessourcePlateau1 = compteurRessourcePlateau1 - dommagesRessource1;
+//         compteurRessourcePlateau2 = compteurRessourcePlateau2 - dommagesRessource2;
+//         compteurRessourcePlateau3 = compteurRessourcePlateau3 - dommagesRessource3;
 //     }
 // }
 
