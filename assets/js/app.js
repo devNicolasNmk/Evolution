@@ -10,7 +10,6 @@
     var ressourceDeux = 0;
     var ressourceTrois = 0;
     var somme = 0;
-    console.log(typeof somme);
     //stat outils obtenus
     var nbTotalOutils = document.getElementById('nbTotalOutils');
     //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
@@ -136,7 +135,7 @@
     function sauvegardeLocal() {
         //sauvegarde bloc statistiques
         localStorage.setItem('nbTotalClic', totalClick.innerHTML);
-        localStorage.setItem('nbTotalRessources', ressourcesCumulees.innerHTML);
+        localStorage.setItem('nbTotalRessources', nbTotalRessources.innerHTML);
         localStorage.setItem('nbTotalOutils', nbTotalOutils.innerHTML);
         localStorage.setItem('nbTotalEre', nbTotalEre.innerHTML);
         localStorage.setItem('nbTotalBatiment', nbTotalBatiment.innerHTML);
@@ -169,7 +168,8 @@
             totalClick.innerHTML = localStorage.getItem('nbTotalClic');
             //ne pas repartir avec un scoreClick a zero
             scoreClick = totalClick.innerHTML;
-            ressourcesCumulees.innerHTML = localStorage.getItem('nbTotalRessources');
+            nbTotalRessources.innerHTML = localStorage.getItem('nbTotalRessources');
+            somme = nbTotalRessources.innerHTML
             nbTotalOutils.innerHTML = localStorage.getItem('nbTotalOutils');
             nbTotalEre.innerHTML = localStorage.getItem('nbTotalEre');
             nbTotalBatiment.innerHTML = localStorage.getItem('nbTotalBatiment');
