@@ -319,7 +319,6 @@ function clicker(plateau) {
                         //tu appel le changements des places des ressources
                         changeDePlaceRessource2();
                     } 
-
                 }  
             }
         } ressource2.innerHTML = compteurRessourcePlateau2;
@@ -345,7 +344,6 @@ function clicker(plateau) {
                         //tu appel le changements des places des ressources
                         changeDePlaceRessource3();
                     } 
-
                 }
             }
         } ressource3.innerHTML = compteurRessourcePlateau3;
