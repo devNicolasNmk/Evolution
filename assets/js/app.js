@@ -10,6 +10,7 @@
     var ressourceDeux = 0;
     var ressourceTrois = 0;
     var somme = 0;
+    console.log(typeof somme);
     //stat outils obtenus
     var nbTotalOutils = document.getElementById('nbTotalOutils');
     //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
@@ -70,11 +71,10 @@
          * 
          */
         function sommeRessources() {
-            somme = ressourceUne + ressourceDeux + ressourceTrois;
-            return somme;
+            somme++;
+            nbTotalRessources.innerHTML = somme;
         }
-        ressourcesCumulees.innerHTML = sommeRessources();
-
+        
 
     // ---- Outils obtenus ---- //
         /*boucle sur le tableau pour check le nombre de fois que 1 est présent 
@@ -176,26 +176,27 @@
             nbTotalCata.innerHTML = localStorage.getItem('nbTotalCata');
             //restauration bloc ressources
             ressource1.innerHTML = localStorage.getItem('ressource1');
+            compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
             ressource2.innerHTML = localStorage.getItem('ressource2');
+            compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);
             ressource3.innerHTML = localStorage.getItem('ressource3');
+            compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);
         }
 
     }
     window.onload = restauration;
 
+    viderCache.addEventListener('click', recommencer);
     /**
      * 
      * fonction d'effacement du webstorage
      * 
      */
-    viderCache.addEventListener('click', recommencer);
-        function recommencer(){
-                // localStorage.removeItem('nbTotalClic');
-                localStorage.clear();
-                // scoreClick = 0;
-                // totalClick.innerHTML = scoreClick;
-                location.reload();
-        }
+    function recommencer(){
+            localStorage.clear();
+            location.reload();
+
+    }
 
 // ----------------------- fin : gestion des cookies || webstorage ----------------------- //
 
@@ -277,6 +278,8 @@ function clicker(plateau) {
             if (plateau.target.getAttribute("class", 'os')) {
                 //alors tu incrémente le score de la div qui comptien la class os
                 i = i + 1;
+                //incrementation du total des clics
+                incrTotalClick();
                 // si la div arrive a un score de 10
                 if (i == 10) {
                     //tu remet le score a 0
@@ -285,6 +288,7 @@ function clicker(plateau) {
                     compteurRessourcePlateau1 = compteurRessourcePlateau1 + clickRessource1;
                     //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
                     declencheurRessource1++;
+                    sommeRessources();
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
                     if (declencheurRessource1 == 15) {
@@ -303,6 +307,8 @@ function clicker(plateau) {
             if (plateau.target.getAttribute("class", 'bois')) {
                 //alors tu incrémente le score de la div qui comptien la class bois
                 j = j + 1;
+                //incrementation du total des clics
+                incrTotalClick();
                 // si la div arrive a un score de 4
                 if (j == 4) {
                     //tu remet le score a 0
@@ -311,6 +317,7 @@ function clicker(plateau) {
                     compteurRessourcePlateau2 = compteurRessourcePlateau2 + clickRessource2;
                     //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
                     declencheurRessource2++;
+                    sommeRessources();
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
                     if (declencheurRessource2 == 10) {
@@ -329,6 +336,8 @@ function clicker(plateau) {
             if (plateau.target.getAttribute("class", 'pierre')) {
                 //alors tu incrémente le score de la div qui comptien la class pierre
                 k = k + 1;
+                //incrementation du total des clics
+                incrTotalClick();
                 // si la div arrive a un score de 7
                 if (k == 7) {
                     //tu remet le score a 0
@@ -337,6 +346,7 @@ function clicker(plateau) {
                     compteurRessourcePlateau3 = compteurRessourcePlateau3 + clickRessource3;
                     //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
                     declencheurRessource3++;
+                    sommeRessources();
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
                     if (declencheurRessource3 == 25) {
