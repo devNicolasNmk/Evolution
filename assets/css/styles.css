@@ -53,7 +53,7 @@ h1,h2 {
 #central {
     width: 960px;
     height: 916px;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
 }
 
 
@@ -103,7 +103,29 @@ h1,h2 {
 }
 
 #personnage {
+    /*background-image: url(../img/.png);*/
+}
 
+#carteConnaissance {
+    width: 270px;
+    height: 240px;
+    border: 1px solid black;
+    display: block;
+    justify-content: flex-end;
+    margin-left: 190px; 
+}
+
+.feuilleConnaissance{
+    width: 140px;
+    height: 75px;
+    border: 1px solid black;
+    display: inline-block ;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: black;
+    /*background-image: url(../img/carteConnaissance.png);*/
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 figure {
@@ -127,15 +149,37 @@ figure {
 
 .bois {
     background-image: url(../img/ressourceArbre.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .pierre {
     background-image: url(../img/ressourcePierre.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .vide{
     
+}
+
+.maison { 
+    background-image: url(../img/maisonLevel1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+} 
+
+.maison1{
+    background-image: url(../img/maisonLevel2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.maison2 { 
+    background-image: url(../img/maisonLevel3.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #ressources .alignStat {
@@ -176,10 +220,20 @@ figure {
 #bgEre {
     height: 191px;
     width: 960px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 2%;
+}
+
+#bgEre div{
+    display: inline-flex;
+    /*border: 1px solid black;*/
+    width: 10%;
+    height: 35%;
 }
 
 #jeu {
-    height: 600px;
+    height: 580px;
     width: 960px;
     display: flex;
     flex-wrap: wrap;
@@ -187,7 +241,7 @@ figure {
 
 #jeu div {
     display: flex;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     width: 10%;
     height: 10%;
 }
