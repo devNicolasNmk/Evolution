@@ -12,6 +12,9 @@
     var somme = 0;
     //stat outils obtenus
     var nbTotalOutils = document.getElementById('nbTotalOutils');
+    //stat batiment obtenus
+    var nbTotalBatiment = document.getElementById('nbTotalBatiment');
+    var constructions = 1;
     //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
     var tabOutils = {
         "out1": 0,
@@ -102,11 +105,11 @@
     // ---- batiments construits ---- //
 
         function incrConstruction(){
-            //if(eventConstruct == true){
-            //    constructions++;
-            //    eventConstruct = false;
-            //}
-        }
+            if(eventConstruct == true){
+                constructions++;
+                eventConstruct = false;
+            }
+        }nbTotalBatiment.innerHTML = constructions;
 
 
     // ---- castastrophes comptées ---- //
@@ -265,6 +268,10 @@ var maisonPrix1 = 40;
 var maisonPrix2 = 50;
 var maisonPrix3 = 30;
 
+//affichage prix maison
+var prixMaison = document.getElementById("prixMaison");
+prixMaison.innerHTML = maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;
+
 //compteur changement de niveau de la maison
 var compteurChangementMaison = 0;
 
@@ -390,7 +397,9 @@ function clickerMaison(bgEre) {
                     changeNiveauMaison ();
             }
         }
-           
+        eventConstruct = true;
+        incrConstruction();
+        console.log(constructions);   
 } bgEre.onclick = clickerMaison;
 
 //générateur de nombre aléatoire
@@ -446,7 +455,8 @@ function changeNiveauMaison () {
                     compteurChangementMaison = 0 ;
                 }     
             }
-        }                 
+        } 
+        prixMaison.innerHTML = maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;                
     }
     ressource1.innerHTML = compteurRessourcePlateau1;
     ressource2.innerHTML = compteurRessourcePlateau2;
