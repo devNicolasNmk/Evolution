@@ -382,28 +382,7 @@ function clicker(plateau) {
 } plateau.onclick = clicker;
 activationItemsShop();
 
-//fonction qui permet d'appeler le changement de niveau
-function clickerMaison(bgEre) {
-        //si tu trouvre une div avec un class qui est maison    
-        if (bgEre.target.getAttribute("class") == "maison") {
-            
-            if (bgEre.target.getAttribute("class", 'maison') && compteurRessourcePlateau1 >= maisonPrix1 && compteurRessourcePlateau2 >= maisonPrix2 && compteurRessourcePlateau3 >= maisonPrix3 && compteurChangementMaison <= 3 ) {
-                    compteurChangementMaison = compteurChangementMaison + 1;
-                    changeNiveauMaison ();
-            }
-        }
 
-        else if (bgEre.target.getAttribute("class") == "maison1") {
-            
-            if (bgEre.target.getAttribute("class", 'maison1') && compteurRessourcePlateau1 >= maisonPrix1 && compteurRessourcePlateau2 >= maisonPrix2 && compteurRessourcePlateau3 >= maisonPrix3 && compteurChangementMaison <= 3 ) {
-                    compteurChangementMaison = compteurChangementMaison + 1;
-                    changeNiveauMaison ();
-            }
-        }
-        eventConstruct = true;
-        incrConstruction();
-        console.log(constructions);   
-} bgEre.onclick = clickerMaison;
 
 //générateur de nombre aléatoire
 function getRandomArbitrary(min, max) {
@@ -412,59 +391,6 @@ function getRandomArbitrary(min, max) {
 
 var randTab = 0;
 
-//fonction de changement de niveau des habitation
-function changeNiveauMaison () {
-    for (item of bgEre.children ) {
-        if (item.classList.contains("maison") || item.classList.contains("maison1")) {
-            if (item.classList.contains("maison") && compteurChangementMaison == 1) {
-                
-                item.classList.remove("maison");
-                item.classList.toggle("maison1");
-
-                compteurRessourcePlateau1 = compteurRessourcePlateau1 - maisonPrix1;
-                compteurRessourcePlateau2 = compteurRessourcePlateau2 - maisonPrix2;
-                compteurRessourcePlateau3 = compteurRessourcePlateau3 - maisonPrix3;
-                maisonPrix1 = maisonPrix1 * 2;
-                maisonPrix2 = maisonPrix2 * 2;
-                maisonPrix3 = maisonPrix3 * 2;
-
-                maisonFixe = maisonFixe + 1 ; 
-            }
-            else if (item.classList.contains("maison1") && compteurChangementMaison == 2) {
-                
-                compteurRessourcePlateau1 = compteurRessourcePlateau1 - maisonPrix1;
-                compteurRessourcePlateau2 = compteurRessourcePlateau2 - maisonPrix2;
-                compteurRessourcePlateau3 = compteurRessourcePlateau3 - maisonPrix3;
-                maisonPrix1 = maisonPrix1 * 2;
-                maisonPrix2 = maisonPrix2 * 2;
-                maisonPrix3 = maisonPrix3 * 2;
-                
-                item.classList.remove("maison1");
-                item.classList.toggle("maison2");
-
-                randTab = parseInt(getRandomArbitrary(0, 10));
-
-                if (bgEre.children[randTab].classList.contains("vide") && maisonFixe < 5) {
-                    bgEre.children[randTab].classList.remove("vide");
-                    bgEre.children[randTab].classList.toggle("maison");
-                    compteurChangementMaison = 0 ;
-
-                }
-
-                else if (bgEre.children[randTab] != bgEre.children[randTab].classList.contains("vide")&& maisonFixe < 5){
-                    randTab = parseInt(getRandomArbitrary(0, 10));
-                    bgEre.children[randTab].classList.remove("vide");
-                    bgEre.children[randTab].classList.toggle("maison");
-                    compteurChangementMaison = 0 ;
-                }     
-            }
-        } 
-        prixMaison.innerHTML = maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;                
-    }
-    ressource1.innerHTML = compteurRessourcePlateau1;
-    ressource2.innerHTML = compteurRessourcePlateau2;
-    ressource3.innerHTML = compteurRessourcePlateau3;
-}
 
 
 //algo de changement des places des ressources
