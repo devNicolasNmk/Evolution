@@ -1,0 +1,460 @@
+/* ---------------- reset css ---------------- */
+
+/* les epaisseurs des bordures de conteneurs se confondent */
+* {
+    box-sizing: border-box;
+}
+
+/* la taille de l'image dependra de son conteneur parent */
+img {
+    width: 100%;
+}
+
+body,
+h1,
+h2,
+p,
+ul {
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+    padding-left: 0;
+}
+
+h1,h2 {
+    font-family: sans-serif;
+    color: #fff;
+}
+
+
+/* ---------------- fin reset css ---------------- */
+
+
+
+/* conteneur principal => contient toutes les sections */
+#principal {
+    width: 1920px;
+    height: 100vh;
+    background-image: url(../img/bg1.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center
+}
+
+
+/* alignement des blocs gauche / central / droite */
+
+
+
+/* taille conteneur central */
+#central {
+    width: 960px;
+    height: 916px;
+   /* border: 1px solid black;*/
+}
+
+
+/* taille conteneurs gauche et droite */
+#gauche,
+#droite {
+    width: 480px;
+    height: 916px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gauche {
+    justify-content: space-between;
+}
+
+#droite {
+    justify-content: flex-start;
+}
+
+
+
+/* ---------------- interieur bloc gauche ---------------- */
+.blocGauche {
+    text-align: center;
+    width: 470px;
+    height: 300px;
+    /*border: 1px solid black;*/
+
+}
+
+#statistiques {
+    background-image: url(../img/fondStat_sansText.png);
+    background-size: cover;
+}
+
+#statistiques h2 {
+    margin-top: 6%;
+    color: #2E5967;
+}
+
+.alignStat{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+#personnage {
+    /*background-image: url(../img/.png);*/
+}
+
+#carteConnaissance {
+    width: 270px;
+    height: 240px;
+    border: 1px solid black;
+    display: block;
+    justify-content: flex-end;
+    margin-left: 190px; 
+}
+
+.feuilleConnaissance{
+    width: 140px;
+    height: 75px;
+    border: 1px solid black;
+    display: inline-block ;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: black;
+    /*background-image: url(../img/carteConnaissance.png);*/
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+figure {
+   margin:0;
+}
+
+#hero {
+    /* border: 1px solid black; */
+}
+
+#ressources {
+   background-image: url(../img/fondRessource.png);
+   background-size: cover;
+}
+
+.os {
+    background-image: url(../img/ressourceOs.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bois {
+    background-image: url(../img/ressourceArbre.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.pierre {
+    background-image: url(../img/ressourcePierre.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.vide{
+    
+}
+
+#ressources .alignStat {
+    margin: 0;
+    padding-left: 15%;
+}
+
+#ressources ul li {
+        width: 230px;
+        height: 35%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+}
+
+#ressources ul li , #ressources p{
+    font-family: sans-serif;
+    font-size: 1.5em;
+    color: #fff;
+    margin-top: 2%;
+    margin-bottom: 12%;
+    text-align: right;
+}
+
+/* ---------------- fin interieur bloc gauche ---------------- */
+
+
+
+/* ---------------- interieur bloc central ---------------- */
+
+#topCentre {
+    height: 125px;
+    width: 960px;
+    text-align: center;
+}
+
+#bgEre {
+    height: 191px;
+    width: 960px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 2%;
+}
+
+#bgEre div{
+    display: inline-flex;
+    /*border: 1px solid black;*/
+    width: 10%;
+    height: 35%;
+}
+
+.maison { 
+    background-image: url(../img/maisonLevel1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+} 
+
+.maison1{
+    background-image: url(../img/maisonLevel2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.maison2 { 
+    background-image: url(../img/maisonLevel3.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#message {
+    width: 70px;
+    height: 50px;
+    background-color: #fff;
+    position:relative; 
+    margin-top: 120px;
+    padding: 0;
+}
+
+#infobulle{
+    font-family: sans-serif;
+    font-size: 1.2em;
+    color: red;
+}
+
+#message span { 
+  display: none; 
+  -moz-border-radius:6px; 
+  -webkit-border-radius:6px; 
+  border-radius:6px; 
+  background-color: #eff1f3; 
+  font-size:1em; 
+  font-family: sans-serif;
+  font-style:italic; 
+  text-align: center;
+  padding-bottom: 150px;
+  
+} 
+
+#message:hover span 
+{ 
+  display:block; 
+  position:absolute; 
+  bottom :0; 
+  right :0; 
+  z-index:1000; 
+  width:250px; 
+  min-height:20px;
+  border:1px solid black; 
+  margin-bottom:60px; 
+  margin-right:-85px; 
+  overflow:hidden;
+  padding:8px;
+}
+
+#jeu {
+    height: 580px;
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#jeu div {
+    display: flex;
+    /*border: 1px solid black;*/
+    width: 10%;
+    height: 10%;
+}
+
+#file {
+    width: 600px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#periode{
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 1em;
+}
+
+/* ---------------- fin interieur bloc central ---------------- */
+
+
+
+/* ---------------- interieur bloc droite ---------------- */
+
+.bloc-droite {
+    text-align: center;
+    width: 470px;
+    /*height: 300px;*/
+    /*border: 1px solid black;*/
+}
+
+#shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 210px;
+}
+
+#bouton-ouvrir-shop {
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+    width: 470px;
+    height: 200px;
+    background-image: url(../img/fondBoutonShop_sansText.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#bouton-fermer-shop {
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+    width: 470px;
+    height: 200px;
+    background-image: url(../img/fondBoutonShop_sansText.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* BLOC-SHOP */
+
+#bloc-shop {
+    display: none;
+    position: absolute;
+    top: 35%;
+    /*top: 387px;*/
+    left: 24%;
+    /*left: 480px;*/
+    height: 600px;
+    width: 960px;
+    background-color: #FEEEDC;
+}
+
+/* Title */
+#container-title-shop {
+    background-color: darkseagreen;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-shop {}
+
+/* Items */
+#container-items-shop {
+    background-color: mediumseagreen;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.containers-items-shop {
+    display: flex;
+    justify-content: space-around;
+}
+
+.noms-items-shop {
+    color: aliceblue;
+    font-size: 1em;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Items Lvls */
+.boutons-itemslvls-shop {
+    width: 15%;
+    border-radius: 10px;
+    color: aliceblue;
+    height: 100px;
+}
+
+.noms-itemslvls-shop {}
+
+.prix-itemslvls-shop {
+    display: flex;
+    flex-direction: column;
+}
+
+#objets {
+    background-image: url(../img/fondObjetsSansText.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 500px;
+    margin-top: 0;
+}
+
+#objetsStock{
+    margin-left: 35px;
+    margin-top: 88px;
+    width: 370px;
+    height: 350px;
+    border: 1px solid black;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.objetscase {
+    width: 120px;
+    height: 114px;
+    border: 1px solid black;
+    display: inline-flex;
+}
+
+#bonusMaitre {
+
+}
+
+/*---------------------- catastrophe --------------------*/
+
+#catastrophe {
+    background-image: url(../img/dino.png);
+    background-size: cover;
+    width: 155px;
+    height: 155px;
+    position: relative;
+}
+
+.none{
+    display: none;
+}
+
+.visible{
+    display: flex; 
+}
+/*------------------- fin catastrophe -------------------*/
+
+/* ---------------- fin interieur bloc droite ---------------- */
