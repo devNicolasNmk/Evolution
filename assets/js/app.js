@@ -320,6 +320,7 @@ function clicker(plateau) {
                 }   
             }
         }ressource1.innerHTML = compteurRessourcePlateau1;
+        activationItemsShop();
 
         //si tu trouvre une div avec un class qui est bois
         if (plateau.target.getAttribute("class") == "bois") {
@@ -348,6 +349,7 @@ function clicker(plateau) {
                 }  
             }
         } ressource2.innerHTML = compteurRessourcePlateau2;
+        activationItemsShop();
 
         //si tu trouvre une div avec un class qui est pierre 
         if (plateau.target.getAttribute("class") == "pierre") {
@@ -378,6 +380,7 @@ function clicker(plateau) {
         } ressource3.innerHTML = compteurRessourcePlateau3;
            
 } plateau.onclick = clicker;
+activationItemsShop();
 
 //fonction qui permet d'appeler le changement de niveau
 function clickerMaison(bgEre) {
