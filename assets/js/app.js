@@ -261,7 +261,7 @@
 // ----------------------- fin : gestion des cookies || webstorage ----------------------- //
 
 
-
+ 
 
 // ----------------------- Debut : ouverture / fermeture du shop ----------------------- //
 
@@ -321,13 +321,13 @@ ressource2.innerHTML = compteurRessourcePlateau2;
 ressource3.innerHTML = compteurRessourcePlateau3;
 
 //prix achat maison
-var maisonPrix1 = 4;
-var maisonPrix2 = 5;
-var maisonPrix3 = 3;
+var maisonPrix1 = 40;
+var maisonPrix2 = 50;
+var maisonPrix3 = 30;
 
 //affichage prix maison
 var prixMaison = document.getElementById("prixMaison");
-prixMaison.innerHTML = maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;
+prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources ==> <br> " +maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;
 
 //compteur changement de niveau de la maison
 var compteurChangementMaison = 0;
@@ -341,9 +341,9 @@ var declencheurRessource2 = 0;
 var declencheurRessource3 = 0;
 
 //décrémenter catastrophe / dommages subi avec la catastrophe
-var dommagesRessource1 = 5;
-var dommagesRessource2 = 5;
-var dommagesRessource3 = 5;
+var dommagesRessource1 = 2;
+var dommagesRessource2 = 2;
+var dommagesRessource3 = 2;
 
 //algo qui permet d'incrémenter 
 function clicker(plateau) {
@@ -439,9 +439,6 @@ function clicker(plateau) {
 } plateau.onclick = clicker;
 
 
-<<<<<<< HEAD
-
-=======
 //fonction qui permet d'appeler le changement de niveau
 function clickerMaison(bgEre) {
         //si tu trouvre une div avec un class qui est maison    
@@ -465,17 +462,17 @@ function clickerMaison(bgEre) {
         activationItemsShop();  
         //console.log(constructions);   
 } bgEre.onclick = clickerMaison;
->>>>>>> 209e7e2c2cd796d3330b39dc0f25599b9a585a83
+
 
 //générateur de nombre aléatoire
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
 
+
 var randTab = 0;
 
-<<<<<<< HEAD
-=======
+
 //fonction de changement de niveau des habitation
 function changeNiveauMaison () {
     for (item of bgEre.children ) {
@@ -499,9 +496,9 @@ function changeNiveauMaison () {
                 compteurRessourcePlateau1 = compteurRessourcePlateau1 - maisonPrix1;
                 compteurRessourcePlateau2 = compteurRessourcePlateau2 - maisonPrix2;
                 compteurRessourcePlateau3 = compteurRessourcePlateau3 - maisonPrix3;
-                maisonPrix1 = maisonPrix1 * 2;
-                maisonPrix2 = maisonPrix2 * 2;
-                maisonPrix3 = maisonPrix3 * 2;
+                maisonPrix1 = maisonPrix1 + 5;
+                maisonPrix2 = maisonPrix2 + 5;
+                maisonPrix3 = maisonPrix3 + 5;
                 
                 item.classList.remove("maison1");
                 item.classList.toggle("maison2");
@@ -526,14 +523,14 @@ function changeNiveauMaison () {
                 }     
             }
         } 
-        prixMaison.innerHTML = maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;                
+        prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources ==> <br> " +maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;
     }
     ressource1.innerHTML = compteurRessourcePlateau1;
     ressource2.innerHTML = compteurRessourcePlateau2;
     ressource3.innerHTML = compteurRessourcePlateau3;
     activationItemsShop(); 
 }
->>>>>>> 209e7e2c2cd796d3330b39dc0f25599b9a585a83
+
 
 
 //algo de changement des places des ressources
@@ -641,59 +638,95 @@ function changeDePlaceRessource3() {
 // ----------------------- Fin : ressource et compteur ----------------------- //
 
 // ----------------------- Debut : carte des Connaissances ----------------------- //
+/*--système comme le carrousel--*/
+var lis = document.getElementsByClassName("1");
+var achatCarte = document.getElementById("achatCarte");
+var carteConnaissance = document.getElementById("carteConnaissance");
+
+var a = 1;
+
+var cartePosseder = 0;
 
 function achatCarte1 () {
-    if (  //outil 1 niveau 1 &&
-        compteurRessourcePlateau1 == 20 && compteurRessourcePlateau2 == 40 && compteurRessourcePlateau3 == 30) { 
+    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2) { 
         
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 20;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 40;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 30;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 2;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 2;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 2;
+
+        suivant();
+
+        cartePosseder = 1;
 
         //ajoute + 20 % à la bar d'évolution
     }
-}
 
-function achatCarte2 () {
-    if (  //outil 2 niveau 1 &&
-        compteurRessourcePlateau1 == 30 && compteurRessourcePlateau2 == 50 && compteurRessourcePlateau3 == 40) { 
+    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5) { 
+        
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 5;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 5;
+
+        suivant();
+
+        cartePosseder = 2;
+
+        //ajoute + 20 % à la bar d'évolution
+
+    }
+
+    else  if (cartePosseder == 2 && compteurRessourcePlateau1 == 30 && compteurRessourcePlateau2 == 50 && compteurRessourcePlateau3 == 40) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 30;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 50;
         compteurRessourcePlateau3 = compteurRessourcePlateau3 - 40;
 
-        //ajoute + 20 % à la bar d'évolution
-
-    }
-}
-
-function achatCarte3 () {
-    if ( //outil 3 niveau 1 &&
-        compteurRessourcePlateau1 == 40 && compteurRessourcePlateau2 == 60 && compteurRessourcePlateau3 == 50) { 
-        
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 40;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 60;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 50;
+        suivant();
 
         //ajoute + 20 % à la bar d'évolution
 
     }
-}
+}achatCarte.onclick = achatCarte1;
+
+
+for (var i = 0; i < lis.length; i++) {
+
+      lis[i].style.display ="none";
+    
+  }
+
+function suivant() {
+ for (var i = 0; i < lis.length; i++) {
+          lis[i].style.display ="none";
+      }
+
+      if (a == 2) {
+              a=0;
+      }
+
+      else{
+          a+=1;
+      }
+      lis[a].style.display ="inline-block";
+    
+}carteConnaissance.onclick = suivant;
 
 // ----------------------- Fin : ressource et compteur --------------------------- //
 
 //------------------------- catastrophe -------------------------//
 
-// function choas (){
-//     if ( /* quelque chose */ == 20) {
-//         var dino = document.getElementById("catastrophe");
-//         dino.classList.contains("none");
-//         dino.classList.remove("none");
-//         dino.classList.add("visible");
-//         compteurRessourcePlateau1 = compteurRessourcePlateau1 - dommagesRessource1;
-//         compteurRessourcePlateau2 = compteurRessourcePlateau2 - dommagesRessource2;
-//         compteurRessourcePlateau3 = compteurRessourcePlateau3 - dommagesRessource3;
-//     }
-// }
+var vieCatastrophe = 15 ;
+var dino = document.getElementById("catastrophe");
+
+function choas (){
+    if ( compteurRessourcePlateau1 == 20) {
+         dino.classList.contains("cacher");
+         dino.classList.remove("cacher");
+         dino.classList.add("attack");
+         compteurRessourcePlateau1 = compteurRessourcePlateau1 - dommagesRessource1;
+         compteurRessourcePlateau2 = compteurRessourcePlateau2 - dommagesRessource2;
+         compteurRessourcePlateau3 = compteurRessourcePlateau3 - dommagesRessource3;
+    }
+}
 
 //------------------------- fin catastrophe -------------------------//
