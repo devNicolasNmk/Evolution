@@ -458,10 +458,9 @@ function clickerMaison(bgEre) {
                     changeNiveauMaison ();
             }
         }
-        eventConstruct = true;
-        
+
         activationItemsShop();  
-        console.log(constructions);   
+        //console.log(constructions);   
 } bgEre.onclick = clickerMaison;
 
 //générateur de nombre aléatoire
