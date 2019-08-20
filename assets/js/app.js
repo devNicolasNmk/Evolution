@@ -14,7 +14,7 @@
     var nbTotalOutils = document.getElementById('nbTotalOutils');
     //stat batiment obtenus
     var nbTotalBatiment = document.getElementById('nbTotalBatiment');
-    var constructions = 1;
+    var constructions = 0;
     //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
     var tabOutils = {
         "out1": 0,
@@ -42,10 +42,12 @@
         "ere4": 0,
         "ere5": 0
     };
-    var nbEres = 0; 
+    var nbEres = 0;
+    var bgEre = document.getElementById("bgEre");
+    
     var nbConstruction = 0;
     // incrementation du nombre de batiments construits et catastrophes rencontrées
-    var eventConstruct = false;
+    // var eventConstruct = false;
     var eventCastastrophes = false;
     
     var viderCache = document.getElementById('viderCache');
@@ -105,11 +107,11 @@
     // ---- batiments construits ---- //
 
         function incrConstruction(){
-            if(eventConstruct == true){
                 constructions++;
-                eventConstruct = false;
+                nbTotalBatiment.innerHTML = constructions;
             }
-        }nbTotalBatiment.innerHTML = constructions;
+            
+        
 
 
     // ---- castastrophes comptées ---- //
@@ -127,8 +129,30 @@
 
 
 
-// ----------------------- Debut : gestion des cookies || webstorage ----------------------- //
-
+// ----------------------- Debut : gestion webstorage ----------------------- //
+    const localisation=[];
+    /**
+     * 
+     * parcourir le tableau de div ou se trouveront les maisons 
+     * indique le niveau de maison a l'indice correspondant
+     * 
+     */
+    function localiserMaison(){
+        for(let x = 0; x<= bgEre.children.length-1;x++){
+            if(bgEre.children[x].classList.contains('maison')){
+                localisation[x] = "maison";
+            }else if(bgEre.children[x].classList.contains('maison1')){
+                localisation[x] = "maison1";
+            }else if((bgEre.children[x].classList.contains('maison2'))){
+                localisation[x] = "maison2";
+            }else{
+                localisation[x] = "vide";
+            }
+        }
+        return localisation;
+    }
+    
+    
     /**
      * 
      * fonction de sauvegarde local via le webstorage
@@ -142,12 +166,19 @@
         localStorage.setItem('nbTotalOutils', nbTotalOutils.innerHTML);
         localStorage.setItem('nbTotalEre', nbTotalEre.innerHTML);
         localStorage.setItem('nbTotalBatiment', nbTotalBatiment.innerHTML);
+        localStorage.setItem('prixMaison1', maisonPrix1);
+        localStorage.setItem('prixMaison2', maisonPrix2);
+        localStorage.setItem('prixMaison3', maisonPrix3);
+        localStorage.setItem('bullePrix', prixMaison.innerHTML)
+        var getLocalisation =localiserMaison();
+        localStorage.setItem('localisation', getLocalisation)
         localStorage.setItem('nbTotalCata', nbTotalCata.innerHTML);
         //sauvegarde bloc ressources
         localStorage.setItem('ressource1', ressource1.innerHTML);
         localStorage.setItem('ressource2', ressource2.innerHTML);
         localStorage.setItem('ressource3', ressource3.innerHTML);
     }
+ 
 
     /**
      * 
@@ -156,9 +187,26 @@
      */
     function sauvegardeAuto(){
         setInterval(sauvegardeLocal, 5000);
+        
     }
-    sauvegardeAuto()
+    sauvegardeAuto();
 
+    // const localiserTest = ['maison','maison1','maison2','vide','vide','vide','vide','vide','vide','vide']
+    function restorerMaison(getLocalisation){
+        
+        for(let z = 0 ; z <=getLocalisation.length-1; z++){
+            if(getLocalisation[z] == 'maison'){
+                bgEre.children[z].setAttribute('class', getLocalisation[z])
+            }else if (getLocalisation[z] == 'maison1'){
+                bgEre.children[z].setAttribute('class', getLocalisation[z])
+            }else if(getLocalisation[z] == 'maison2'){
+                bgEre.children[z].setAttribute('class', getLocalisation[z])
+            }else {
+
+            }           
+        }   
+    }
+    
     /**
      * 
      * fonction restauration des variables aux rechargements de pages
@@ -176,6 +224,15 @@
             nbTotalOutils.innerHTML = localStorage.getItem('nbTotalOutils');
             nbTotalEre.innerHTML = localStorage.getItem('nbTotalEre');
             nbTotalBatiment.innerHTML = localStorage.getItem('nbTotalBatiment');
+            //gestion de restauration des maisons (emplacement et niveau)
+            getLocalisation = localStorage.getItem('localisation')
+            // transformer la chaine de caracteres en array
+            getArray= getLocalisation.split(',');
+            restorerMaison(getArray);
+            maisonPrix1 =localStorage.getItem('prixMaison1')
+            maisonPrix2 =localStorage.getItem('prixMaison2')
+            maisonPrix3 =localStorage.getItem('prixMaison3')
+            prixMaison.innerHTML = localStorage.getItem('bullePrix');
             nbTotalCata.innerHTML = localStorage.getItem('nbTotalCata');
             //restauration bloc ressources
             ressource1.innerHTML = localStorage.getItem('ressource1');
@@ -241,7 +298,7 @@ boutonFermerShop.onclick = fermerShop;
 // ----------------------- Debut : ressource et compteur ----------------------- //
 
 var plateau= document.getElementById("jeu");
-var bgEre = document.getElementById("bgEre");
+bgEre = document.getElementById("bgEre");
 
 //compteur des ressources
 var compteurRessourcePlateau1 = 0;
@@ -264,9 +321,9 @@ ressource2.innerHTML = compteurRessourcePlateau2;
 ressource3.innerHTML = compteurRessourcePlateau3;
 
 //prix achat maison
-var maisonPrix1 = 4;
-var maisonPrix2 = 5;
-var maisonPrix3 = 3;
+var maisonPrix1 = 40;
+var maisonPrix2 = 50;
+var maisonPrix3 = 30;
 
 //affichage prix maison
 var prixMaison = document.getElementById("prixMaison");
@@ -347,11 +404,9 @@ function clicker(plateau) {
                         changeDePlaceRessource2();
                     } 
                 }  
-            } 
-        } 
-        ressource2.innerHTML = compteurRessourcePlateau2;
+            }
+        } ressource2.innerHTML = compteurRessourcePlateau2;
         activationItemsShop();
-
 
         //si tu trouvre une div avec un class qui est pierre 
         if (plateau.target.getAttribute("class") == "pierre") {
@@ -379,9 +434,8 @@ function clicker(plateau) {
                     } 
                 }
             }
-        } 
-        ressource3.innerHTML = compteurRessourcePlateau3;
-        activationItemsShop();
+        } ressource3.innerHTML = compteurRessourcePlateau3;
+        activationItemsShop();       
 } plateau.onclick = clicker;
 
 
@@ -393,6 +447,7 @@ function clickerMaison(bgEre) {
             if (bgEre.target.getAttribute("class", 'maison') && compteurRessourcePlateau1 >= maisonPrix1 && compteurRessourcePlateau2 >= maisonPrix2 && compteurRessourcePlateau3 >= maisonPrix3 && compteurChangementMaison <= 3 ) {
                     compteurChangementMaison = compteurChangementMaison + 1;
                     changeNiveauMaison ();
+                    
             }
         }
 
@@ -403,10 +458,9 @@ function clickerMaison(bgEre) {
                     changeNiveauMaison ();
             }
         }
-        eventConstruct = true;
-        incrConstruction();
-        console.log(constructions);
+
         activationItemsShop();  
+        //console.log(constructions);   
 } bgEre.onclick = clickerMaison;
 
 //générateur de nombre aléatoire
@@ -452,6 +506,7 @@ function changeNiveauMaison () {
                     bgEre.children[randTab].classList.remove("vide");
                     bgEre.children[randTab].classList.toggle("maison");
                     compteurChangementMaison = 0 ;
+                    incrConstruction();
 
                 }
 
@@ -460,6 +515,8 @@ function changeNiveauMaison () {
                     bgEre.children[randTab].classList.remove("vide");
                     bgEre.children[randTab].classList.toggle("maison");
                     compteurChangementMaison = 0 ;
+                    incrConstruction();
+                    
                 }     
             }
         } 
@@ -468,7 +525,7 @@ function changeNiveauMaison () {
     ressource1.innerHTML = compteurRessourcePlateau1;
     ressource2.innerHTML = compteurRessourcePlateau2;
     ressource3.innerHTML = compteurRessourcePlateau3;
-    activationItemsShop();
+    activationItemsShop(); 
 }
 
 
