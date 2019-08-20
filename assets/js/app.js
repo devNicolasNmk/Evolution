@@ -264,9 +264,9 @@ ressource2.innerHTML = compteurRessourcePlateau2;
 ressource3.innerHTML = compteurRessourcePlateau3;
 
 //prix achat maison
-var maisonPrix1 = 40;
-var maisonPrix2 = 50;
-var maisonPrix3 = 30;
+var maisonPrix1 = 4;
+var maisonPrix2 = 5;
+var maisonPrix3 = 3;
 
 //affichage prix maison
 var prixMaison = document.getElementById("prixMaison");
@@ -597,7 +597,7 @@ function achatCarte2 () {
 
 function achatCarte3 () {
     if ( //outil 3 niveau 1 &&
-        compteurRessourcePlateau1 == 40 && compteurRessourcePlateau2 == 60&& compteurRessourcePlateau3 == 50) { 
+        compteurRessourcePlateau1 == 40 && compteurRessourcePlateau2 == 60 && compteurRessourcePlateau3 == 50) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 40;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 60;
