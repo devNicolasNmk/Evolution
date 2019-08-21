@@ -444,3 +444,4 @@ function activationItemsShop() {
     boutonItem3Lvl1.onclick = achatItem3Lvl1;
     boutonItem3Lvl2.onclick = achatItem3Lvl2;
     boutonItem3Lvl3.onclick = achatItem3Lvl3;
+
