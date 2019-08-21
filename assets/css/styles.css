@@ -456,6 +456,13 @@ figure {
     height: 80px;
     position: relative;
 }
+
+button:hover, .bois:hover, .os:hover, .pierre:hover, .maison:hover, .maison1:hover{
+    cursor: pointer;
+}
+[disabled]{
+    cursor:not-allowed !important;
+}
 /*.cacher{
     display: none;
 }
