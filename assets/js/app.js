@@ -287,9 +287,9 @@
             // transformer la chaine de caracteres en array
             getArray= getLocalisation.split(',');
             restorerMaison(getArray);
-            maisonPrix1 =localStorage.getItem('prixMaison1')
-            maisonPrix2 =localStorage.getItem('prixMaison2')
-            maisonPrix3 =localStorage.getItem('prixMaison3')
+            maisonPrix1 =parseInt(localStorage.getItem('prixMaison1'));
+            maisonPrix2 =parseInt(localStorage.getItem('prixMaison2'));
+            maisonPrix3 =parseInt(localStorage.getItem('prixMaison3'));
             prixMaison.innerHTML = localStorage.getItem('bullePrix');
             nbTotalCata.innerHTML = localStorage.getItem('nbTotalCata');
             //restauration bloc ressources
@@ -622,7 +622,7 @@ function changeNiveauMaison () {
 
                 randTab = parseInt(getRandomArbitrary(0, 10));
 
-                if (bgEre.children[randTab].classList.contains("vide") && maisonFixe < 5) {
+                if (bgEre.children[randTab].classList.contains("vide") && maisonFixe < 4) {
                     bgEre.children[randTab].classList.remove("vide");
                     bgEre.children[randTab].classList.toggle("maison");
                     compteurChangementMaison = 0 ;
@@ -630,7 +630,7 @@ function changeNiveauMaison () {
 
                 }
 
-                else if (bgEre.children[randTab] != bgEre.children[randTab].classList.contains("vide")&& maisonFixe < 5){
+                else if (bgEre.children[randTab] != bgEre.children[randTab].classList.contains("vide")&& maisonFixe < 4){
                     randTab = parseInt(getRandomArbitrary(0, 10));
                     bgEre.children[randTab].classList.remove("vide");
                     bgEre.children[randTab].classList.toggle("maison");
@@ -852,7 +852,7 @@ function achatCarte1 () {
         //ajoute + 20 % à la bar d'évolution
     }
 
-    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 3 && outilsNiveau2 == 3) { 
+    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 2 && outilsNiveau2 == 3) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 5;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
@@ -877,7 +877,7 @@ function achatCarte1 () {
 
     }
 
-    else  if (cartePosseder == 2 && compteurRessourcePlateau1 >= 6 && compteurRessourcePlateau2 >= 6 && compteurRessourcePlateau3 >= 6 && constructions >= 4 && outilsNiveau3 == 3) { 
+    else  if (cartePosseder == 2 && compteurRessourcePlateau1 >= 6 && compteurRessourcePlateau2 >= 6 && compteurRessourcePlateau3 >= 6 && constructions == 3 && outilsNiveau3 == 3) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 3;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
@@ -899,6 +899,7 @@ function achatCarte1 () {
         //ajoute + 20 % à la bar d'évolution
 
     }
+
 }achatCarte.onclick = achatCarte1;
 /*--système achat carte--*/
 
