@@ -444,7 +444,7 @@ var maisonPrix3 = 1;
 
 //affichage prix maison
 var prixMaison = document.getElementById("prixMaison");
-prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources ==> <br> " +maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;
+prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources <br> " +maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;
 
 //compteur changement de niveau de la maison
 var compteurChangementMaison = 0;
@@ -602,9 +602,9 @@ function changeNiveauMaison () {
                 compteurRessourcePlateau1 = compteurRessourcePlateau1 - maisonPrix1;
                 compteurRessourcePlateau2 = compteurRessourcePlateau2 - maisonPrix2;
                 compteurRessourcePlateau3 = compteurRessourcePlateau3 - maisonPrix3;
-                maisonPrix1 = maisonPrix1 + 1;
-                maisonPrix2 = maisonPrix2 + 1;
-                maisonPrix3 = maisonPrix3 + 1;
+                maisonPrix1 = maisonPrix1 * 2;
+                maisonPrix2 = maisonPrix2 * 2;
+                maisonPrix3 = maisonPrix3 * 2;
 
                 maisonFixe = maisonFixe + 1 ; 
             }
@@ -613,16 +613,16 @@ function changeNiveauMaison () {
                 compteurRessourcePlateau1 = compteurRessourcePlateau1 - maisonPrix1;
                 compteurRessourcePlateau2 = compteurRessourcePlateau2 - maisonPrix2;
                 compteurRessourcePlateau3 = compteurRessourcePlateau3 - maisonPrix3;
-                maisonPrix1 = maisonPrix1 + 2;
-                maisonPrix2 = maisonPrix2 + 2;
-                maisonPrix3 = maisonPrix3 + 2;
+                maisonPrix1 = maisonPrix1 + 5;
+                maisonPrix2 = maisonPrix2 + 5;
+                maisonPrix3 = maisonPrix3 + 5;
                 
                 item.classList.remove("maison1");
                 item.classList.toggle("maison2");
 
                 randTab = parseInt(getRandomArbitrary(0, 10));
 
-                if (bgEre.children[randTab].classList.contains("vide") && maisonFixe < 4) {
+                if (bgEre.children[randTab].classList.contains("vide") && maisonFixe < 5) {
                     bgEre.children[randTab].classList.remove("vide");
                     bgEre.children[randTab].classList.toggle("maison");
                     compteurChangementMaison = 0 ;
@@ -630,7 +630,7 @@ function changeNiveauMaison () {
 
                 }
 
-                else if (bgEre.children[randTab] != bgEre.children[randTab].classList.contains("vide")&& maisonFixe < 4){
+                else if (bgEre.children[randTab] != bgEre.children[randTab].classList.contains("vide")&& maisonFixe < 5){
                     randTab = parseInt(getRandomArbitrary(0, 10));
                     bgEre.children[randTab].classList.remove("vide");
                     bgEre.children[randTab].classList.toggle("maison");
@@ -640,7 +640,7 @@ function changeNiveauMaison () {
                 }     
             }
         } 
-        prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources ==> <br> " +maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;
+        prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources <br> " +maisonPrix1+ " : <strong>os</strong> <br>" +maisonPrix2+ " : <strong>bois</strong> <br>" +maisonPrix3+  " : <strong>pierre</strong> <br>" ;
     }
     ressource1.innerHTML = compteurRessourcePlateau1;
     ressource2.innerHTML = compteurRessourcePlateau2;
@@ -755,9 +755,6 @@ function changeDePlaceRessource3() {
 // ----------------------- Fin : ressource et compteur ----------------------- //
 
 // ----------------------- Debut : carte des Connaissances ----------------------- //
-
-
-
 /*------------ fonction vérification outils--------------*/
 
 var outilsNiveau1 = 0;
@@ -852,7 +849,7 @@ function achatCarte1 () {
         //ajoute + 20 % à la bar d'évolution
     }
 
-    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 2 && outilsNiveau2 == 3) { 
+    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 3 && outilsNiveau2 == 3) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 5;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
@@ -877,7 +874,7 @@ function achatCarte1 () {
 
     }
 
-    else  if (cartePosseder == 2 && compteurRessourcePlateau1 >= 6 && compteurRessourcePlateau2 >= 6 && compteurRessourcePlateau3 >= 6 && constructions == 3 && outilsNiveau3 == 3) { 
+    else  if (cartePosseder == 2 && compteurRessourcePlateau1 >= 6 && compteurRessourcePlateau2 >= 6 && compteurRessourcePlateau3 >= 6 && constructions >= 4 && outilsNiveau3 == 3) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 3;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
@@ -899,11 +896,10 @@ function achatCarte1 () {
         //ajoute + 20 % à la bar d'évolution
 
     }
-
 }achatCarte.onclick = achatCarte1;
 /*--système achat carte--*/
 
-// ----------------------- Fin : carte des Connaissances --------------------------- //
+// ----------------------- Fin : ressource et compteur --------------------------- //
 
 //------------------------- catastrophe -------------------------//
 
