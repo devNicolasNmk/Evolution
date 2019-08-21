@@ -146,17 +146,18 @@ function activationItemsShop() {
     
     // Item1 Lvl2
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
-    if (affichagePrixItem1Lvl1.innerHTML !== "OBTENU" || affichagePrixItem1Lvl1 !== "OBTENU") {  
+    if (affichagePrixItem1Lvl1.innerHTML !== "OBTENU" || affichagePrixItem1Lvl2.innerHTML !== "OBTENU") {  
         boutonItem1Lvl2.disabled = true; // Désactivé
         boutonItem1Lvl2.style.backgroundColor = "red"; // rouge
     }
     // Si j'ai OBTENU la précédente ET Si le compteur a les ressources necessaires
-    if (affichagePrixItem1Lvl1.innerHTML == "OBTENU" && ressource1.innerHTML >= prix1Item1Lvl2 && ressource2.innerHTML >= prix2Item1Lvl2) { 
+    if (affichagePrixItem1Lvl1.innerHTML == "OBTENU" && (ressource1.innerHTML >= prix1Item1Lvl2 && ressource2.innerHTML >= prix2Item1Lvl2)) { 
     boutonItem1Lvl2.disabled = false;
     boutonItem1Lvl2.style.color = "aliceblue";
+    boutonItem1Lvl2.style.backgroundColor = "green";
     } 
     // Si PAS déja obtenu et PAS assez de ressources
-    if (affichagePrixItem1Lvl2.innerHTML !== "OBTENU" && ressource1.innerHTML < prix1Item1Lvl2 && ressource2.innerHTML < prix2Item1Lvl2) { 
+    if (affichagePrixItem1Lvl2.innerHTML !== "OBTENU" && (ressource1.innerHTML < prix1Item1Lvl2 && ressource2.innerHTML < prix2Item1Lvl2)) { 
         boutonItem1Lvl2.disabled = true; // Désactivé
         boutonItem1Lvl2.style.color = "aliceblue"; 
         boutonItem1Lvl2.style.backgroundColor = "red"; // rouge
@@ -164,14 +165,15 @@ function activationItemsShop() {
     
     // Item1 Lvl3
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
-    if (affichagePrixItem1Lvl2.innerHTML !== "OBTENU" || affichagePrixItem1Lvl2 !== "OBTENU") {  
+    if (affichagePrixItem1Lvl2.innerHTML !== "OBTENU" || affichagePrixItem1Lvl3.innerHTML !== "OBTENU") {  
         boutonItem1Lvl3.disabled = true; // Désactivé
         boutonItem1Lvl3.style.backgroundColor = "red"; // rouge
     }
     // Si j'ai OBTENU la précédente ET Si le compteur a les ressources necessaires
-    if (affichagePrixItem1Lvl3.innerHTML == "OBTENU" && ressource2.innerHTML >= prix1Item1Lvl3 && ressource3.innerHTML >= prix2Item1Lvl3) { 
+    if (affichagePrixItem1Lvl2.innerHTML == "OBTENU" && ressource2.innerHTML >= prix1Item1Lvl3 && ressource3.innerHTML >= prix2Item1Lvl3) { 
         boutonItem1Lvl3.disabled = false;
         boutonItem1Lvl3.style.color = "aliceblue";
+        boutonItem1Lvl3.style.backgroundColor = "green";
     }
     // Si PAS déja obtenu et PAS assez de ressources
     if (affichagePrixItem1Lvl3.innerHTML !== "OBTENU" && ressource2.innerHTML < prix1Item1Lvl3 && ressource3.innerHTML < prix2Item1Lvl3) { 
@@ -202,7 +204,7 @@ function activationItemsShop() {
     
     // Item2 Lvl2
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
-    if (affichagePrixItem2Lvl1.innerHTML !== "OBTENU" || affichagePrixItem2Lvl2 !== "OBTENU") {  
+    if (affichagePrixItem2Lvl1.innerHTML !== "OBTENU" || affichagePrixItem2Lvl2.innerHTML !== "OBTENU") {  
         boutonItem2Lvl2.disabled = true; // Désactivé
         boutonItem2Lvl2.style.backgroundColor = "red"; // rouge
     }
@@ -210,6 +212,7 @@ function activationItemsShop() {
     if (affichagePrixItem2Lvl1.innerHTML == "OBTENU" && ressource1.innerHTML >= prix1Item2Lvl2 && ressource2.innerHTML >= prix2Item2Lvl2) { 
         boutonItem2Lvl2.disabled = false;
         boutonItem2Lvl2.style.color = "aliceblue";
+        boutonItem2Lvl2.style.backgroundColor = "green";
     }
     // Si PAS déja obtenu et PAS assez de ressources
     if (affichagePrixItem2Lvl2.innerHTML !== "OBTENU" && ressource1.innerHTML < prix1Item2Lvl2 && ressource2.innerHTML < prix2Item2Lvl2) { 
@@ -220,7 +223,7 @@ function activationItemsShop() {
     
     // Item2 Lvl3
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
-    if (affichagePrixItem2Lvl2.innerHTML !== "OBTENU" || affichagePrixItem2Lvl3 !== "OBTENU") {  
+    if (affichagePrixItem2Lvl2.innerHTML !== "OBTENU" || affichagePrixItem2Lvl3.innerHTML !== "OBTENU") {  
         boutonItem2Lvl3.disabled = true; // Désactivé
         boutonItem2Lvl3.style.backgroundColor = "red"; // rouge
     }
@@ -228,6 +231,7 @@ function activationItemsShop() {
     if (affichagePrixItem2Lvl2.innerHTML == "OBTENU" && ressource2.innerHTML >= prix1Item2Lvl3 && ressource3.innerHTML >= prix2Item2Lvl3) { 
         boutonItem2Lvl3.disabled = false;
         boutonItem2Lvl3.style.color = "aliceblue";
+        boutonItem2Lvl3.style.backgroundColor = "green";
     }
     // Si PAS déja obtenu et PAS assez de ressources
     if (affichagePrixItem2Lvl3.innerHTML !== "OBTENU" && ressource2.innerHTML < prix1Item2Lvl3 && ressource3.innerHTML < prix2Item2Lvl3) { 
@@ -235,6 +239,7 @@ function activationItemsShop() {
         boutonItem2Lvl3.style.color = "aliceblue"; 
         boutonItem2Lvl3.style.backgroundColor = "red"; // rouge
     }
+
     // Item3-----------------------------------------------------------------------------------------------
     
     // Item3 Lvl1
@@ -257,7 +262,7 @@ function activationItemsShop() {
     
     // Item3 Lvl2
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
-    if (affichagePrixItem3Lvl1.innerHTML !== "OBTENU" || affichagePrixItem3Lvl1 !== "OBTENU") {  
+    if (affichagePrixItem3Lvl1.innerHTML !== "OBTENU" || affichagePrixItem3Lvl2.innerHTML !== "OBTENU") {  
         boutonItem3Lvl2.disabled = true; // Désactivé
         boutonItem3Lvl2.style.backgroundColor = "red"; // rouge
     }
@@ -265,6 +270,7 @@ function activationItemsShop() {
     if (affichagePrixItem3Lvl1.innerHTML == "OBTENU" && ressource1.innerHTML >= prix1Item3Lvl2 && ressource2.innerHTML >= prix2Item3Lvl2) { 
         boutonItem3Lvl2.disabled = false;
         boutonItem3Lvl2.style.color = "aliceblue";
+        boutonItem3Lvl2.style.backgroundColor = "green";
     }
     // Si PAS déja obtenu et PAS assez de ressources
     if (affichagePrixItem3Lvl2.innerHTML !== "OBTENU" && ressource1.innerHTML < prix1Item3Lvl2 && ressource2.innerHTML < prix2Item3Lvl2) { 
@@ -275,7 +281,7 @@ function activationItemsShop() {
     
     // Item3 Lvl3
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
-    if (affichagePrixItem3Lvl2.innerHTML !== "OBTENU" || affichagePrixItem3Lvl2 !== "OBTENU") {  
+    if (affichagePrixItem3Lvl2.innerHTML !== "OBTENU" || affichagePrixItem3Lvl3.innerHTML !== "OBTENU") {  
         boutonItem3Lvl3.disabled = true; // Désactivé
         boutonItem3Lvl3.style.backgroundColor = "red"; // rouge
     }
@@ -283,6 +289,7 @@ function activationItemsShop() {
     if (affichagePrixItem3Lvl2.innerHTML == "OBTENU" && ressource2.innerHTML >= prix1Item3Lvl3 && ressource3.innerHTML >= prix2Item3Lvl3) { 
         boutonItem3Lvl3.disabled = false;
         boutonItem3Lvl3.style.color = "aliceblue";
+        boutonItem3Lvl3.style.backgroundColor = "green";
     }
     // Si PAS déja obtenu et PAS assez de ressources
     if (affichagePrixItem3Lvl3.innerHTML !== "OBTENU" && ressource2.innerHTML < prix1Item3Lvl3 && ressource3.innerHTML < prix2Item3Lvl3) { 
@@ -299,11 +306,9 @@ function activationItemsShop() {
     function achatItem1Lvl1() {
         affichagePrixItem1Lvl1.innerHTML = "OBTENU";
         boutonItem1Lvl1.disabled = true;
-        boutonItem1Lvl1.style.color = "green";
         boutonItem1Lvl1.style.border = "inherit";
         clickRessource1 = 2;
         ressource1.innerHTML = ressource1.innerHTML - prixItem1Lvl1;
-        boutonItem1Lvl1.style.backgroundColor = "yellow";
         activationItemsShop();
         compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
     }
@@ -311,12 +316,10 @@ function activationItemsShop() {
     function achatItem1Lvl2() {
         affichagePrixItem1Lvl2.innerHTML = "OBTENU";
         boutonItem1Lvl2.disabled = true;
-        boutonItem1Lvl2.style.color = "green";
         boutonItem1Lvl2.style.border = "inherit";
         clickRessource1 = 4;
         ressource1.innerHTML = ressource1.innerHTML - prix1Item1Lvl2;
         ressource2.innerHTML = ressource2.innerHTML - prix2Item1Lvl2;
-        boutonItem1Lvl2.style.backgroundColor = "yellow";
         activationItemsShop();
         compteurRessourcePlateau1 = parseInt(ressource1.innerHTML)
         compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
@@ -325,12 +328,10 @@ function activationItemsShop() {
     function achatItem1Lvl3() {
         affichagePrixItem1Lvl3.innerHTML = "OBTENU";
         boutonItem1Lvl3.disabled = true;
-        boutonItem1Lvl3.style.color = "green";
         boutonItem1Lvl3.style.border = "inherit";
         clickRessource1 = 6;
-        ressource2.innerHTML = ressource1.innerHTML - prix1Item1Lvl3;
-        ressource3.innerHTML = ressource2.innerHTML - prix2Item1Lvl3;
-        boutonItem1Lvl3.style.backgroundColor = "yellow";
+        ressource2.innerHTML = ressource2.innerHTML - prix1Item1Lvl3;
+        ressource3.innerHTML = ressource3.innerHTML - prix2Item1Lvl3;
         activationItemsShop();
         compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
         compteurRessourcePlateau3 = parseInt(ressource3.innerHTML)
@@ -340,11 +341,9 @@ function activationItemsShop() {
     function achatItem2Lvl1() {
         affichagePrixItem2Lvl1.innerHTML = "OBTENU";
         boutonItem2Lvl1.disabled = true;
-        boutonItem2Lvl1.style.color = "green";
         boutonItem2Lvl1.style.border = "inherit";
         clickRessource2 = 2;
         ressource1.innerHTML = ressource1.innerHTML - prixItem2Lvl1;
-        boutonItem2Lvl1.style.backgroundColor = "yellow";
         activationItemsShop();
         compteurRessourcePlateau1 = parseInt(ressource1.innerHTML)
     }
@@ -352,12 +351,10 @@ function activationItemsShop() {
     function achatItem2Lvl2() {
         affichagePrixItem2Lvl2.innerHTML = "OBTENU";
         boutonItem2Lvl2.disabled = true;
-        boutonItem2Lvl2.style.color = "green";
         boutonItem2Lvl2.style.border = "inherit";
         clickRessource2 = 4;
         ressource1.innerHTML = ressource1.innerHTML - prix1Item2Lvl2;
         ressource2.innerHTML = ressource2.innerHTML - prix2Item2Lvl2;
-        boutonItem2Lvl2.style.backgroundColor = "yellow";
         activationItemsShop();
         compteurRessourcePlateau1 = parseInt(ressource1.innerHTML)
         compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
@@ -366,12 +363,10 @@ function activationItemsShop() {
     function achatItem2Lvl3() {
         affichagePrixItem2Lvl3.innerHTML = "OBTENU";
         boutonItem2Lvl3.disabled = true;
-        boutonItem2Lvl3.style.color = "green";
         boutonItem2Lvl3.style.border = "inherit";
         clickRessource2 = 6;
         ressource2.innerHTML = ressource2.innerHTML - prix1Item2Lvl3;
         ressource3.innerHTML = ressource3.innerHTML - prix2Item2Lvl3;
-        boutonItem2Lvl3.style.backgroundColor = "yellow";
         activationItemsShop();
         compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
         compteurRessourcePlateau3 = parseInt(ressource3.innerHTML)
@@ -381,11 +376,9 @@ function activationItemsShop() {
     function achatItem3Lvl1() {
         affichagePrixItem3Lvl1.innerHTML = "OBTENU";
         boutonItem3Lvl1.disabled = true;
-        boutonItem3Lvl1.style.color = "green";
         boutonItem3Lvl1.style.border = "inherit";
         clickRessource3 = 2;
         ressource1.innerHTML = ressource1.innerHTML - prixItem3Lvl1;
-        boutonItem3Lvl1.style.backgroundColor = "yellow";
         activationItemsShop();
         compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
     }
@@ -393,12 +386,10 @@ function activationItemsShop() {
     function achatItem3Lvl2() {
         affichagePrixItem3Lvl2.innerHTML = "OBTENU";
         boutonItem3Lvl2.disabled = true;
-        boutonItem3Lvl2.style.color = "green";
         boutonItem3Lvl2.style.border = "inherit";
         clickRessource3 = 4;
         ressource1.innerHTML = ressource1.innerHTML - prix1Item3Lvl2;
         ressource2.innerHTML = ressource2.innerHTML - prix2Item3Lvl2;
-        boutonItem3Lvl2.style.backgroundColor = "yellow";
         activationItemsShop();
         compteurRessourcePlateau1 = parseInt(ressource1.innerHTML)
         compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
@@ -407,12 +398,10 @@ function activationItemsShop() {
     function achatItem3Lvl3() {
         affichagePrixItem3Lvl3.innerHTML = "OBTENU";
         boutonItem3Lvl3.disabled = true;
-        boutonItem3Lvl3.style.color = "green";
         boutonItem3Lvl3.style.border = "inherit";
         clickRessource3 = 6;
         ressource2.innerHTML = ressource2.innerHTML - prix1Item3Lvl3;
         ressource3.innerHTML = ressource3.innerHTML - prix2Item3Lvl3;
-        boutonItem3Lvl3.style.backgroundColor = "yellow";
         activationItemsShop();
         compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
         compteurRessourcePlateau3 = parseInt(ressource3.innerHTML)
