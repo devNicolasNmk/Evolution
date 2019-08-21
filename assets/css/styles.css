@@ -413,10 +413,10 @@ figure {
 }
 
 #objetsStock{
-    margin-left: 35px;
-    margin-top: 88px;
-    width: 300px;
-    height: 280px;
+    margin-left: 29px;
+    margin-top: 78px;
+    width: 315px;
+    height: 288px;
     border: 1px solid black;
     display: block;
     justify-content: center;
@@ -424,10 +424,11 @@ figure {
 }
 
 .objetscase {
-    width: 95px;
-    height: 89px;
+    width: 94px;
+    height: 88px;
     border: 1px solid black;
     display: inline-flex;
+    margin: 2px;
 }
 
 #bonusMaitre {

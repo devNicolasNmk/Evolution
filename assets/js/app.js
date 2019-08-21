@@ -660,7 +660,7 @@ var a = 1;
 var cartePosseder = 0;
 
 function achatCarte1 () {
-    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2) { 
+    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2 && constructions >= 3) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 2;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 2;
@@ -673,7 +673,7 @@ function achatCarte1 () {
         //ajoute + 20 % à la bar d'évolution
     }
 
-    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5) { 
+    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 9) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 5;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
@@ -687,7 +687,7 @@ function achatCarte1 () {
 
     }
 
-    else  if (cartePosseder == 2 && compteurRessourcePlateau1 == 30 && compteurRessourcePlateau2 == 50 && compteurRessourcePlateau3 == 40) { 
+    else  if (cartePosseder == 2 && compteurRessourcePlateau1 == 30 && compteurRessourcePlateau2 == 50 && compteurRessourcePlateau3 == 40 && constructions >= 14) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 30;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 50;
