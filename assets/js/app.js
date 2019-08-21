@@ -206,7 +206,6 @@
             }           
         }   
     }
-    
     /**
      * 
      * fonction restauration des variables aux rechargements de pages
