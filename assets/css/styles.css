@@ -457,8 +457,24 @@ figure {
     position: relative;
 }
 
+.imgitem{
+    border-radius:10%;
+}
+
 button:hover, .bois:hover, .os:hover, .pierre:hover, .maison:hover, .maison1:hover{
     cursor: pointer;
+}
+
+#imgitem1lvl1Vide,
+#imgitem1lvl2Vide,
+#imgitem1lvl3Vide,
+#imgitem2lvl1Vide,
+#imgitem2lvl2Vide,
+#imgitem2lvl3Vide,
+#imgitem3lvl1Vide,
+#imgitem3lvl2Vide,
+#imgitem3lvl3Vide {
+    border-radius:10%;
 }
 [disabled]{
     cursor:not-allowed !important;
