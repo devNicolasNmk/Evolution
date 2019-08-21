@@ -15,25 +15,8 @@
     //stat batiment obtenus
     var nbTotalBatiment = document.getElementById('nbTotalBatiment');
     var constructions = 0;
-    //Tableau des outils des 5 eres => 3 par eres(en attente du nom des outils pour modification)
-    var tabOutils = {
-        "out1": 0,
-        "out2": 0,
-        "out3": 0,
-        "out4": 0,
-        "out5": 0,
-        "out6": 0,
-        "out7": 0,
-        "out8": 0,
-        "out9": 0,
-        "out10": 0,
-        "out11": 0,
-        "out12": 0,
-        "out13": 0,
-        "out14": 0,
-        "out15": 0
-    };
-    var nbOutils = 0;
+    
+
     //tableau des eres terminées : 0=> non achevée 1=> achevée
     var tabEre = {
         "ere1": 0,
@@ -78,18 +61,7 @@
             somme++;
             nbTotalRessources.innerHTML = somme;
         }
-        
 
-    // ---- Outils obtenus ---- //
-        /*boucle sur le tableau pour check le nombre de fois que 1 est présent 
-        *le for in me permet de boucler sur le tableau associatif
-        */
-        for (outil in tabOutils) {
-            if (tabOutils[outil] === 1) {
-                nbOutils++
-            }
-        }
-        nbTotalOutils.innerHTML = nbOutils;
 
 
     // ---- eres terminées ---- //
@@ -164,6 +136,7 @@
         localStorage.setItem('nbTotalClic', totalClick.innerHTML);
         localStorage.setItem('nbTotalRessources', nbTotalRessources.innerHTML);
         localStorage.setItem('nbTotalOutils', nbTotalOutils.innerHTML);
+        localStorage.setItem('nbTotalOutils', parseInt(nbTotalOutils.innerHTML));
         localStorage.setItem('nbTotalEre', nbTotalEre.innerHTML);
         localStorage.setItem('nbTotalBatiment', nbTotalBatiment.innerHTML);
         localStorage.setItem('prixMaison1', maisonPrix1);
