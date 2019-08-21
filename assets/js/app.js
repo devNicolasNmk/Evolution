@@ -173,17 +173,70 @@
         var getLocalisation =localiserMaison();
         localStorage.setItem('localisation', getLocalisation);
 
+        //sav item1 lvl1
         localStorage.setItem('prix-item1-lvl1-bouton-shop', affichagePrixItem1Lvl1.innerHTML);
+        localStorage.setItem('boutonItem1Lvl1.disabled', boutonItem1Lvl1.disabled);
+        localStorage.setItem('boutonItem1Lvl1.style.color', boutonItem1Lvl1.style.color);
+        localStorage.setItem('boutonItem1Lvl1.style.border', boutonItem1Lvl1.style.border);
+        localStorage.setItem('boutonItem1Lvl1.style.backgroundColor', boutonItem1Lvl1.style.backgroundColor);
+        //sav item1 lvl2
         localStorage.setItem('prix-item1-lvl2-bouton-shop', affichagePrixItem1Lvl2.innerHTML);
+        localStorage.setItem('boutonItem1Lvl2.disabled', boutonItem1Lvl2.disabled);
+        localStorage.setItem('boutonItem1Lvl2.style.color', boutonItem1Lvl2.style.color);
+        localStorage.setItem('boutonItem1Lvl2.style.border', boutonItem1Lvl2.style.border);
+        localStorage.setItem('boutonItem1Lvl2.style.backgroundColor', boutonItem1Lvl2.style.backgroundColor);
+        //sav item1 lvl3
         localStorage.setItem('prix-item1-lvl3-bouton-shop', affichagePrixItem1Lvl3.innerHTML);
+        localStorage.setItem('boutonItem1Lvl3.disabled', boutonItem1Lvl3.disabled);
+        localStorage.setItem('boutonItem1Lvl3.style.color', boutonItem1Lvl3.style.color);
+        localStorage.setItem('boutonItem1Lvl3.style.border', boutonItem1Lvl3.style.border);
+        localStorage.setItem('boutonItem1Lvl3.style.backgroundColor', boutonItem1Lvl3.style.backgroundColor);
 
+        //sav item2 lvl1
         localStorage.setItem('prix-item2-lvl1-bouton-shop', affichagePrixItem2Lvl1.innerHTML);
-        localStorage.setItem('prix-item2-lvl2-bouton-shop', affichagePrixItem2Lvl2.innerHTML);
-        localStorage.setItem('prix-item2-lvl3-bouton-shop', affichagePrixItem2Lvl3.innerHTML);
+        localStorage.setItem('boutonItem2Lvl1.disabled', boutonItem2Lvl1.disabled);
+        localStorage.setItem('boutonItem2Lvl1.style.color', boutonItem2Lvl1.style.color);
+        localStorage.setItem('boutonItem2Lvl1.style.border', boutonItem2Lvl1.style.border);
+        localStorage.setItem('boutonItem2Lvl1.style.backgroundColor', boutonItem2Lvl1.style.backgroundColor);
 
+        //sav item2 lvl2
+        localStorage.setItem('prix-item2-lvl2-bouton-shop', affichagePrixItem2Lvl2.innerHTML);
+        localStorage.setItem('boutonItem2Lvl2.disabled', boutonItem2Lvl2.disabled);
+        localStorage.setItem('boutonItem2Lvl2.style.color', boutonItem2Lvl2.style.color);
+        localStorage.setItem('boutonItem2Lvl2.style.border', boutonItem2Lvl2.style.border);
+        localStorage.setItem('boutonItem2Lvl2.style.backgroundColor', boutonItem2Lvl2.style.backgroundColor);
+
+        //sav item2 lvl3
+        localStorage.setItem('prix-item2-lvl3-bouton-shop', affichagePrixItem2Lvl3.innerHTML);
+        localStorage.setItem('boutonItem2Lvl3.disabled', boutonItem2Lvl3.disabled);
+        localStorage.setItem('boutonItem2Lvl3.style.color', boutonItem2Lvl3.style.color);
+        localStorage.setItem('boutonItem2Lvl3.style.border', boutonItem2Lvl3.style.border);
+        localStorage.setItem('boutonItem2Lvl3.style.backgroundColor', boutonItem2Lvl3.style.backgroundColor);
+
+        //sav item3 lvl1
         localStorage.setItem('prix-item3-lvl1-bouton-shop', affichagePrixItem3Lvl1.innerHTML);
+        localStorage.setItem('boutonItem3Lvl1.disabled', boutonItem3Lvl1.disabled);
+        localStorage.setItem('boutonItem3Lvl1.style.color', boutonItem3Lvl1.style.color);
+        localStorage.setItem('boutonItem3Lvl1.style.border', boutonItem3Lvl1.style.border);
+        localStorage.setItem('boutonItem3Lvl1.style.backgroundColor', boutonItem3Lvl1.style.backgroundColor);
+
+        //sav item3 lvl2
         localStorage.setItem('prix-item3-lvl2-bouton-shop', affichagePrixItem3Lvl2.innerHTML);
+        localStorage.setItem('boutonItem3Lvl2.disabled', boutonItem3Lvl2.disabled);
+        localStorage.setItem('boutonItem3Lvl2.style.color', boutonItem3Lvl2.style.color);
+        localStorage.setItem('boutonItem3Lvl2.style.border', boutonItem3Lvl2.style.border);
+        localStorage.setItem('boutonItem3Lvl2.style.backgroundColor', boutonItem3Lvl2.style.backgroundColor);
+
+        //sav item3 lvl3
         localStorage.setItem('prix-item3-lvl3-bouton-shop', affichagePrixItem3Lvl3.innerHTML);
+        localStorage.setItem('boutonItem3Lvl3.disabled', boutonItem3Lvl3.disabled);
+        localStorage.setItem('boutonItem3Lvl3.style.color', boutonItem3Lvl3.style.color);
+        localStorage.setItem('boutonItem3Lvl3.style.border', boutonItem3Lvl3.style.border);
+        localStorage.setItem('boutonItem3Lvl3.style.backgroundColor', boutonItem3Lvl3.style.backgroundColor);
+        //sav coefficientx multiplicateur liés aux items
+        localStorage.setItem('clickRessource1', clickRessource1);
+        localStorage.setItem('clickRessource2', clickRessource2);
+        localStorage.setItem('clickRessource3', clickRessource3);
 
         localStorage.setItem('nbTotalCata', nbTotalCata.innerHTML);
         //sauvegarde bloc ressources
@@ -253,6 +306,51 @@
             compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);
             ressource3.innerHTML = localStorage.getItem('ressource3');
             compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);
+            //restauration item1 lvl1
+            affichagePrixItem1Lvl1.innerHTML = localStorage.getItem('prix-item1-lvl1-bouton-shop');
+            boutonItem1Lvl1.disabled = localStorage.getItem('boutonItem1Lvl1.disabled');
+            boutonItem1Lvl1.style.color = localStorage.getItem('boutonItem1Lvl1.style.color');
+            boutonItem1Lvl1.style.border = localStorage.getItem('boutonItem1Lvl1.style.border');
+            boutonItem1Lvl1.style.backgroundColor = localStorage.getItem('boutonItem1Lvl1.style.backgroundColor');
+            //restauration item1 lvl2
+            affichagePrixItem1Lvl2.innerHTML = localStorage.getItem('prix-item1-lvl2-bouton-shop');
+            boutonItem1Lvl2.disabled = localStorage.getItem('boutonItem1Lvl2.disabled');
+            boutonItem1Lvl2.style.color = localStorage.getItem('boutonItem1Lvl2.style.color');
+            boutonItem1Lvl2.style.border = localStorage.getItem('boutonItem1Lvl2.style.border');
+            boutonItem1Lvl2.style.backgroundColor = localStorage.getItem('boutonItem1Lvl2.style.backgroundColor');
+            //restauration item1 lvl3
+            affichagePrixItem1Lvl3.innerHTML = localStorage.getItem('prix-item1-lvl3-bouton-shop');
+            boutonItem1Lvl3.disabled = localStorage.getItem('boutonItem1Lvl3.disabled');
+            boutonItem1Lvl3.disabled = localStorage.getItem('boutonItem1Lvl3.disabled');
+            boutonItem1Lvl3.style.color = localStorage.getItem('boutonItem1Lvl3.style.color');
+            boutonItem1Lvl3.style.border = localStorage.getItem('boutonItem1Lvl3.style.border');
+            //restauration item2 lvl1
+            affichagePrixItem2Lvl1.innerHTML = localStorage.getItem('prix-item2-lvl1-bouton-shop');
+            boutonItem2Lvl1.disabled = localStorage.getItem('boutonItem2Lvl1.disabled');
+            boutonItem2Lvl1.disabled = localStorage.getItem('boutonItem2Lvl1.disabled');
+            boutonItem2Lvl1.style.color = localStorage.getItem('boutonItem2Lvl1.style.color');
+            boutonItem2Lvl1.style.border = localStorage.getItem('boutonItem2Lvl1.style.border');
+            //restauration item2 lvl2
+            affichagePrixItem2Lvl2.innerHTML = localStorage.getItem('prix-item2-lvl2-bouton-shop');
+            boutonItem2Lvl2.disabled = localStorage.getItem('boutonItem2Lvl2.disabled');
+            boutonItem2Lvl2.disabled = localStorage.getItem('boutonItem2Lvl2.disabled');
+            boutonItem2Lvl2.style.color = localStorage.getItem('boutonItem2Lvl2.style.color');
+            boutonItem2Lvl2.style.border = localStorage.getItem('boutonItem2Lvl2.style.border');
+            //restauration item2 lvl3            
+            affichagePrixItem2Lvl3.innerHTML = localStorage.getItem('prix-item2-lvl3-bouton-shop');
+            boutonItem2Lvl3.disabled = localStorage.getItem('boutonItem2Lvl3.disabled');
+            boutonItem2Lvl3.disabled = localStorage.getItem('boutonItem2Lvl3.disabled');
+            boutonItem2Lvl3.style.color = localStorage.getItem('boutonItem2Lvl3.style.color');
+            boutonItem2Lvl3.style.border = localStorage.getItem('boutonItem2Lvl3.style.border');
+            //restauration item3 lvl1
+            affichagePrixItem3Lvl1.innerHTML = localStorage.getItem('prix-item3-lvl1-bouton-shop');
+            boutonItem3Lvl1.disabled = localStorage.getItem('boutonItem3Lvl1.disabled');
+            boutonItem3Lvl1.disabled = localStorage.getItem('boutonItem3Lvl1.disabled');
+            boutonItem3Lvl1.style.color = localStorage.getItem('boutonItem3Lvl1.style.color');
+            boutonItem3Lvl1.style.border = localStorage.getItem('boutonItem3Lvl1.style.border');
+
+            affichagePrixItem3Lvl2.innerHTML = localStorage.getItem('prix-item3-lvl2-bouton-shop');
+            affichagePrixItem3Lvl3.innerHTML = localStorage.getItem('prix-item3-lvl3-bouton-shop');
         }
 
     }
