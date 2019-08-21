@@ -876,9 +876,9 @@ function achatCarte1 () {
 
     else  if (cartePosseder == 2 && compteurRessourcePlateau1 >= 6 && compteurRessourcePlateau2 >= 6 && compteurRessourcePlateau3 >= 6 && constructions == 3 && outilsNiveau3 == 3) { 
         
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 3;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 4;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 6;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 6;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 6;
 
         for (var i = 0; i < lis.length; i++) {
           lis[i].style.display ="none";
