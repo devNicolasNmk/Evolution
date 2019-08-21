@@ -227,6 +227,11 @@
         localStorage.setItem('ressource1', ressource1.innerHTML);
         localStorage.setItem('ressource2', ressource2.innerHTML);
         localStorage.setItem('ressource3', ressource3.innerHTML);
+
+        //sauvegarde cartes
+        localStorage.setItem('cartes1', lis[0].style.display);
+        localStorage.setItem('cartes2', lis[1].style.display);
+        localStorage.setItem('cartes3', lis[2].style.display);
     }
  
 
@@ -353,10 +358,14 @@
             boutonItem3Lvl3.style.color = localStorage.getItem('boutonItem3Lvl3.style.color');
             boutonItem3Lvl3.style.border = localStorage.getItem('boutonItem3Lvl3.style.border');
             document.getElementById("imgitem3lvl3Vide").src= localStorage.getItem('imgitem3lvl3');
-            //restauration
+            //restauration bonus multiplicateurs
             clickRessource1 = parseInt(localStorage.getItem('clickRessource1'));
             clickRessource2 = parseInt(localStorage.getItem('clickRessource2'));
             clickRessource3 = parseInt(localStorage.getItem('clickRessource3'));
+            //restauration cartes
+            lis[0].style.display = localStorage.getItem('cartes1');
+            lis[1].style.display = localStorage.getItem('cartes2');
+            lis[2].style.display = localStorage.getItem('cartes3');
             activationItemsShop();
         }
 
