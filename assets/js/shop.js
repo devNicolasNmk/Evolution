@@ -310,8 +310,9 @@ function activationItemsShop() {
         clickRessource1 = 2;
         ressource1.innerHTML = ressource1.innerHTML - prixItem1Lvl1;
         activationItemsShop();
-        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML); // mise a jour du compteurRessource
         document.getElementById("imgitem1lvl1Vide").src= "assets/img/lance1Obtenu.png";
+        parseInt(nbTotalOutils.innerHTML++);
     }
 // achat Item 1 Lvl2
     function achatItem1Lvl2() {
@@ -322,9 +323,10 @@ function activationItemsShop() {
         ressource1.innerHTML = ressource1.innerHTML - prix1Item1Lvl2;
         ressource2.innerHTML = ressource2.innerHTML - prix2Item1Lvl2;
         activationItemsShop();
-        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
-        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);// mise a jour du compteurRessource
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem1lvl2Vide").src= "assets/img/lance2Obtenu.png";
+        parseInt(nbTotalOutils.innerHTML++);
     }
 // achat Item 1 Lvl3
     function achatItem1Lvl3() {
@@ -335,9 +337,10 @@ function activationItemsShop() {
         ressource2.innerHTML = ressource2.innerHTML - prix1Item1Lvl3;
         ressource3.innerHTML = ressource3.innerHTML - prix2Item1Lvl3;
         activationItemsShop();
-        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);
-        compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);// mise a jour du compteurRessource
+        compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem1lvl3Vide").src= "assets/img/lance3Obtenu.png";
+        parseInt(nbTotalOutils.innerHTML++);
     }
 // fonction achat Item 2
 // achat Item 2 Lvl1
@@ -348,8 +351,9 @@ function activationItemsShop() {
         clickRessource2 = 2;
         ressource1.innerHTML = ressource1.innerHTML - prixItem2Lvl1;
         activationItemsShop();
-        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem2lvl1Vide").src= "assets/img/hache1Obtenu.png";
+        parseInt(nbTotalOutils.innerHTML++);
     }
 // achat Item 2 Lvl2
     function achatItem2Lvl2() {
@@ -360,9 +364,10 @@ function activationItemsShop() {
         ressource1.innerHTML = ressource1.innerHTML - prix1Item2Lvl2;
         ressource2.innerHTML = ressource2.innerHTML - prix2Item2Lvl2;
         activationItemsShop();
-        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
-        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);// mise a jour du compteurRessource
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem2lvl2Vide").src= "assets/img/hache2Obtenu.png";
+        parseInt(nbTotalOutils.innerHTML++);
     }
 // achat Item 2 Lvl3
     function achatItem2Lvl3() {
@@ -373,9 +378,10 @@ function activationItemsShop() {
         ressource2.innerHTML = ressource2.innerHTML - prix1Item2Lvl3;
         ressource3.innerHTML = ressource3.innerHTML - prix2Item2Lvl3;
         activationItemsShop();
-        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);
-        compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);// mise a jour du compteurRessource
+        compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem2lvl3Vide").src= "assets/img/hache3Obtenu.png";
+        parseInt(nbTotalOutils.innerHTML++);
     }
 // fonction achat Item 3
 // achat Item 3 Lvl1
@@ -386,8 +392,9 @@ function activationItemsShop() {
         clickRessource3 = 2;
         ressource1.innerHTML = ressource1.innerHTML - prixItem3Lvl1;
         activationItemsShop();
-        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem3lvl1Vide").src= "assets/img/pioche1Obtenu.png";
+        parseInt(nbTotalOutils.innerHTML++);        
     }
 // achat Item 3 Lvl2
     function achatItem3Lvl2() {
@@ -398,9 +405,10 @@ function activationItemsShop() {
         ressource1.innerHTML = ressource1.innerHTML - prix1Item3Lvl2;
         ressource2.innerHTML = ressource2.innerHTML - prix2Item3Lvl2;
         activationItemsShop();
-        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
-        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);// mise a jour du compteurRessource
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem3lvl2Vide").src= "assets/img/pioche2Obtenu.png";
+        parseInt(nbTotalOutils.innerHTML++);
     }
 // achat Item 3 Lvl3
     function achatItem3Lvl3() {
@@ -411,9 +419,10 @@ function activationItemsShop() {
         ressource2.innerHTML = ressource2.innerHTML - prix1Item3Lvl3;
         ressource3.innerHTML = ressource3.innerHTML - prix2Item3Lvl3;
         activationItemsShop();
-        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);
-        compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);// mise a jour du compteurRessource
+        compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem3lvl3Vide").src= "assets/img/pioche3Obtenu.png";
+        parseInt(nbTotalOutils.innerHTML++);
     }
 
 
