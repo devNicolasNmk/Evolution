@@ -2,6 +2,7 @@
 //Declaration des variables 
     //stat clicks
     var totalClick = document.getElementById('nbTotalClic');
+    var getClick = document.getElementById('jeu'); // temporaire pour mes tests
     var scoreClick = 0;
     //stat ressources recoltées
     var ressourcesCumulees = document.getElementById('nbTotalRessources');
