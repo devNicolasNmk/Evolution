@@ -650,7 +650,64 @@ function changeDePlaceRessource3() {
 // ----------------------- Fin : ressource et compteur ----------------------- //
 
 // ----------------------- Debut : carte des Connaissances ----------------------- //
-/*--système comme le carrousel--*/
+
+
+
+/*------------ fonction vérification outils--------------*/
+
+var outilsNiveau1 = 0;
+var outilsNiveau2 = 0;
+var outilsNiveau3 = 0;
+
+console.log(outilsNiveau2);
+
+function verificationOutils1 () {
+// outils Niveau 1-----------------------------------------
+
+    if (affichagePrixItem1Lvl1.innerHTML = "OBTENU") {
+        outilsNiveau1 = outilsNiveau1 + 1;
+    }
+    else if (affichagePrixItem2Lvl1.innerHTML = "OBTENU") {
+       outilsNiveau1 = outilsNiveau1 + 1;
+    }
+    else if (affichagePrixItem3Lvl1.innerHTML = "OBTENU") {
+        outilsNiveau1 = outilsNiveau1 + 1;
+    }
+}
+
+function verificationOutils2 () {
+// outils Niveau 2-----------------------------------------
+
+    if (affichagePrixItem1Lvl2.innerHTML = "OBTENU") {
+        outilsNiveau2 = outilsNiveau2 + 1;
+    }
+    else if (affichagePrixItem2Lvl2.innerHTML = "OBTENU") {
+       outilsNiveau2 = outilsNiveau2 + 1;
+    }
+    else if (affichagePrixItem3Lvl2.innerHTML = "OBTENU") {
+        outilsNiveau2 = outilsNiveau2 + 1;
+    }
+}
+
+function verificationOutils3 () {
+// outils Niveau 3-----------------------------------------
+
+    if (affichagePrixItem1Lvl3.innerHTML = "OBTENU") {
+        outilsNiveau3 = outilsNiveau3 + 1;
+    }
+    else if (affichagePrixItem2Lvl3.innerHTML = "OBTENU") {
+       outilsNiveau3 = outilsNiveau3 + 1;
+    }
+    else if (affichagePrixItem3Lvl3.innerHTML = "OBTENU") {
+        outilsNiveau3 = outilsNiveau3 + 1;
+    }
+}
+
+/*------------ fonction vérification outils--------------*/
+
+console.log(outilsNiveau1);
+
+/*--système achat carte--*/
 var lis = document.getElementsByClassName("1");
 var achatCarte = document.getElementById("achatCarte");
 var carteConnaissance = document.getElementById("carteConnaissance");
@@ -666,7 +723,7 @@ for (var i = 0; i < lis.length; i++) {
   }
 
 function achatCarte1 () {
-    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2 && constructions >= 1) { 
+    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2 && constructions >= 1 && outilsNiveau1 == 3) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 2;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 2;
@@ -690,7 +747,7 @@ function achatCarte1 () {
         //ajoute + 20 % à la bar d'évolution
     }
 
-    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 3) { 
+    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 3 && outilsNiveau2 == 3) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 5;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
@@ -715,11 +772,11 @@ function achatCarte1 () {
 
     }
 
-    else  if (cartePosseder == 2 && compteurRessourcePlateau1 == 6 && compteurRessourcePlateau2 == 6 && compteurRessourcePlateau3 == 6 && constructions >= 4) { 
+    else  if (cartePosseder == 2 && compteurRessourcePlateau1 >= 6 && compteurRessourcePlateau2 >= 6 && compteurRessourcePlateau3 >= 6 && constructions >= 4 && outilsNiveau3 == 3) { 
         
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 30;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 50;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 40;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 3;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 4;
 
         for (var i = 0; i < lis.length; i++) {
           lis[i].style.display ="none";
@@ -738,9 +795,9 @@ function achatCarte1 () {
 
     }
 }achatCarte.onclick = achatCarte1;
+/*--système achat carte--*/
 
-
-// ----------------------- Fin : ressource et compteur --------------------------- //
+// ----------------------- Fin : carte des Connaissances --------------------------- //
 
 //------------------------- catastrophe -------------------------//
 
