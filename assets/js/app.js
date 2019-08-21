@@ -758,47 +758,53 @@ function changeDePlaceRessource3() {
 /*------------ fonction vérification outils--------------*/
 
 var outilsNiveau1 = 0;
+
 var outilsNiveau2 = 0;
+
 var outilsNiveau3 = 0;
 
 console.log(outilsNiveau2);
 
-function verificationOutils1 () {
-// outils Niveau 1-----------------------------------------
+function verificationOutils1() {
+
+    // outils Niveau 1-----------------------------------------
 
     if (affichagePrixItem1Lvl1.innerHTML = "OBTENU") {
         outilsNiveau1 = outilsNiveau1 + 1;
     }
     else if (affichagePrixItem2Lvl1.innerHTML = "OBTENU") {
-       outilsNiveau1 = outilsNiveau1 + 1;
+        outilsNiveau1 = outilsNiveau1 + 1;
     }
     else if (affichagePrixItem3Lvl1.innerHTML = "OBTENU") {
         outilsNiveau1 = outilsNiveau1 + 1;
     }
 }
 
-function verificationOutils2 () {
-// outils Niveau 2-----------------------------------------
+function verificationOutils2() {
+
+    // outils Niveau 2-----------------------------------------
 
     if (affichagePrixItem1Lvl2.innerHTML = "OBTENU") {
         outilsNiveau2 = outilsNiveau2 + 1;
     }
     else if (affichagePrixItem2Lvl2.innerHTML = "OBTENU") {
-       outilsNiveau2 = outilsNiveau2 + 1;
+        outilsNiveau2 = outilsNiveau2 + 1;
     }
     else if (affichagePrixItem3Lvl2.innerHTML = "OBTENU") {
         outilsNiveau2 = outilsNiveau2 + 1;
     }
 }
 
-function verificationOutils3 () {
-// outils Niveau 3-----------------------------------------
+function verificationOutils3() {
+
+    // outils Niveau 3-----------------------------------------
 
     if (affichagePrixItem1Lvl3.innerHTML = "OBTENU") {
         outilsNiveau3 = outilsNiveau3 + 1;
     }
+
     else if (affichagePrixItem2Lvl3.innerHTML = "OBTENU") {
-       outilsNiveau3 = outilsNiveau3 + 1;
+        outilsNiveau3 = outilsNiveau3 + 1;
     }
     else if (affichagePrixItem3Lvl3.innerHTML = "OBTENU") {
         outilsNiveau3 = outilsNiveau3 + 1;
@@ -819,84 +825,87 @@ var a = 1;
 var cartePosseder = 0;
 
 for (var i = 0; i < lis.length; i++) {
+    lis[i].style.display = "none";
 
-      lis[i].style.display ="none";
-    
-  }
+}
 
-function achatCarte1 () {
-    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2 && constructions >= 1 && outilsNiveau1 == 3) { 
-        
+function achatCarte1() {
+
+    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2 && constructions >= 1 && outilsNiveau1 == 3) {
+
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 2;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 2;
         compteurRessourcePlateau3 = compteurRessourcePlateau3 - 2;
 
         for (var i = 0; i < lis.length; i++) {
-          lis[i].style.display ="none";
-              }
+            lis[i].style.display = "none";
+        }
 
-              if (a == 2) {
-                      a=0;
-              }
+        if (a == 2) {
+            a = 0;
+        }
 
-              else{
-                  a+=1;
-              }
-              lis[a].style.display ="inline-block";
+        else {
+            a += 1;
+        }
 
+        lis[a].style.display = "inline-block";
         cartePosseder = 1;
 
         //ajoute + 20 % à la bar d'évolution
+
     }
 
-    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 2 && outilsNiveau2 == 3) { 
-        
+    else if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 2 && outilsNiveau2 == 3) {
+
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 5;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
         compteurRessourcePlateau3 = compteurRessourcePlateau3 - 5;
 
         for (var i = 0; i < lis.length; i++) {
-          lis[i].style.display ="none";
-              }
+            lis[i].style.display = "none";
+        }
+        
+        if (a == 2) {
+            a = 0;
 
-              if (a == 2) {
-                      a=0;
-              }
+        }
+        else {
+            a += 1;
+        }
 
-              else{
-                  a+=1;
-              }
-              lis[a].style.display ="inline-block";
-
+        lis[a].style.display = "inline-block";
         cartePosseder = 2;
 
         //ajoute + 20 % à la bar d'évolution
 
     }
 
-    else  if (cartePosseder == 2 && compteurRessourcePlateau1 >= 6 && compteurRessourcePlateau2 >= 6 && compteurRessourcePlateau3 >= 6 && constructions == 3 && outilsNiveau3 == 3) { 
+    else if (cartePosseder == 2 && compteurRessourcePlateau1 >= 6 && compteurRessourcePlateau2 >= 6 && compteurRessourcePlateau3 >= 6 && constructions >= 3 && outilsNiveau3 == 3) {
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 6;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 6;
         compteurRessourcePlateau3 = compteurRessourcePlateau3 - 6;
 
         for (var i = 0; i < lis.length; i++) {
-          lis[i].style.display ="none";
-              }
+            lis[i].style.display = "none";
+        }
 
-              if (a == 2) {
-                      a=0;
-              }
+        if (a == 2) {
+            a = 0;
+        }
+        else {
+            a += 1;
+        }
 
-              else{
-                  a+=1;
-              }
-              lis[a].style.display ="inline-block";
-
+        lis[a].style.display = "inline-block";
+        cartePosseder = 3;
         //ajoute + 20 % à la bar d'évolution
 
     }
-}achatCarte.onclick = achatCarte1;
+
+} achatCarte.onclick = achatCarte1;
+
 /*--système achat carte--*/
 
 // ----------------------- Fin : ressource et compteur --------------------------- //
