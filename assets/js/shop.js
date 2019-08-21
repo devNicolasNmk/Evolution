@@ -305,6 +305,7 @@ function activationItemsShop() {
         ressource1.innerHTML = ressource1.innerHTML - prixItem1Lvl1;
         boutonItem1Lvl1.style.backgroundColor = "yellow";
         activationItemsShop();
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
     }
 // achat Item 1 Lvl2
     function achatItem1Lvl2() {
@@ -317,6 +318,8 @@ function activationItemsShop() {
         ressource2.innerHTML = ressource2.innerHTML - prix2Item1Lvl2;
         boutonItem1Lvl2.style.backgroundColor = "yellow";
         activationItemsShop();
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML)
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
     }
 // achat Item 1 Lvl3
     function achatItem1Lvl3() {
@@ -329,6 +332,8 @@ function activationItemsShop() {
         ressource3.innerHTML = ressource2.innerHTML - prix2Item1Lvl3;
         boutonItem1Lvl3.style.backgroundColor = "yellow";
         activationItemsShop();
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
+        compteurRessourcePlateau3 = parseInt(ressource3.innerHTML)
     }
 // fonction achat Item 2
 // achat Item 2 Lvl1
@@ -341,6 +346,7 @@ function activationItemsShop() {
         ressource1.innerHTML = ressource1.innerHTML - prixItem2Lvl1;
         boutonItem2Lvl1.style.backgroundColor = "yellow";
         activationItemsShop();
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML)
     }
 // achat Item 2 Lvl2
     function achatItem2Lvl2() {
@@ -353,6 +359,8 @@ function activationItemsShop() {
         ressource2.innerHTML = ressource2.innerHTML - prix2Item2Lvl2;
         boutonItem2Lvl2.style.backgroundColor = "yellow";
         activationItemsShop();
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML)
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
     }
 // achat Item 2 Lvl3
     function achatItem2Lvl3() {
@@ -365,6 +373,8 @@ function activationItemsShop() {
         ressource3.innerHTML = ressource3.innerHTML - prix2Item2Lvl3;
         boutonItem2Lvl3.style.backgroundColor = "yellow";
         activationItemsShop();
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
+        compteurRessourcePlateau3 = parseInt(ressource3.innerHTML)
     }
 // fonction achat Item 3
 // achat Item 3 Lvl1
@@ -377,6 +387,7 @@ function activationItemsShop() {
         ressource1.innerHTML = ressource1.innerHTML - prixItem3Lvl1;
         boutonItem3Lvl1.style.backgroundColor = "yellow";
         activationItemsShop();
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);
     }
 // achat Item 3 Lvl2
     function achatItem3Lvl2() {
@@ -389,6 +400,8 @@ function activationItemsShop() {
         ressource2.innerHTML = ressource2.innerHTML - prix2Item3Lvl2;
         boutonItem3Lvl2.style.backgroundColor = "yellow";
         activationItemsShop();
+        compteurRessourcePlateau1 = parseInt(ressource1.innerHTML)
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
     }
 // achat Item 3 Lvl3
     function achatItem3Lvl3() {
@@ -401,6 +414,8 @@ function activationItemsShop() {
         ressource3.innerHTML = ressource3.innerHTML - prix2Item3Lvl3;
         boutonItem3Lvl3.style.backgroundColor = "yellow";
         activationItemsShop();
+        compteurRessourcePlateau2 = parseInt(ressource2.innerHTML)
+        compteurRessourcePlateau3 = parseInt(ressource3.innerHTML)
     }
 
 

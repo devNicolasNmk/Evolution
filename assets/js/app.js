@@ -169,9 +169,22 @@
         localStorage.setItem('prixMaison1', maisonPrix1);
         localStorage.setItem('prixMaison2', maisonPrix2);
         localStorage.setItem('prixMaison3', maisonPrix3);
-        localStorage.setItem('bullePrix', prixMaison.innerHTML)
+        localStorage.setItem('bullePrix', prixMaison.innerHTML);
         var getLocalisation =localiserMaison();
-        localStorage.setItem('localisation', getLocalisation)
+        localStorage.setItem('localisation', getLocalisation);
+
+        localStorage.setItem('prix-item1-lvl1-bouton-shop', affichagePrixItem1Lvl1.innerHTML);
+        localStorage.setItem('prix-item1-lvl2-bouton-shop', affichagePrixItem1Lvl2.innerHTML);
+        localStorage.setItem('prix-item1-lvl3-bouton-shop', affichagePrixItem1Lvl3.innerHTML);
+
+        localStorage.setItem('prix-item2-lvl1-bouton-shop', affichagePrixItem2Lvl1.innerHTML);
+        localStorage.setItem('prix-item2-lvl2-bouton-shop', affichagePrixItem2Lvl2.innerHTML);
+        localStorage.setItem('prix-item2-lvl3-bouton-shop', affichagePrixItem2Lvl3.innerHTML);
+
+        localStorage.setItem('prix-item3-lvl1-bouton-shop', affichagePrixItem3Lvl1.innerHTML);
+        localStorage.setItem('prix-item3-lvl2-bouton-shop', affichagePrixItem3Lvl2.innerHTML);
+        localStorage.setItem('prix-item3-lvl3-bouton-shop', affichagePrixItem3Lvl3.innerHTML);
+
         localStorage.setItem('nbTotalCata', nbTotalCata.innerHTML);
         //sauvegarde bloc ressources
         localStorage.setItem('ressource1', ressource1.innerHTML);
@@ -186,7 +199,7 @@
      * 
      */
     function sauvegardeAuto(){
-        setInterval(sauvegardeLocal, 5000);
+        setInterval(sauvegardeLocal, 1000);
         
     }
     sauvegardeAuto();
