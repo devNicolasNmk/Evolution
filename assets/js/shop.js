@@ -313,7 +313,7 @@ function activationItemsShop() {
         compteurRessourcePlateau1 = parseInt(ressource1.innerHTML); // mise a jour du compteurRessource
         document.getElementById("imgitem1lvl1Vide").src= "assets/img/lance1Obtenu.png";
         parseInt(nbTotalOutils.innerHTML++);
-        verificationOutils1 ()
+        verificationOutils1();
     }
 // achat Item 1 Lvl2
     function achatItem1Lvl2() {
@@ -328,7 +328,7 @@ function activationItemsShop() {
         compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem1lvl2Vide").src= "assets/img/lance2Obtenu.png";
         parseInt(nbTotalOutils.innerHTML++);
-        verificationOutils2 ()
+        verificationOutils2();
     }
 // achat Item 1 Lvl3
     function achatItem1Lvl3() {
@@ -343,7 +343,7 @@ function activationItemsShop() {
         compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem1lvl3Vide").src= "assets/img/lance3Obtenu.png";
         parseInt(nbTotalOutils.innerHTML++);
-        verificationOutils3 ()
+        verificationOutils3();
     }
 // fonction achat Item 2
 // achat Item 2 Lvl1
@@ -357,7 +357,7 @@ function activationItemsShop() {
         compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem2lvl1Vide").src= "assets/img/hache1Obtenu.png";
         parseInt(nbTotalOutils.innerHTML++);
-        verificationOutils1 ()
+        verificationOutils1();
     }
 // achat Item 2 Lvl2
     function achatItem2Lvl2() {
@@ -372,7 +372,7 @@ function activationItemsShop() {
         compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem2lvl2Vide").src= "assets/img/hache2Obtenu.png";
         parseInt(nbTotalOutils.innerHTML++);
-        verificationOutils2 ()
+        verificationOutils2();
     }
 // achat Item 2 Lvl3
     function achatItem2Lvl3() {
@@ -387,7 +387,7 @@ function activationItemsShop() {
         compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem2lvl3Vide").src= "assets/img/hache3Obtenu.png";
         parseInt(nbTotalOutils.innerHTML++);
-        verificationOutils3 ()
+        verificationOutils3();
     }
 // fonction achat Item 3
 // achat Item 3 Lvl1
@@ -401,7 +401,7 @@ function activationItemsShop() {
         compteurRessourcePlateau1 = parseInt(ressource1.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem3lvl1Vide").src= "assets/img/pioche1Obtenu.png";
         parseInt(nbTotalOutils.innerHTML++);
-        verificationOutils1 ()        
+        verificationOutils1();        
     }
 // achat Item 3 Lvl2
     function achatItem3Lvl2() {
@@ -416,7 +416,7 @@ function activationItemsShop() {
         compteurRessourcePlateau2 = parseInt(ressource2.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem3lvl2Vide").src= "assets/img/pioche2Obtenu.png";
         parseInt(nbTotalOutils.innerHTML++);
-        verificationOutils2 ()
+        verificationOutils2();
     }
 // achat Item 3 Lvl3
     function achatItem3Lvl3() {
@@ -431,7 +431,7 @@ function activationItemsShop() {
         compteurRessourcePlateau3 = parseInt(ressource3.innerHTML);// mise a jour du compteurRessource
         document.getElementById("imgitem3lvl3Vide").src= "assets/img/pioche3Obtenu.png";
         parseInt(nbTotalOutils.innerHTML++);
-        verificationOutils3 ()
+        verificationOutils3();
     }
 
 

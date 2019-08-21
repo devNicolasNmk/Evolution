@@ -835,7 +835,6 @@ var cartePosseder = 0;
 
 for (var i = 0; i < lis.length; i++) {
     lis[i].style.display = "none";
-
 }
 
 function achatCarte1() {
@@ -861,7 +860,7 @@ function achatCarte1() {
         lis[a].style.display = "inline-block";
         cartePosseder = 1;
 
-        //ajoute + 20 % à la bar d'évolution
+        document.getElementById("bar").src= "assets/img/progressBar1.png";
 
     }
 
@@ -886,7 +885,7 @@ function achatCarte1() {
         lis[a].style.display = "inline-block";
         cartePosseder = 2;
 
-        //ajoute + 20 % à la bar d'évolution
+        document.getElementById("bar").src= "assets/img/progressBar2.png";
 
     }
 
@@ -909,7 +908,8 @@ function achatCarte1() {
 
         lis[a].style.display = "inline-block";
         cartePosseder = 3;
-        //ajoute + 20 % à la bar d'évolution
+        
+        document.getElementById("bar").src= "assets/img/progressBar3.png";
 
     }
 
