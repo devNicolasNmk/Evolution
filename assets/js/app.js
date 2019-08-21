@@ -333,9 +333,9 @@ ressource2.innerHTML = compteurRessourcePlateau2;
 ressource3.innerHTML = compteurRessourcePlateau3;
 
 //prix achat maison
-var maisonPrix1 = 40;
-var maisonPrix2 = 50;
-var maisonPrix3 = 30;
+var maisonPrix1 = 1;
+var maisonPrix2 = 1;
+var maisonPrix3 = 1;
 
 //affichage prix maison
 var prixMaison = document.getElementById("prixMaison");
@@ -497,9 +497,9 @@ function changeNiveauMaison () {
                 compteurRessourcePlateau1 = compteurRessourcePlateau1 - maisonPrix1;
                 compteurRessourcePlateau2 = compteurRessourcePlateau2 - maisonPrix2;
                 compteurRessourcePlateau3 = compteurRessourcePlateau3 - maisonPrix3;
-                maisonPrix1 = maisonPrix1 * 2;
-                maisonPrix2 = maisonPrix2 * 2;
-                maisonPrix3 = maisonPrix3 * 2;
+                maisonPrix1 = maisonPrix1 + 1;
+                maisonPrix2 = maisonPrix2 + 1;
+                maisonPrix3 = maisonPrix3 + 1;
 
                 maisonFixe = maisonFixe + 1 ; 
             }
@@ -508,9 +508,9 @@ function changeNiveauMaison () {
                 compteurRessourcePlateau1 = compteurRessourcePlateau1 - maisonPrix1;
                 compteurRessourcePlateau2 = compteurRessourcePlateau2 - maisonPrix2;
                 compteurRessourcePlateau3 = compteurRessourcePlateau3 - maisonPrix3;
-                maisonPrix1 = maisonPrix1 + 5;
-                maisonPrix2 = maisonPrix2 + 5;
-                maisonPrix3 = maisonPrix3 + 5;
+                maisonPrix1 = maisonPrix1 + 2;
+                maisonPrix2 = maisonPrix2 + 2;
+                maisonPrix3 = maisonPrix3 + 2;
                 
                 item.classList.remove("maison1");
                 item.classList.toggle("maison2");
@@ -659,27 +659,55 @@ var a = 1;
 
 var cartePosseder = 0;
 
+for (var i = 0; i < lis.length; i++) {
+
+      lis[i].style.display ="none";
+    
+  }
+
 function achatCarte1 () {
-    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2 && constructions >= 3) { 
+    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2 && constructions >= 1) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 2;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 2;
         compteurRessourcePlateau3 = compteurRessourcePlateau3 - 2;
 
-        suivant();
+        for (var i = 0; i < lis.length; i++) {
+          lis[i].style.display ="none";
+              }
+
+              if (a == 2) {
+                      a=0;
+              }
+
+              else{
+                  a+=1;
+              }
+              lis[a].style.display ="inline-block";
 
         cartePosseder = 1;
 
         //ajoute + 20 % à la bar d'évolution
     }
 
-    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 9) { 
+    else  if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 3) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 5;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
         compteurRessourcePlateau3 = compteurRessourcePlateau3 - 5;
 
-        suivant();
+        for (var i = 0; i < lis.length; i++) {
+          lis[i].style.display ="none";
+              }
+
+              if (a == 2) {
+                      a=0;
+              }
+
+              else{
+                  a+=1;
+              }
+              lis[a].style.display ="inline-block";
 
         cartePosseder = 2;
 
@@ -687,41 +715,30 @@ function achatCarte1 () {
 
     }
 
-    else  if (cartePosseder == 2 && compteurRessourcePlateau1 == 30 && compteurRessourcePlateau2 == 50 && compteurRessourcePlateau3 == 40 && constructions >= 14) { 
+    else  if (cartePosseder == 2 && compteurRessourcePlateau1 == 6 && compteurRessourcePlateau2 == 6 && compteurRessourcePlateau3 == 6 && constructions >= 4) { 
         
         compteurRessourcePlateau1 = compteurRessourcePlateau1 - 30;
         compteurRessourcePlateau2 = compteurRessourcePlateau2 - 50;
         compteurRessourcePlateau3 = compteurRessourcePlateau3 - 40;
 
-        suivant();
+        for (var i = 0; i < lis.length; i++) {
+          lis[i].style.display ="none";
+              }
+
+              if (a == 2) {
+                      a=0;
+              }
+
+              else{
+                  a+=1;
+              }
+              lis[a].style.display ="inline-block";
 
         //ajoute + 20 % à la bar d'évolution
 
     }
 }achatCarte.onclick = achatCarte1;
 
-
-for (var i = 0; i < lis.length; i++) {
-
-      lis[i].style.display ="none";
-    
-  }
-
-function suivant() {
- for (var i = 0; i < lis.length; i++) {
-          lis[i].style.display ="none";
-      }
-
-      if (a == 2) {
-              a=0;
-      }
-
-      else{
-          a+=1;
-      }
-      lis[a].style.display ="inline-block";
-    
-}carteConnaissance.onclick = suivant;
 
 // ----------------------- Fin : ressource et compteur --------------------------- //
 
