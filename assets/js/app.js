@@ -496,8 +496,8 @@ function clicker(plateau) {
 
             }
         }
+        ressource1.innerHTML = compteurRessourcePlateau1;
     }
-    ressource1.innerHTML = compteurRessourcePlateau1;
     activationItemsShop();
 
     //si tu trouvre une div avec un class qui est bois
@@ -531,10 +531,10 @@ function clicker(plateau) {
                     //tu appel le changements des places des ressources
                     changeDePlaceRessource2();
                 }
-            }
+            } 
         }
-    }
-    ressource2.innerHTML = compteurRessourcePlateau2;
+        ressource2.innerHTML = compteurRessourcePlateau2;
+    } 
     activationItemsShop();
 
     //si tu trouvre une div avec un class qui est pierre 
@@ -570,11 +570,10 @@ function clicker(plateau) {
                 }
             }
         }
-    }
-    ressource3.innerHTML = compteurRessourcePlateau3;
-    activationItemsShop();
-}
-plateau.onclick = clicker;
+        ressource3.innerHTML = compteurRessourcePlateau3;
+    } 
+    activationItemsShop();       
+}plateau.onclick = clicker;
 
 
 //fonction qui permet d'appeler le changement de niveau
@@ -842,14 +841,9 @@ function achatCarte1() {
 
     if (cartePosseder == 0 && compteurRessourcePlateau1 >= 10 && compteurRessourcePlateau2 >= 10 && compteurRessourcePlateau3 >= 10 && constructions >= 1 && outilsNiveau1 == 3) {
 
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 10;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 10;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 10;
-
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.display = "none";
         }
-
         if (a == 2) {
             a = 0;
         } else {
@@ -858,38 +852,29 @@ function achatCarte1() {
 
         lis[a].style.display = "inline-block";
         cartePosseder = 1;
-
-        document.getElementById("bar").src = "assets/img/progressBar1.png";
-
-        bonustardis();
-
+        document.getElementById("bar").src= "assets/img/progressBar1.png";
+        ressource1.innerHTML  = compteurRessourcePlateau1 - 10;
+        ressource2.innerHTML  = compteurRessourcePlateau2 - 10;
+        ressource3.innerHTML  = compteurRessourcePlateau3 - 10;
+        // bonustardis();
     } else if (cartePosseder == 1 && compteurRessourcePlateau1 >= 20 && compteurRessourcePlateau2 >= 20 && compteurRessourcePlateau3 >= 20 && constructions >= 2 && outilsNiveau2 == 3) {
-
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 20;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 20;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 20;
 
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.display = "none";
         }
-
         if (a == 2) {
             a = 0;
-
         } else {
             a += 1;
         }
 
         lis[a].style.display = "inline-block";
         cartePosseder = 2;
-
-        document.getElementById("bar").src = "assets/img/progressBar2.png";
-
+        document.getElementById("bar").src= "assets/img/progressBar2.png";
+        ressource1.innerHTML  = compteurRessourcePlateau1 - 20;
+        ressource2.innerHTML  = compteurRessourcePlateau2 - 20;
+        ressource3.innerHTML  = compteurRessourcePlateau3 - 20;
     } else if (cartePosseder == 2 && compteurRessourcePlateau1 >= 30 && compteurRessourcePlateau2 >= 30 && compteurRessourcePlateau3 >= 30 && constructions >= 3 && outilsNiveau3 == 3) {
-
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 30;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 30;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 30;
 
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.display = "none";
@@ -903,13 +888,12 @@ function achatCarte1() {
 
         lis[a].style.display = "inline-block";
         cartePosseder = 3;
-
-        document.getElementById("bar").src = "assets/img/progressBar3.png";
-
+        document.getElementById("bar").src= "assets/img/progressBar3.png";
+        ressource1.innerHTML  = compteurRessourcePlateau1 - 30;
+        ressource2.innerHTML  = compteurRessourcePlateau2 - 30;
+        ressource3.innerHTML  = compteurRessourcePlateau3 - 30;
     }
-
-}
-achatCarte.onclick = achatCarte1;
+} achatCarte.onclick = achatCarte1;
 
 /*--système achat carte--*/
 
@@ -938,17 +922,16 @@ function choas() {
 var bonusclick = 1;
 var tardis = document.getElementById("tardis");
 
-function bonustardis() {
+function bonustardis(){
     if (tardis.classList.contains("outTime") && cartePosseder == 1) {
         tardis.classList.remove("outTime");
         tardis.classList.add("inTime");
-        bonusclick--;
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 + 50;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 + 50;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 + 50;
+        bonusclick++;
+        ressource1.innerHTML = compteurRessourcePlateau1 + 50;
+        ressource2.innerHTML = compteurRessourcePlateau2 + 50;
+        ressource3.innerHTML = compteurRessourcePlateau3 + 50;
     }
-
-}
-tardis.onclick = bonustardis;
+    
+}tardis.onclick = bonustardis;
 
 //------------------------- tradis -------------------------//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
