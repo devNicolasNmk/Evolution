@@ -146,6 +146,7 @@ function activationItemsShop() {
     
     // Item1 Lvl2
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
+  
     if (affichagePrixItem1Lvl1.innerHTML !== "OBTENU" || affichagePrixItem1Lvl2.innerHTML !== "OBTENU") {  
         boutonItem1Lvl2.disabled = true; // Désactivé
         boutonItem1Lvl2.style.backgroundColor = "red"; // rouge
@@ -155,14 +156,18 @@ function activationItemsShop() {
     boutonItem1Lvl2.disabled = false;
     boutonItem1Lvl2.style.color = "aliceblue";
     boutonItem1Lvl2.style.backgroundColor = "green";
-    } 
+    }
     // Si PAS déja obtenu et PAS assez de ressources
     if (affichagePrixItem1Lvl2.innerHTML !== "OBTENU" && (ressource1.innerHTML < prix1Item1Lvl2 && ressource2.innerHTML < prix2Item1Lvl2)) { 
         boutonItem1Lvl2.disabled = true; // Désactivé
         boutonItem1Lvl2.style.color = "aliceblue"; 
         boutonItem1Lvl2.style.backgroundColor = "red"; // rouge
     }
-    
+    // SI DEJA ACHETE
+    if(affichagePrixItem1Lvl2.innerHTML == "OBTENU"){
+        boutonItem1Lvl2.disabled = true;
+        boutonItem1Lvl2.style.backgroundColor = "green";
+    }
     // Item1 Lvl3
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
     if (affichagePrixItem1Lvl2.innerHTML !== "OBTENU" || affichagePrixItem1Lvl3.innerHTML !== "OBTENU") {  
@@ -181,7 +186,12 @@ function activationItemsShop() {
         boutonItem1Lvl3.style.color = "aliceblue"; 
         boutonItem1Lvl3.style.backgroundColor = "red"; // rouge
     }
-    
+    // SI DEJA ACHETE
+    if(affichagePrixItem1Lvl3.innerHTML == "OBTENU"){
+        boutonItem1Lvl3.disabled = true;
+        boutonItem1Lvl3.style.backgroundColor = "green";
+    }
+
     // Item2-----------------------------------------------------------------------------------------------
     
     // Item2 Lvl1
@@ -220,6 +230,11 @@ function activationItemsShop() {
         boutonItem2Lvl2.style.color = "aliceblue"; 
         boutonItem2Lvl2.style.backgroundColor = "red"; // rouge
     }
+    // SI DEJA ACHETE
+    if(affichagePrixItem2Lvl2.innerHTML == "OBTENU"){
+        boutonItem2Lvl2.disabled = true;
+        boutonItem2Lvl2.style.backgroundColor = "green";
+    }
     
     // Item2 Lvl3
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
@@ -239,7 +254,11 @@ function activationItemsShop() {
         boutonItem2Lvl3.style.color = "aliceblue"; 
         boutonItem2Lvl3.style.backgroundColor = "red"; // rouge
     }
-
+    // SI DEJA ACHETE
+    if(affichagePrixItem2Lvl3.innerHTML == "OBTENU"){
+        boutonItem2Lvl3.disabled = true;
+        boutonItem2Lvl3.style.backgroundColor = "green";
+    }
     // Item3-----------------------------------------------------------------------------------------------
     
     // Item3 Lvl1
@@ -278,7 +297,11 @@ function activationItemsShop() {
         boutonItem3Lvl2.style.color = "aliceblue"; 
         boutonItem3Lvl2.style.backgroundColor = "red"; // rouge
     }
-    
+    // SI DEJA ACHETE
+    if(affichagePrixItem3Lvl2.innerHTML == "OBTENU"){
+        boutonItem3Lvl2.disabled = true;
+        boutonItem3Lvl2.style.backgroundColor = "green";
+    }
     // Item3 Lvl3
     // Si item précédent PAS OBTENU (obligatoire) et Si item PAS déja OBTENU
     if (affichagePrixItem3Lvl2.innerHTML !== "OBTENU" || affichagePrixItem3Lvl3.innerHTML !== "OBTENU") {  
@@ -296,6 +319,11 @@ function activationItemsShop() {
         boutonItem3Lvl3.disabled = true; // Désactivé
         boutonItem3Lvl3.style.color = "aliceblue"; 
         boutonItem3Lvl3.style.backgroundColor = "red"; // rouge
+    }
+    // SI DEJA ACHETE
+    if(affichagePrixItem3Lvl3.innerHTML == "OBTENU"){
+        boutonItem3Lvl3.disabled = true;
+        boutonItem3Lvl3.style.backgroundColor = "green";
     }
 }
 
