@@ -575,13 +575,13 @@ button:hover, .bois:hover, .os:hover, .pierre:hover, .maison:hover, .maison1:hov
     }
 }
 
-/*.cacher{
+.cacher{
     display: none;
 }
 .attack{
     display: flex; 
 }
-
+/*
 div img {
     animation: finDuMonde 10s;
     -webkit-animation:finDuMonde 10s;
