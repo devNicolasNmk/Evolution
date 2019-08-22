@@ -835,7 +835,6 @@ var cartePosseder = 0;
 
 for (var i = 0; i < lis.length; i++) {
     lis[i].style.display = "none";
-
 }
 
 function achatCarte1() {
@@ -861,7 +860,9 @@ function achatCarte1() {
         lis[a].style.display = "inline-block";
         cartePosseder = 1;
 
-        //ajoute + 20 % à la bar d'évolution
+        document.getElementById("bar").src= "assets/img/progressBar1.png";
+
+        bonustardis();
 
     }
 
@@ -886,7 +887,7 @@ function achatCarte1() {
         lis[a].style.display = "inline-block";
         cartePosseder = 2;
 
-        //ajoute + 20 % à la bar d'évolution
+        document.getElementById("bar").src= "assets/img/progressBar2.png";
 
     }
 
@@ -909,7 +910,8 @@ function achatCarte1() {
 
         lis[a].style.display = "inline-block";
         cartePosseder = 3;
-        //ajoute + 20 % à la bar d'évolution
+        
+        document.getElementById("bar").src= "assets/img/progressBar3.png";
 
     }
 
@@ -935,4 +937,23 @@ function choas (){
     }
 }
 
-//------------------------- fin catastrophe -------------------------//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+//------------------------- fin catastrophe -------------------------//    
+
+//------------------------- tardis -------------------------//
+
+var bonusclick = 1;
+var tardis = document.getElementById("tardis");
+
+function bonustardis(){
+    if (tardis.classList.contains("outTime") && cartePosseder == 1) {
+        tardis.classList.remove("outTime");
+        tardis.classList.add("inTime");
+        bonusclick--;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 + 50;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 + 50;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 + 50;
+    }
+    
+}tardis.onclick = bonustardis;
+
+//------------------------- tradis -------------------------//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

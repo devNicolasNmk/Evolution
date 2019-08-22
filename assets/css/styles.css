@@ -188,6 +188,56 @@ figure {
 
 /* ---------------- interieur bloc central ---------------- */
 
+.progressBar {
+    background-image: url(../img/progressBar0.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*height: 112px;*/
+    width: 660px;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+
+.progressBar1 {
+    background-image: url(../img/progressBar1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*height: 112px;*/
+    width: 660px;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+
+.progressBar2 {
+    background-image: url(../img/progressBar2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*height: 112px;*/
+    width: 660px;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+
+.progressBar3 {
+    background-image: url(../img/progressBar3.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*height: 112px;*/
+    width: 660px;
+    margin-left: 15%;
+}
+
+#topCentre p span{
+    
+}
+
+#barreConnaissance{
+    font-family: sans-serif;
+    font-size: 1.7em;
+    color: yellow;
+    font-weight: bold;
+}
+
 #topCentre {
     height: 125px;
     width: 960px;
@@ -233,7 +283,7 @@ figure {
     height: 50px;
     background-color: #fff;
     position:relative; 
-    margin-top: 120px;
+    margin-top: 100px;
     padding: 0;
 }
 
@@ -332,6 +382,7 @@ figure {
     font-family: sans-serif;
     font-size: 1.5em;
     color: #A48136;
+    padding-bottom: 3%;
 }
 
 #bouton-fermer-shop {
@@ -347,6 +398,7 @@ figure {
     font-family: sans-serif;
     font-size: 1.5em;
     color: #A48136;
+    padding-bottom: 3%;
 }
 
 /* BLOC-SHOP */
@@ -424,9 +476,13 @@ figure {
     margin-top: 0;
 }
 
+#objets h2 {
+    margin-top: 10%;
+}
+
 #objetsStock{
     margin-left: 29px;
-    margin-top: 78px;
+    margin-top: 40px;
     width: 315px;
     height: 288px;
     /*border: 1px solid black;*/
@@ -479,6 +535,46 @@ button:hover, .bois:hover, .os:hover, .pierre:hover, .maison:hover, .maison1:hov
 [disabled]{
     cursor:not-allowed !important;
 }
+
+#tardis {
+    background-image: url(../img/tardis.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+     width: 150px;
+    height: 150px;
+    position: relative;
+    /*top: 40px; left: 40px;*/
+}
+
+.oldTime{
+    background-image: url(../img/tardisIncrust.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+}
+
+.outTime{
+    display: none;
+}
+
+.inTime {
+    display: flex;
+   animation: TimeAndRelativeDimensionInSpace 4s;
+}
+
+@keyframes TimeAndRelativeDimensionInSpace {
+    0% {
+        transform: translateX(-100px) translateY(0px);
+    }
+    50% {
+        transform: translateX(-45px) translateY(0px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 /*.cacher{
     display: none;
 }
