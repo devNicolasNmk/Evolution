@@ -447,9 +447,9 @@ ressource2.innerHTML = compteurRessourcePlateau2;
 ressource3.innerHTML = compteurRessourcePlateau3;
 
 //prix achat maison
-var maisonPrix1 = 30;
-var maisonPrix2 = 50;
-var maisonPrix3 = 40;
+var maisonPrix1 = 3;
+var maisonPrix2 = 5;
+var maisonPrix3 = 4;
 
 //affichage prix maison
 var prixMaison = document.getElementById("prixMaison");
@@ -483,7 +483,7 @@ function clicker(plateau) {
                 //incrementation du total des clics
                 incrTotalClick();
                 // si la div arrive a un score de 10
-                if (i == 10) {
+                if (i == 4) {
                     //tu remet le score a 0
                     i = 0;
                     // et tu incrémente de x le compteur de ressource
@@ -513,7 +513,7 @@ function clicker(plateau) {
                 //incrementation du total des clics
                 incrTotalClick();
                 // si la div arrive a un score de 4
-                if (j == 4) {
+                if (j == 3) {
                     //tu remet le score a 0
                     j = 0;
                     // et tu incrémente de x le compteur de ressource
@@ -523,7 +523,7 @@ function clicker(plateau) {
                     sommeRessources();
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
-                    if (declencheurRessource2 == 7) {
+                    if (declencheurRessource2 == 6) {
                         //tu remets le compteur du déclencheur a 0
                         declencheurRessource2 = 0;
                         //tu appel le changements des places des ressources
@@ -542,7 +542,7 @@ function clicker(plateau) {
                 //incrementation du total des clics
                 incrTotalClick();
                 // si la div arrive a un score de 7
-                if (k == 7) {
+                if (k == 4) {
                     //tu remet le score a 0
                     k = 0;
                     // et tu incrémente de x le compteur de ressource
@@ -552,7 +552,7 @@ function clicker(plateau) {
                     sommeRessources();
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
-                    if (declencheurRessource3 == 9) {
+                    if (declencheurRessource3 == 8) {
                         //tu remets le compteur du déclencheur a 0
                         declencheurRessource3 = 0;
                         //tu appel le changements des places des ressources
@@ -778,13 +778,13 @@ function verificationOutils1() {
 
     // outils Niveau 1-----------------------------------------
 
-    if (affichagePrixItem1Lvl1.innerHTML = "OBTENU") {
+    if (affichagePrixItem1Lvl1.innerHTML == "OBTENU") {
         outilsNiveau1 = outilsNiveau1 + 1;
     }
-    else if (affichagePrixItem2Lvl1.innerHTML = "OBTENU") {
+    else if (affichagePrixItem2Lvl1.innerHTML == "OBTENU") {
         outilsNiveau1 = outilsNiveau1 + 1;
     }
-    else if (affichagePrixItem3Lvl1.innerHTML = "OBTENU") {
+    else if (affichagePrixItem3Lvl1.innerHTML == "OBTENU") {
         outilsNiveau1 = outilsNiveau1 + 1;
     }
 }
@@ -793,13 +793,13 @@ function verificationOutils2() {
 
     // outils Niveau 2-----------------------------------------
 
-    if (affichagePrixItem1Lvl2.innerHTML = "OBTENU") {
+    if (affichagePrixItem1Lvl2.innerHTML == "OBTENU") {
         outilsNiveau2 = outilsNiveau2 + 1;
     }
-    else if (affichagePrixItem2Lvl2.innerHTML = "OBTENU") {
+    else if (affichagePrixItem2Lvl2.innerHTML == "OBTENU") {
         outilsNiveau2 = outilsNiveau2 + 1;
     }
-    else if (affichagePrixItem3Lvl2.innerHTML = "OBTENU") {
+    else if (affichagePrixItem3Lvl2.innerHTML == "OBTENU") {
         outilsNiveau2 = outilsNiveau2 + 1;
     }
 }
@@ -808,14 +808,14 @@ function verificationOutils3() {
 
     // outils Niveau 3-----------------------------------------
 
-    if (affichagePrixItem1Lvl3.innerHTML = "OBTENU") {
+    if (affichagePrixItem1Lvl3.innerHTML == "OBTENU") {
         outilsNiveau3 = outilsNiveau3 + 1;
     }
 
-    else if (affichagePrixItem2Lvl3.innerHTML = "OBTENU") {
+    else if (affichagePrixItem2Lvl3.innerHTML == "OBTENU") {
         outilsNiveau3 = outilsNiveau3 + 1;
     }
-    else if (affichagePrixItem3Lvl3.innerHTML = "OBTENU") {
+    else if (affichagePrixItem3Lvl3.innerHTML == "OBTENU") {
         outilsNiveau3 = outilsNiveau3 + 1;
     }
 }
