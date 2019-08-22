@@ -535,6 +535,46 @@ button:hover, .bois:hover, .os:hover, .pierre:hover, .maison:hover, .maison1:hov
 [disabled]{
     cursor:not-allowed !important;
 }
+
+#tardis {
+    background-image: url(../img/tardis.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+     width: 150px;
+    height: 150px;
+    position: relative;
+    /*top: 40px; left: 40px;*/
+}
+
+.oldTime{
+    background-image: url(../img/tardisIncrust.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+}
+
+.outTime{
+    display: none;
+}
+
+.inTime {
+    display: flex;
+   animation: TimeAndRelativeDimensionInSpace 4s;
+}
+
+@keyframes TimeAndRelativeDimensionInSpace {
+    0% {
+        transform: translateX(-100px) translateY(0px);
+    }
+    50% {
+        transform: translateX(-45px) translateY(0px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 /*.cacher{
     display: none;
 }

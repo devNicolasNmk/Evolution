@@ -862,6 +862,8 @@ function achatCarte1() {
 
         document.getElementById("bar").src= "assets/img/progressBar1.png";
 
+        bonustardis();
+
     }
 
     else if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 2 && outilsNiveau2 == 3) {
@@ -935,4 +937,23 @@ function choas (){
     }
 }
 
-//------------------------- fin catastrophe -------------------------//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+//------------------------- fin catastrophe -------------------------//    
+
+//------------------------- tardis -------------------------//
+
+var bonusclick = 1;
+var tardis = document.getElementById("tardis");
+
+function bonustardis(){
+    if (tardis.classList.contains("outTime") && cartePosseder == 1) {
+        tardis.classList.remove("outTime");
+        tardis.classList.add("inTime");
+        bonusclick--;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 + 50;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 + 50;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 + 50;
+    }
+    
+}tardis.onclick = bonustardis;
+
+//------------------------- tradis -------------------------//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
