@@ -12,29 +12,29 @@ var item3Shop = "Pioche";
 
 // PRIX Item
 //item1 lvl 1
-var prixItem1Lvl1 = 2;  // ex : La Hâche en os coûte : 4 os
+var prixItem1Lvl1 = 10;  // ex : La Hâche en os coûte : 4 os
 //item1 lvl 2
-var prix1Item1Lvl2 = 2; // ex : La Hâche en pierre coûte : 2 os et 4 pierre 
-var prix2Item1Lvl2 = 4; 
+var prix1Item1Lvl2 = 15; // ex : La Hâche en pierre coûte : 2 os et 4 pierre 
+var prix2Item1Lvl2 = 20; 
 //item1 lvl 3
-var prix1Item1Lvl3 = 2; 
-var prix2Item1Lvl3 = 4; 
+var prix1Item1Lvl3 = 30; 
+var prix2Item1Lvl3 = 40; 
 //item2 lvl 1
-var prixItem2Lvl1 =  2;
+var prixItem2Lvl1 =  10;
 //item2 lvl 2
-var prix1Item2Lvl2 = 2;
-var prix2Item2Lvl2 = 4;
+var prix1Item2Lvl2 = 15;
+var prix2Item2Lvl2 = 20;
 //item2 lvl 3
-var prix1Item2Lvl3 = 2;
-var prix2Item2Lvl3 = 4;
+var prix1Item2Lvl3 = 30;
+var prix2Item2Lvl3 = 40;
 //item3 lvl1
-var prixItem3Lvl1 = 2;
+var prixItem3Lvl1 = 10;
 //item3 lvl 2
-var prix1Item3Lvl2 = 2;
-var prix2Item3Lvl2 = 4;
+var prix1Item3Lvl2 = 15;
+var prix2Item3Lvl2 = 20;
 //item3 lvl 3
-var prix1Item3Lvl3 = 2;
-var prix2Item3Lvl3 = 4;
+var prix1Item3Lvl3 = 30;
+var prix2Item3Lvl3 = 40;
 
 // Affichage Noms Items (dans le shop directement) ex: Hache
 var affichageNomItem1Shop = document.getElementById("nom-item1-shop");

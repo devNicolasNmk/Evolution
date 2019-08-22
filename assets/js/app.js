@@ -447,9 +447,9 @@ ressource2.innerHTML = compteurRessourcePlateau2;
 ressource3.innerHTML = compteurRessourcePlateau3;
 
 //prix achat maison
-var maisonPrix1 = 1;
-var maisonPrix2 = 1;
-var maisonPrix3 = 1;
+var maisonPrix1 = 30;
+var maisonPrix2 = 50;
+var maisonPrix3 = 40;
 
 //affichage prix maison
 var prixMaison = document.getElementById("prixMaison");
@@ -493,7 +493,7 @@ function clicker(plateau) {
                     sommeRessources();
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
-                    if (declencheurRessource1 == 15) {
+                    if (declencheurRessource1 == 10) {
                         //tu remets le compteur du déclencheur a 0
                         declencheurRessource1 = 0;
                         //tu appel le changements des places des ressources
@@ -523,7 +523,7 @@ function clicker(plateau) {
                     sommeRessources();
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
-                    if (declencheurRessource2 == 10) {
+                    if (declencheurRessource2 == 7) {
                         //tu remets le compteur du déclencheur a 0
                         declencheurRessource2 = 0;
                         //tu appel le changements des places des ressources
@@ -552,7 +552,7 @@ function clicker(plateau) {
                     sommeRessources();
 
                     //a chaque fois que le compteur du déclencheur atteindra 20, ça appelera le changement des places des ressources
-                    if (declencheurRessource3 == 25) {
+                    if (declencheurRessource3 == 9) {
                         //tu remets le compteur du déclencheur a 0
                         declencheurRessource3 = 0;
                         //tu appel le changements des places des ressources
@@ -611,9 +611,9 @@ function changeNiveauMaison () {
                 compteurRessourcePlateau1 = compteurRessourcePlateau1 - maisonPrix1;
                 compteurRessourcePlateau2 = compteurRessourcePlateau2 - maisonPrix2;
                 compteurRessourcePlateau3 = compteurRessourcePlateau3 - maisonPrix3;
-                maisonPrix1 = maisonPrix1 * 2;
-                maisonPrix2 = maisonPrix2 * 2;
-                maisonPrix3 = maisonPrix3 * 2;
+                maisonPrix1 = maisonPrix1 + 10;
+                maisonPrix2 = maisonPrix2 + 10;
+                maisonPrix3 = maisonPrix3 + 10;
 
                 maisonFixe = maisonFixe + 1 ; 
             }
@@ -839,11 +839,11 @@ for (var i = 0; i < lis.length; i++) {
 
 function achatCarte1() {
 
-    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 2 && compteurRessourcePlateau2 >= 2 && compteurRessourcePlateau3 >= 2 && constructions >= 1 && outilsNiveau1 == 3) {
+    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 10 && compteurRessourcePlateau2 >= 10 && compteurRessourcePlateau3 >= 10 && constructions >= 1 && outilsNiveau1 == 3) {
 
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 2;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 2;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 2;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 10;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 10;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 10;
 
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.display = "none";
@@ -866,11 +866,11 @@ function achatCarte1() {
 
     }
 
-    else if (cartePosseder == 1 && compteurRessourcePlateau1 >= 5 && compteurRessourcePlateau2 >= 5 && compteurRessourcePlateau3 >= 5 && constructions >= 2 && outilsNiveau2 == 3) {
+    else if (cartePosseder == 1 && compteurRessourcePlateau1 >= 20 && compteurRessourcePlateau2 >= 20 && compteurRessourcePlateau3 >= 20 && constructions >= 2 && outilsNiveau2 == 3) {
 
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 5;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 5;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 5;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 20;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 20;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 20;
 
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.display = "none";
@@ -891,11 +891,11 @@ function achatCarte1() {
 
     }
 
-    else if (cartePosseder == 2 && compteurRessourcePlateau1 >= 6 && compteurRessourcePlateau2 >= 6 && compteurRessourcePlateau3 >= 6 && constructions >= 3 && outilsNiveau3 == 3) {
+    else if (cartePosseder == 2 && compteurRessourcePlateau1 >= 30 && compteurRessourcePlateau2 >= 30 && compteurRessourcePlateau3 >= 30 && constructions >= 3 && outilsNiveau3 == 3) {
         
-        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 6;
-        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 6;
-        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 6;
+        compteurRessourcePlateau1 = compteurRessourcePlateau1 - 30;
+        compteurRessourcePlateau2 = compteurRessourcePlateau2 - 30;
+        compteurRessourcePlateau3 = compteurRessourcePlateau3 - 30;
 
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.display = "none";
