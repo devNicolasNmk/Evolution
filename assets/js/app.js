@@ -1,39 +1,32 @@
 //Declaration des variables 
 //stat clicks
 var totalClick = document.getElementById('nbTotalClic');
-var getClick = document.getElementById('jeu'); // temporaire pour mes tests
+var getClick = document.getElementById('jeu');
 var scoreClick = 0;
 //stat ressources recoltées
 var ressourcesCumulees = document.getElementById('nbTotalRessources');
-var ressourceUne = 0;
-var ressourceDeux = 0;
-var ressourceTrois = 0;
 var somme = 0;
 //stat outils obtenus
 var nbTotalOutils = document.getElementById('nbTotalOutils');
 //stat batiment obtenus
 var nbTotalBatiment = document.getElementById('nbTotalBatiment');
 var constructions = 0;
-
-
 //tableau des eres terminées : 0=> non achevée 1=> achevée
 var tabEre = {
     "ere1": 0,
     "ere2": 0,
     "ere3": 0,
     "ere4": 0,
-    "ere5": 0
-};
+    "ere5": 0   
+    };
 var nbEres = 0;
 var bgEre = document.getElementById("bgEre");
-
 var nbConstruction = 0;
+
 // incrementation du nombre de batiments construits et catastrophes rencontrées
-// var eventConstruct = false;
-var eventCastastrophes = false;
+// en attente d'implementation
 
 var viderCache = document.getElementById('viderCache');
-
 
 // ----------------------- Debut : Statistiques - options ----------------------- //
 
@@ -51,15 +44,14 @@ getClick.onclick = incrTotalClick;
 
 
 // ---- eres terminées ---- //
-/*boucle sur le tableau pour check le nombre de fois que 1 est présent 
- *le for in me permet de boucler sur le tableau associatif
- */
-for (ere in tabEre) {
-    if (tabEre[ere] === 1) {
-        nbEres++;
-    }
-}
-nbTotalEre.innerHTML = nbEres;
+// ---- en attente d'implemenation ---- //
+//
+// for (ere in tabEre) {
+//     if (tabEre[ere] === 1) {
+//         nbEres++;
+//     }
+// }
+// nbTotalEre.innerHTML = nbEres;
 
 
 // ---- batiments construits ---- //
@@ -69,29 +61,22 @@ function incrConstruction() {
     nbTotalBatiment.innerHTML = constructions;
 }
 
-
-
-
 // ---- castastrophes comptées ---- //
-function incrCatastrophe() {
-    //if(eventCastastrophes == true){
-    //    castastrophes++;
-    //    eventCastastrophes = false;  
-    //}
-}
-
-
+// ---- en attente d'implemenation
+// function incrCatastrophe() {
+//
+//
+//
+// }
 
 // ----------------------- Fin : Statistiques - options ----------------------- //
-
-
 
 
 // ----------------------- Debut : gestion webstorage ----------------------- //
 var localisation = [];
 /**
  * 
- * parcourir le tableau de div ou se trouveront les maisons 
+ * parcourir le tableau de div ou se trouvent les maisons 
  * indique le niveau de maison a l'indice correspondant
  * 
  */
@@ -109,7 +94,6 @@ function localiserMaison() {
     }
     return localisation;
 }
-
 
 /**
  * 
@@ -232,7 +216,12 @@ function sauvegardeAuto() {
 }
 sauvegardeAuto();
 
-// const localiserTest = ['maison','maison1','maison2','vide','vide','vide','vide','vide','vide','vide']
+// var localiserTest = ['maison','maison1','maison2','vide','vide','vide','vide','vide','vide','vide']; // pour tests
+/***
+ * 
+ * fonction de restauration de la localisation, du niveau et du nombre de maison
+ * 
+ */
 function restorerMaison(getLocalisation) {
 
     for (let z = 0; z <= getLocalisation.length - 1; z++) {
@@ -247,6 +236,7 @@ function restorerMaison(getLocalisation) {
         }
     }
 }
+
 /**
  * 
  * fonction restauration des variables aux rechargements de pages
@@ -373,8 +363,6 @@ function recommencer() {
 // ----------------------- fin : gestion des cookies || webstorage ----------------------- //
 
 
-
-
 // ----------------------- Debut : ouverture / fermeture du shop ----------------------- //
 
 //Cible le bouton ouvrir le shop
@@ -440,7 +428,11 @@ var maisonPrix3 = 4;
 
 //affichage prix maison
 var prixMaison = document.getElementById("prixMaison");
-prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources <br> " + maisonPrix1 + " : <strong>os</strong> <br>" + maisonPrix2 + " : <strong>bois</strong> <br>" + maisonPrix3 + " : <strong>pierre</strong> <br>";
+prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources <br> "
+                        + maisonPrix1 
+                        + " : <strong>os</strong> <br>" 
+                        + maisonPrix2 + " : <strong>bois</strong> <br>" 
+                        + maisonPrix3 + " : <strong>pierre</strong> <br>";
 
 //compteur changement de niveau de la maison
 var compteurChangementMaison = 0;
@@ -460,7 +452,6 @@ var dommagesRessource3 = 2;
 
 //algo qui permet d'incrémenter 
 function clicker(plateau) {
-
 
     //si tu trouvre une div avec un class qui est os    
     if (plateau.target.getAttribute("class") == "os") {
@@ -552,7 +543,7 @@ function clicker(plateau) {
                 compteurRessourcePlateau3 = compteurRessourcePlateau3 + clickRessource3;
                 //tu incrémente aussi le compteur du déclancheur du changement de place des ressources
                 declencheurRessource3++;
-                //gestion de l'incrementation des ressources cumulées
+                //gestion de l'incrementation des ressources cumulées avec coef multiplicateur lié aux items du shop
                 somme++;
                 if (clickRessource1 > 1) {
                     nbTotalRessources.innerHTML = parseInt(nbTotalRessources.innerHTML) + clickRessource3;
@@ -581,14 +572,22 @@ function clickerMaison(bgEre) {
     //si tu trouvre une div avec un class qui est maison    
     if (bgEre.target.getAttribute("class") == "maison") {
 
-        if (bgEre.target.getAttribute("class", 'maison') && compteurRessourcePlateau1 >= maisonPrix1 && compteurRessourcePlateau2 >= maisonPrix2 && compteurRessourcePlateau3 >= maisonPrix3 && compteurChangementMaison <= 3) {
+        if ( bgEre.target.getAttribute( "class", 'maison' ) 
+            && compteurRessourcePlateau1 >= maisonPrix1 
+            && compteurRessourcePlateau2 >= maisonPrix2 
+            && compteurRessourcePlateau3 >= maisonPrix3 
+            && compteurChangementMaison <= 3 ) {
             compteurChangementMaison = compteurChangementMaison + 1;
             changeNiveauMaison();
 
         }
     } else if (bgEre.target.getAttribute("class") == "maison1") {
 
-        if (bgEre.target.getAttribute("class", 'maison1') && compteurRessourcePlateau1 >= maisonPrix1 && compteurRessourcePlateau2 >= maisonPrix2 && compteurRessourcePlateau3 >= maisonPrix3 && compteurChangementMaison <= 3) {
+        if ( bgEre.target.getAttribute("class", 'maison1') 
+            && compteurRessourcePlateau1 >= maisonPrix1 
+            && compteurRessourcePlateau2 >= maisonPrix2 
+            && compteurRessourcePlateau3 >= maisonPrix3 
+            && compteurChangementMaison <= 3 ) {
             compteurChangementMaison = compteurChangementMaison + 1;
             changeNiveauMaison();
         }
@@ -605,9 +604,7 @@ function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-
 var randTab = 0;
-
 
 //fonction de changement de niveau des habitation
 function changeNiveauMaison() {
@@ -656,14 +653,17 @@ function changeNiveauMaison() {
                 }
             }
         }
-        prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources <br> " + maisonPrix1 + " : <strong>os</strong> <br>" + maisonPrix2 + " : <strong>bois</strong> <br>" + maisonPrix3 + " : <strong>pierre</strong> <br>";
+        prixMaison.innerHTML = "Pour faire évoluer la maison clique dessus si tu as ces ressources <br> " 
+                                + maisonPrix1 
+                                + " : <strong>os</strong> <br>" 
+                                + maisonPrix2 + " : <strong>bois</strong> <br>" 
+                                + maisonPrix3 + " : <strong>pierre</strong> <br>";
     }
     ressource1.innerHTML = compteurRessourcePlateau1;
     ressource2.innerHTML = compteurRessourcePlateau2;
     ressource3.innerHTML = compteurRessourcePlateau3;
     activationItemsShop();
 }
-
 
 
 //algo de changement des places des ressources
@@ -774,12 +774,10 @@ function changeDePlaceRessource3() {
 /*------------ fonction vérification outils--------------*/
 
 var outilsNiveau1 = 0;
-
 var outilsNiveau2 = 0;
-
 var outilsNiveau3 = 0;
 
-console.log(outilsNiveau2);
+// console.log(outilsNiveau2);
 
 function verificationOutils1() {
 
@@ -839,7 +837,12 @@ for (var i = 0; i < lis.length; i++) {
 
 function achatCarte1() {
 
-    if (cartePosseder == 0 && compteurRessourcePlateau1 >= 10 && compteurRessourcePlateau2 >= 10 && compteurRessourcePlateau3 >= 10 && constructions >= 1 && outilsNiveau1 == 3) {
+    if ( cartePosseder == 0 
+        && compteurRessourcePlateau1 >= 10 
+        && compteurRessourcePlateau2 >= 10 
+        && compteurRessourcePlateau3 >= 10 
+        && constructions >= 1 
+        && outilsNiveau1 == 3) {
 
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.display = "none";
@@ -857,7 +860,12 @@ function achatCarte1() {
         ressource2.innerHTML  = compteurRessourcePlateau2 - 10;
         ressource3.innerHTML  = compteurRessourcePlateau3 - 10;
         // bonustardis();
-    } else if (cartePosseder == 1 && compteurRessourcePlateau1 >= 20 && compteurRessourcePlateau2 >= 20 && compteurRessourcePlateau3 >= 20 && constructions >= 2 && outilsNiveau2 == 3) {
+    } else if (cartePosseder == 1 
+                && compteurRessourcePlateau1 >= 20 
+                && compteurRessourcePlateau2 >= 20
+                && compteurRessourcePlateau3 >= 20 
+                && constructions >= 2 
+                && outilsNiveau2 == 3) {
 
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.display = "none";
@@ -874,7 +882,13 @@ function achatCarte1() {
         ressource1.innerHTML  = compteurRessourcePlateau1 - 20;
         ressource2.innerHTML  = compteurRessourcePlateau2 - 20;
         ressource3.innerHTML  = compteurRessourcePlateau3 - 20;
-    } else if (cartePosseder == 2 && compteurRessourcePlateau1 >= 30 && compteurRessourcePlateau2 >= 30 && compteurRessourcePlateau3 >= 30 && constructions >= 3 && outilsNiveau3 == 3) {
+
+    } else if (cartePosseder == 2 
+                && compteurRessourcePlateau1 >= 30 
+                && compteurRessourcePlateau2 >= 30 
+                && compteurRessourcePlateau3 >= 30 
+                && constructions >= 3 
+                && outilsNiveau3 == 3) {
 
         for (var i = 0; i < lis.length; i++) {
             lis[i].style.display = "none";
